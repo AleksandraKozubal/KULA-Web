@@ -1,4 +1,4 @@
-## @blumilksoftware/askwell-panel
+## Kebabowe Uniwersum LegnicA
 
 ### Local development
 ```

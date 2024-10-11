@@ -16,6 +16,5 @@
         </style>
     </head>
     <body class="antialiased">
-    działa
     </body>
 </html>
