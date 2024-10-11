@@ -34,7 +34,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id("admin")
-            ->path("admin")
+            ->path("")
             ->login()
             ->passwordReset()
             ->emailVerification()
@@ -68,17 +68,21 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->navigationGroups([
-                NavigationGroup::make("zewnętrzne linki")->collapsible(false),
+                NavigationGroup::make("linki projektowe")->collapsible(false),
             ])
             ->navigationItems([
-                NavigationItem::make("Analityka")
-                    ->url(config("analytics.url"), shouldOpenInNewTab: true)
-                    ->icon("heroicon-o-chart-bar")
-                    ->group("zewnętrzne linki"),
-                NavigationItem::make("Strona główna")
-                    ->url(config("app.url"), shouldOpenInNewTab: true)
-                    ->icon("heroicon-o-arrow-top-right-on-square")
-                    ->group("zewnętrzne linki"),
+                NavigationItem::make("OPZ")
+                    ->url("https://drive.google.com/file/d/1rzBXt32Hwl9UaX9H00mx_Al4heIaSa4a/view?authuser=1&usp=classroom_web", shouldOpenInNewTab: true)
+                    ->icon("heroicon-o-clipboard-document-list")
+                    ->group("linki projektowe"),
+                NavigationItem::make("PUM - zasady")
+                    ->url("https://github.com/kamilpiech97/cwup-resources/blob/main/INF/2024-2025/s7/pum/classes/lab01.md", shouldOpenInNewTab: true)
+                    ->icon("heroicon-o-device-phone-mobile")
+                    ->group("linki projektowe"),
+                NavigationItem::make("PZ - zasady")
+                    ->url("https://github.com/krzysztofrewak/cwup/blob/main/projects/pz.md", shouldOpenInNewTab: true)
+                    ->icon("heroicon-o-users")
+                    ->group("linki projektowe"),
             ])
             ->spa();
     }
