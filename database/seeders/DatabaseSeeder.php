@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
             return;
         }
 
-        $this->call(UsersSeeder::class);
+        // $this->call(UsersSeeder::class);
     }
 }
