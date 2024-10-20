@@ -20,22 +20,29 @@
                             @csrf
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700">Name</label>
-                                <input id="name" type="text" name="name" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
+                                <input id="name" type="text" name="name"
+                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
+
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="block text-gray-700">Email</label>
-                                <input id="email" type="email" name="email" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
+                                <input id="email" type="email" name="email"
+                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm peer" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="password" class="block text-gray-700">Password</label>
-                                <input id="password" type="password" name="password" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="password_confirmation" class="block text-gray-700">Confirm Password</label>
-                                <input id="password_confirmation" type="password" name="password_confirmation" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
+                            <div id="password_fields" class="[&>input]:mb-4 ">
+
+                                    <label for="password" class="block text-gray-700">Password</label>
+                                    <input id="password" type="password" name="password"
+                                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
+                                    <label for="password_confirmation" class="block text-gray-700">Confirm
+                                        Password</label>
+                                    <input id="password_confirmation" type="password" name="password_confirmation"
+                                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm" required>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600">Create Admin Account</button>
+                                <button disabled type="submit"
+                                    class="px-4 py-2 text-white rounded-md bg-kula-light-500 hover:bg-kula-light-600 disabled:bg-kula-light-300">Create
+                                    Admin Account</button>
                             </div>
                         </form>
                     </div>
