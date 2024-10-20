@@ -6,6 +6,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'fade-in':  'fadeIn 0.15s ease-in-out forwards',
+        'fade-out': 'fadeOut 0.15s ease-in-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { height: 'initial' },
+          '1%': { opacity: '0', display: 'block' },
+          '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '99%': { opacity: '0', height: 'initial' },
+          '100%': { height: '0px', opacity: '0', display: 'none' },
+        },
+      },
       colors: {
         kula: {
           light: {

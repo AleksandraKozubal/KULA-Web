@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/filament/filament/app.css') }}">
     @vite('resources/css/app.css')
 </head>
+{{-- TODO: Translation --}}
+{{--  TODO: Password rules tip --}}
 
 <body class="fixed bg-gray-100 dark:bg-gray-900">
     <div class="container fixed p-4 mx-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -21,40 +23,29 @@
                             creating your
                             <span
                                 class="relative inline-block -z-10 before:bg-kula-light-400 before:block before:dark:bg-kula-dark-600 before:absolute before:-inset-1 before:-skew-y-2 ">
-                                <span class="relative text-white dark:text-black">admin account.</span>
+                                <span class="relative text-white dark:text-black">admin account</span>
                             </span>
+                            .
                         </h2>
                         <form method="POST" action=""
-                            class="dark:[&>div>input]:bg-gray-900 dark:[&>div>input]:text-white [&>div>input]:h-10 *:*:transition">
+                            class="dark:[&>div>input]:bg-gray-900 *:*:transition">
                             @csrf
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700 dark:text-gray-300">Name</label>
                                 <input id="name" type="text" name="name"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700"
+                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
 
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="block text-gray-700 dark:text-gray-300">Email</label>
                                 <input id="email" type="email" name="email"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700"
+                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
                             </div>
-                            <div class="mb-4 ">
+                            <x-password-field :name="'password'" :label="'Password'"/>
+                            <x-password-field :name="'password_confirmation'" :label="'Confirm Password'"/>
 
-                                <label for="password" class="block text-gray-700 dark:text-gray-300">Password</label>
-                                <input id="password" type="password" name="password"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700"
-                                    required>
-                            </div>
-                            <div class="mb-4 ">
-                                <label for="password_confirmation"
-                                    class="block text-gray-700 dark:text-gray-300">Confirm
-                                    Password</label>
-                                <input id="password_confirmation" type="password" name="password_confirmation"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700"
-                                    required>
-                            </div>
                             <div class="text-center">
                                 <button disabled type="submit"
                                     class="px-4 py-2 text-white transition rounded-md dark:text-black bg-kula-light-500 dark:bg-kula-dark-600 hover:bg-kula-light-600 dark:hover:bg-kula-dark-700 disabled:bg-kula-light-300 dark:disabled:bg-kula-dark-100">Create
@@ -71,12 +62,18 @@
 <script>
     const validationChecks = document.getElementById('validation_checks');
     const password = document.getElementById('password');
+    const password_tip = document.getElementById('password-tip');
     const password_confirmation = document.getElementById('password_confirmation');
+    const password_confirmation_tip = document.getElementById('password_confirmation-tip');
     const submitButton = document.querySelector('button[type="submit"]');
     const email = document.getElementById('email');
     const name = document.getElementById('name');
     const passwordRegex =
         /^((?=.*[0-9])(?=.*[a-z])(?=.*([A-Z]|[!-\/:-@[-`{-~]))|(?=.*[A-Z])(?=.*[!-\/:-@[-`{-~])(?=.*([0-9]|[a-z])))[a-zA-Z0-9!-\/:-@[-`{-~]{8,}$/;
+    const lowercaseRegex = /[a-z]/;
+    const uppercaseRegex = /[A-Z]/;
+    const numberRegex = /[0-9]/;
+    const specialCharacterRegex = /[!-\/:-@[-`{-~]/;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
     function checkValidation() {
@@ -87,44 +84,50 @@
         }
     }
 
-    function checkUsername(skipColors = 0) {
+    function checkUsername(skipTips = 0) {
         if (name.value.length > 0) {
             valid.name = true;
-            if(!skipColors) name.classList.remove('!border-red-500');
+            if(!skipTips) name.classList.remove('!border-red-500');
         } else {
             valid.name = false;
-            if(!skipColors)name.classList.add('!border-red-500');
+            if(!skipTips)name.classList.add('!border-red-500');
         }
     }
 
-    function checkEmail(skipColors = 0) {
+    function checkEmail(skipTips = 0) {
         if (emailRegex.test(email.value)) {
             valid.email = true;
-            if(!skipColors) email.classList.remove('!border-red-500');
+            if(!skipTips) email.classList.remove('!border-red-500');
         } else {
             valid.email = false;
-            if(!skipColors) email.classList.add('!border-red-500');
+            if(!skipTips) email.classList.add('!border-red-500');
         }
     }
 
-    function checkPassword(skipColors = 0) {
+    function checkPassword(skipTips = 0) {
         if (passwordRegex.test(password.value)) {
             valid.password = true;
-            if(!skipColors) password.classList.remove('!border-red-500');
+            if(!skipTips) password.classList.remove('!border-red-500');
+            password_tip.classList.add('hidden');
         } else {
             valid.password = false;
-            if(!skipColors) password.classList.add('!border-red-500');
+            if(!skipTips) password.classList.add('!border-red-500');
+            password_tip.classList.remove('hidden');
+            password_tip.innerHTML = `<span class="${password.value.length<8?'text-red-500':'text-green-500'}">>8&nbsp;characters</span><br><span class="${uppercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">uppercase&nbsp;letter</span><br><span class="${lowercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">lowercase&nbsp;letter</span><br><span class="${numberRegex.test(password.value)?'text-green-500':'text-red-500'}">number</span><br><span class="${specialCharacterRegex.test(password.value)?'text-green-500':'text-red-500'}">special&nbsp;character.`;
         }
-        checkPasswordConfirmation(skipColors);
+        checkPasswordConfirmation(skipTips);
     }
 
-    function checkPasswordConfirmation(skipColors = 0) {
+    function checkPasswordConfirmation(skipTips = 0) {
         if (password.value === password_confirmation.value) {
             valid.password_confirmation = true;
-            if(!skipColors)password_confirmation.classList.remove('!border-red-500');
+            if(!skipTips)password_confirmation.classList.remove('!border-red-500');
+            password_confirmation_tip.classList.add('hidden');
         } else {
             valid.password_confirmation = false;
-            if(!skipColors)password_confirmation.classList.add('!border-red-500');
+            if(!skipTips)password_confirmation.classList.add('!border-red-500');
+            password_confirmation_tip.classList.remove('hidden');
+            password_confirmation_tip.textContent = 'Passwords do not match.';
         }
     }
     let valid = [{
