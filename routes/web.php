@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InitAppController;
 
-Route::get('/init-app', [App\Http\Controllers\InitAppController::class, 'index']);
-Route::post('/init-app', [App\Http\Controllers\InitAppController::class, 'store']);
+Route::get('/init-app' ,[InitAppController::class, 'index']);
+Route::post('/init-app', [InitAppController::class, 'store']);

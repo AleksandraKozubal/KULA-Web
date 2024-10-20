@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use App\Enums\Role;
 
 class InitAppController extends Controller
 {
@@ -25,12 +28,16 @@ class InitAppController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'role' => 'admin',
-            'password' => bcrypt($request->password),
-        ]);
+        $user = User::firstOrCreate(
+            ["email" => "$request->email"],
+            ["role" => Role::Admin,
+                "name" => "$request->name",
+                "email_verified_at" => now(),
+                "password" => Hash::make($request->password),
+                "remember_token" => Str::random(10),
+                "active" => true,
+            ],
+        );
 
         auth()->login($user);
 
