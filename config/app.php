@@ -14,13 +14,18 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    'timezone' => "Europe/Warsaw",
+    'timezone' => 'Europe/Warsaw',
 
     'locale' => 'pl',
 
     'fallback_locale' => 'en',
 
     'faker_locale' => 'pl',
+
+    'available_locales' => [
+        'English' => 'en',
+        'Polish' => 'pl',
+    ],
 
     'key' => env('APP_KEY'),
 

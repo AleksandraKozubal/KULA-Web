@@ -1,0 +1,15 @@
+{
+    "admin_account": "Admin Account",
+    "Let's_finish_setting_up_by_creating_your": "Let's finish setting up by creating your",
+    "Name": "Name",
+    "Email": "Email",
+    "Create_Admin_Account": "Create Admin Account",
+    "8_characters": "8 characters",
+    "lowercase_letter": "lowercase letter",
+    "uppercase_letter": "uppercase letter",
+    "number": "number",
+    "special_character": "special character",
+    "Passwords_do_not_match": "Passwords do not match",
+    "Password": "Password",
+    "Confirm_Password": "Confirm Password"
+}

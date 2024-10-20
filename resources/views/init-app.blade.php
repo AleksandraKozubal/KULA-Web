@@ -9,21 +9,16 @@
     @vite('resources/css/app.css')
 </head>
 {{-- TODO: Translation --}}
-{{--  TODO: Password rules tip --}}
-
 <body class="fixed bg-gray-100 dark:bg-gray-900">
     <div class="container fixed p-4 mx-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
                 <div class="overflow-hidden bg-white rounded-lg shadow-md dark:bg-black ">
                     <div class="p-6">
-                        <h2 class="relative z-10 mb-4 text-2xl font-bold text-center text-black dark:text-white">Let's
-                            finish setting
-                            up by
-                            creating your
+                        <h2 class="relative z-10 mb-4 text-2xl font-bold text-center text-black dark:text-white">{{ __("Let's_finish_setting_up_by_creating_your") }}
                             <span
                                 class="relative inline-block -z-10 before:bg-kula-light-400 before:block before:dark:bg-kula-dark-600 before:absolute before:-inset-1 before:-skew-y-2 ">
-                                <span class="relative text-white dark:text-black">admin account</span>
+                                <span class="relative text-white dark:text-black">{{ __("admin_account") }}</span>
                             </span>
                             .
                         </h2>
@@ -31,14 +26,14 @@
                             class="dark:[&>div>input]:bg-gray-900 *:*:transition">
                             @csrf
                             <div class="mb-4">
-                                <label for="name" class="block text-gray-700 dark:text-gray-300">Name</label>
+                                <label for="name" class="block text-gray-700 dark:text-gray-300">{{ __("Name") }}</label>
                                 <input id="name" type="text" name="name"
                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
 
                             </div>
                             <div class="mb-4">
-                                <label for="email" class="block text-gray-700 dark:text-gray-300">Email</label>
+                                <label for="email" class="block text-gray-700 dark:text-gray-300">{{ __("Email") }}</label>
                                 <input id="email" type="email" name="email"
                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
@@ -48,8 +43,7 @@
 
                             <div class="text-center">
                                 <button disabled type="submit"
-                                    class="px-4 py-2 text-white transition rounded-md dark:text-black bg-kula-light-500 dark:bg-kula-dark-600 hover:bg-kula-light-600 dark:hover:bg-kula-dark-700 disabled:bg-kula-light-300 dark:disabled:bg-kula-dark-100">Create
-                                    Admin Account</button>
+                                    class="px-4 py-2 text-white transition rounded-md dark:text-black bg-kula-light-500 dark:bg-kula-dark-600 hover:bg-kula-light-600 dark:hover:bg-kula-dark-700 disabled:bg-kula-light-300 dark:disabled:bg-kula-dark-100">{{ __("Create_Admin_Account") }}</button>
                             </div>
                         </form>
                     </div>
@@ -113,7 +107,7 @@
             valid.password = false;
             if(!skipTips) password.classList.add('!border-red-500');
             password_tip.classList.remove('hidden');
-            password_tip.innerHTML = `<span class="${password.value.length<8?'text-red-500':'text-green-500'}">>8&nbsp;characters</span><br><span class="${uppercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">uppercase&nbsp;letter</span><br><span class="${lowercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">lowercase&nbsp;letter</span><br><span class="${numberRegex.test(password.value)?'text-green-500':'text-red-500'}">number</span><br><span class="${specialCharacterRegex.test(password.value)?'text-green-500':'text-red-500'}">special&nbsp;character.`;
+            password_tip.innerHTML = `<span class="${password.value.length<8?'text-red-500':'text-green-500'}">>{{ __("8_characters") }}</span><br><span class="${uppercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">{{ __("uppercase_letter") }}</span><br><span class="${lowercaseRegex.test(password.value)?'text-green-500':'text-red-500'}">{{ __("lowercase_letter") }}</span><br><span class="${numberRegex.test(password.value)?'text-green-500':'text-red-500'}">{{ __("number") }}</span><br><span class="${specialCharacterRegex.test(password.value)?'text-green-500':'text-red-500'}">{{ __("special_character") }}</span>`;
         }
         checkPasswordConfirmation(skipTips);
     }
@@ -127,7 +121,7 @@
             valid.password_confirmation = false;
             if(!skipTips)password_confirmation.classList.add('!border-red-500');
             password_confirmation_tip.classList.remove('hidden');
-            password_confirmation_tip.textContent = 'Passwords do not match.';
+            password_confirmation_tip.textContent = '{{ __("Passwords_do_not_match") }}';
         }
     }
     let valid = [{
