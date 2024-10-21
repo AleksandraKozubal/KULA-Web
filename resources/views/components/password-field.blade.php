@@ -1,6 +1,6 @@
 @props(['name', 'label'])
 <div class="mb-4 ">
-    <label for="{{ $name }}" class="block text-gray-700 dark:text-gray-300">{{ $label }}</label>
+    <label for="{{ $name }}" class="block text-gray-700 dark:text-gray-300">{{ __($label) }}</label>
     <div class="relative flex">
         <input id="{{ $name }}" type="password" name="{{ $name }}"
             class="relative flex-row w-full mt-1 border-gray-300 rounded-r-none shadow-sm peer rounded-l-md dark:border-gray-700 dark:text-white dark:bg-gray-900"

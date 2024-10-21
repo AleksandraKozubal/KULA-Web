@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/filament/filament/app.css') }}">
     @vite('resources/css/app.css')
 </head>
-{{-- TODO: Translation --}}
 <body class="fixed bg-gray-100 dark:bg-gray-900">
     <div class="container fixed p-4 mx-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div class="flex justify-center">
@@ -39,7 +38,7 @@
                                     required>
                             </div>
                             <x-password-field :name="'password'" :label="'Password'"/>
-                            <x-password-field :name="'password_confirmation'" :label="'Confirm Password'"/>
+                            <x-password-field :name="'password_confirmation'" :label="'Confirm_Password'"/>
 
                             <div class="text-center">
                                 <button disabled type="submit"
