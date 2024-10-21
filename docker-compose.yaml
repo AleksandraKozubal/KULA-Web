@@ -39,7 +39,8 @@ services:
       - ./environment/dev/app/supervisord.conf:/etc/supervisor/custom-supervisord.conf:ro
       - .:/application
     ports:
-      - ${DOCKER_APP_HOST_PORT:-63851}:80
+      - "${DOCKER_APP_HOST_PORT:-63851}:80"
+      - "5173:5173" # Make sure this port is exposed
     networks:
       - kula-web-dev
       - traefik-proxy-blumilk-local
@@ -47,6 +48,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    command: nodemon --watch /application app.js
 
   database:
     image: postgres:16.3-alpine3.18@sha256:64e18e8fb3e9c9aac89ac590c5dd8306b862478404f76cd9b5f7720d012b4c47
