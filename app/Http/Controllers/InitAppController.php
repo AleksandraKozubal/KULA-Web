@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Enums\Role;
+use App\Http\Requests\UserRequest;
 
 class InitAppController extends Controller
 {
     public function index()
     {
-        if (DB::table('users')->count() > 0) {
+        if (User::count() > 0) {
             return redirect('/');
         }
 
@@ -22,11 +23,8 @@ class InitAppController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:8',
-        ]);
+        $userRequest = new UserRequest();
+        $request->validate($userRequest->rules());
 
         $user = User::firstOrCreate(
             ["email" => "$request->email"],
