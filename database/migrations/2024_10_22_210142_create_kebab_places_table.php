@@ -6,20 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('kebab_places', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('street');
+            $table->string('building_number');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('google_maps_url');
+            $table->string('google_maps_rating');
+            $table->string('phone');
+            $table->string('website')->nullable();
+            $table->string('email')->nullable();
+            $table->string('fillings');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('kebab_places');
