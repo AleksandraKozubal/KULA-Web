@@ -77,3 +77,4 @@ COPY ./entrypoint.sh /entrypoint.sh
 WORKDIR /application
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nodemon", "--watch", "/application", "app.js"]
