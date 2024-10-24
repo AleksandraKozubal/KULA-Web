@@ -8,10 +8,6 @@ use Illuminate\View\Component;
 
 class PasswordField extends Component
 {
-    public function __construct()
-    {
-    }
-    
     public function render(): View|Closure|string
     {
         return view('components.password-field');

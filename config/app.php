@@ -22,11 +22,6 @@ return [
 
     'faker_locale' => 'pl',
 
-    'available_locales' => [
-        'English' => 'en',
-        'Polish' => 'pl',
-    ],
-
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
