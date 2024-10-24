@@ -21,8 +21,7 @@ class InitAppController extends Controller
 
     public function store(UserRequest $request)
     {
-        $userRequest = new UserRequest();
-        $request->validate($userRequest->rules());
+        $request->validate($request->rules());
 
         $user = $this->createOrFindUser($request);
 
