@@ -12,7 +12,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        Comment::all();
+
+        return json_encode(Comment::all());
     }
 
     /**
