@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('realization_state');
+            $table->string('status');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('kebab_place_id')->constrained();
             $table->timestamps();

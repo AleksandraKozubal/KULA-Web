@@ -7,43 +7,35 @@ use Illuminate\Http\Request;
 
 class FillingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return json_encode(Filling::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $filling = new Filling();
+        $filling->name = $request->name;
+        $filling->is_vegan = $request->is_vegan;
+        $filling->is_gluten_free = $request->is_gluten_free;
+        $filling->save();
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Filling $filling)
     {
-        //
+        return json_encode($filling);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Filling $filling)
     {
-        //
+        $filling->name ? $filling->name = $request->name : null;
+        $filling->is_vegan ? $filling->is_vegan = $request->is_vegan : null;
+        $filling->is_gluten_free ? $filling->is_gluten_free = $request->is_gluten_free : null;
+        $filling->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Filling $filling)
     {
-        //
+        $filling->delete();
     }
 }

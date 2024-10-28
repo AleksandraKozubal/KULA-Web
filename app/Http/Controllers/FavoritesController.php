@@ -3,47 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorites;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FavoritesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(User $user)
     {
-        //
+        return json_encode(Favorites::where('user_id', $user->id)->get());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $favorite = new Favorites();
+        $favorite->user_id = $request->user_id;
+        $favorite->kebab_place_id = $request->kebabPlace_id;
+        $favorite->save();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Favorites $favorites)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Favorites $favorites)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Favorites $favorites)
     {
-        //
+        $favorites->delete();
     }
 }

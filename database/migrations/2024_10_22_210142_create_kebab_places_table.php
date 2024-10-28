@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('email')->nullable();
             $table->string('fillings');
+            $table->string('sauces');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
