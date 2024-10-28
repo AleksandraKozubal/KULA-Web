@@ -7,22 +7,19 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        Comment::all();
-
         return json_encode(Comment::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment();
+        $comment->content = $request->content;
+        $comment->user_id = $request->user_id;
+        $comment->kebab_place_id = $request->kebab_place_id;
+        
+        $comment->save();
     }
 
     /**

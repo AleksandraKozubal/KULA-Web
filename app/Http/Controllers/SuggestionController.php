@@ -7,43 +7,41 @@ use Illuminate\Http\Request;
 
 class SuggestionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        return json_encode(Suggestion::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $suggestion = new Suggestion();
+        $suggestion->name = $request->name;
+        $suggestion->description = $request->description;
+        $suggestion->status = $request->status;
+        $suggestion->user_id = $request->user_id;
+        $suggestion->kebab_place_id = $request->kebab_place_id;
+        $suggestion->save();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Suggestion $suggestion)
+    public function updateState(Request $request, Suggestion $suggestion)
     {
-        //
+        $suggestion->status = $request->status;
+        $suggestion->save();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Suggestion $suggestion)
+    public function softDelete(Suggestion $suggestion)
     {
-        //
+        $suggestion->delete();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function restore(Suggestion $suggestion)
+    {
+        $suggestion->restore();
+    }
+
     public function destroy(Suggestion $suggestion)
     {
-        //
+        $suggestion->forceDelete();
     }
 }
