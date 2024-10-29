@@ -57,5 +57,7 @@ class Kebab extends Model
         "is_chain_restaurant" => "boolean",
         "order_options" => "array",
         "social_media" => "collection",
+        "opened_at_year" => "year",
+        "closed_at_year" => "year",
     ];
 }
