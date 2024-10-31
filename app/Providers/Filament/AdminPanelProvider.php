@@ -23,6 +23,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\View\View;
+use App\Http\Middleware\CheckIfInitialized;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -63,6 +64,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                CheckIfInitialized::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
