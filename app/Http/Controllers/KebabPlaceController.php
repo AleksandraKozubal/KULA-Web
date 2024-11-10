@@ -14,13 +14,13 @@ class KebabPlaceController extends Controller
 {
     public function index(?User $user)
     {
+        $kebabPlaces = KebabPlace::all();
         if ($user) {
-            $kebabPlaces = KebabPlace::all();
             foreach ($kebabPlaces as $kebabPlace) {
                 $kebabPlace->is_favorite = Favorites::where('user_id', $user->id)->where('kebab_place_id', $kebabPlace->id)->exists();
             }
         }
-        return json_encode(KebabPlace::all());
+        return json_encode($kebabPlaces);
     }
 
     public function store(Request $request)

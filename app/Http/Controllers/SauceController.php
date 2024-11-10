@@ -9,7 +9,7 @@ class SauceController extends Controller
 {
     public function index()
     {
-        return json_encode(Sauce::all()->paginate(3));
+        return json_encode(Sauce::all());
     }
 
     public function store(Request $request)
