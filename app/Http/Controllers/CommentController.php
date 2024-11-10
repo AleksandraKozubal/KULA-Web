@@ -18,31 +18,23 @@ class CommentController extends Controller
         $comment->content = $request->content;
         $comment->user_id = $request->user_id;
         $comment->kebab_place_id = $request->kebab_place_id;
-        
+
         $comment->save();
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Comment $comment)
     {
-        //
+        return json_encode($comment);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->content ? $comment->content = $request->content : null;
+        $comment->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
     }
 }
