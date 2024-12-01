@@ -15,15 +15,17 @@ Route::get('/kebab-places', [KebabPlaceController::class, 'index']);
 Route::get('/kebab-places/{kebabPlace}', [KebabPlaceController::class, 'show']);
 Route::get('/sauces', [SauceController::class, 'index']);
 Route::get('/fillings', [FillingController::class, 'index']);
-Route::post('/register', [UserController::class, 'register']);
+Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [UserController::class, 'login']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+// comments
 Route::middleware('auth:sanctum')->post('/kebab-places/{kebabPlace}/comment', [CommentController::class, 'store']);
-Route::middleware('auth:sanctum')->post('/kebab-places/{kebabPlace}/fav', [FavoritesController::class, 'store']);
-Route::middleware('auth:sanctum')->delete('/kebab-places/{kebabPlace}/unfav', [FavoritesController::class, 'destroy']);
-Route::middleware('auth:sanctum')->get('/kebab-places/{kebabPlace}/suggest', [SuggestionController::class, 'index']);
 Route::middleware('auth:sanctum')->delete('/comment/{comment}', [CommentController::class, 'destroy']);
 Route::middleware('auth:sanctum')->put('/comment/{comment}', [CommentController::class, 'update']);
+// favorites
+Route::middleware('auth:sanctum')->post('/kebab-places/{kebabPlace}/fav', [FavoritesController::class, 'store']);
+Route::middleware('auth:sanctum')->delete('/kebab-places/{kebabPlace}/unfav', [FavoritesController::class, 'destroy']);
+// suggestions
+Route::middleware('auth:sanctum')->get('/kebab-places/{kebabPlace}/suggest', [SuggestionController::class, 'index']);

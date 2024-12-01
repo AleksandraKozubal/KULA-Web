@@ -14,7 +14,7 @@ class KebabPlaceController extends Controller
 {
     public function index(?User $user)
     {
-        $kebabPlaces = KebabPlace::all();
+        $kebabPlaces = KebabPlace::paginate(20);
         if ($user) {
             foreach ($kebabPlaces as $kebabPlace) {
                 $kebabPlace->is_favorite = Favorites::where('user_id', $user->id)->where('kebab_place_id', $kebabPlace->id)->exists();
