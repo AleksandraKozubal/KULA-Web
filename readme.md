@@ -31,9 +31,9 @@ make shell
 
 #### Containers
 
-| service    | container name            | default host port               |
-|:-----------|:--------------------------|:--------------------------------|
-| `app`      | `askwell-panel-app-dev`     | [63251](http://localhost:63251) |
-| `database` | `askwell-panel-db-dev`      | 63253                           |
-| `redis`    | `askwell-panel-redis-dev`   | 63252                           |
-| `mailpit`  | `askwell-panel-mailpit-dev` | 63254                           |
+| service    | container name              | default host port               |
+|:-----------|:----------------------------|:--------------------------------|
+| `app`      | `kula-web-app-dev`          | [63251](http://localhost:63251) |
+| `database` | `kula-web-db-dev`      | 63253                           |
+| `redis`    | `kula-web-redis-dev`   | 63252                           |
+| `mailpit`  | `kula-web-mailpit-dev` | 63254                           |

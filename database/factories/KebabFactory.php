@@ -18,52 +18,57 @@ class KebabFactory extends Factory
             "name" => fake()->name(),
             "logo" => fake()->imageUrl(),
             "address" => fake()->address(),
-            "coordinates" => [
-                "latitude" => fake()->latitude(),
-                "longitude" => fake()->longitude(),
-            ],
+            "lat" => fake()->latitude(),
+            "long" => fake()->longitude(),
             "opened_at_year" => fake()->year(),
             "closed_at_year" => fake()->optional()->year(),
             "opening_hours" => [
-                "monday" => [
+                [
+                    "day" => "poniedziałek",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "tuesday" => [
+                [
+                    "day" => "wtorek",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "wednesday" => [
+                [
+                    "day" => "środa",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "thursday" => [
+                [
+                    "day" => "czwartek",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "friday" => [
+                [
+                    "day" => "piątek",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "saturday" => [
+                [
+                    "day" => "sobota",
                     "from" => "10:00",
                     "to" => "22:00",
                 ],
-                "sunday" => [
+                [
+                    "day" => "niedziela",
                     "from" => "10:00",
                     "to" => "22:00",
+                ]
                 ],
-            ],
-            "fillings" => [
-                "chicken",
-                "beef",
-                "lamb",
-            ],
-            "sauces" => [
-                "garlic",
-                "chilli",
-                "mayo",
-            ],
+//            "fillings" => [
+//                "chicken",
+//                "beef",
+//                "lamb",
+//            ],
+//            "sauces" => [
+//                "garlic",
+//                "chilli",
+//                "mayo",
+//            ],
             "status" => fake()->randomElement(["open", "closed"]),
             "is_craft" => fake()->boolean(),
             "is_chain_restaurant" => fake()->boolean(),
@@ -72,11 +77,11 @@ class KebabFactory extends Factory
                 "takeaway",
                 "delivery",
             ],
-            "social_media" => [
-                    "facebook" => fake()->url(),
-                    "instagram" => fake()->url(),
-                    "twitter" => fake()->url(),
-            ],
+//            "social_media" => [
+//                    "facebook" => fake()->url(),
+//                    "instagram" => fake()->url(),
+//                    "twitter" => fake()->url(),
+//            ],
         ];
     }
 }

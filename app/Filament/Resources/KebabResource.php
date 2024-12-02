@@ -8,6 +8,12 @@ use App\Filament\Resources\KebabResource\Pages\CreateKebab;
 use App\Filament\Resources\KebabResource\Pages\EditKebab;
 use App\Models\Kebab;
 use Blumilk\Website\Filament\Resources\NewsResource\Pages\ListKebab;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\TimePicker;
 use Filament\Resources\Resource;
 use Exception;
 use Filament\Forms;
@@ -32,65 +38,83 @@ class KebabResource extends Resource
             ->schema([
                 Split::make([
                     Section::make([
-                        Forms\Components\TextInput::make("name")
+                        TextInput::make("name")
                             ->label("Nazwa")
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true),
-                        Forms\Components\Checkbox::make("is_craft")
+                        Checkbox::make("is_craft")
                             ->label("Mięso kraftowe"),
-                        Forms\Components\Checkbox::make("is_chain_restaurant")
+                        Checkbox::make("is_chain_restaurant")
                             ->label("Sieciówka"),
-                        Forms\Components\FileUpload::make("logo")
+                        FileUpload::make("logo")
                             ->label("Logo")
-                            ->required()
                             ->directory(Kebab::PHOTOS_DIRECTORY)
-                            ->multiple(false)
-                            ->maxSize(2500),
-                    ]),
-                    Section::make([
-                        Forms\Components\TextInput::make("address")
+                            ->multiple(false),
+                        TextInput::make("address")
                             ->label("Adres")
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true),
-                        Forms\Components\TextInput::make("lat")
+                        TextInput::make("lat")
                             ->label("Szerokość geograficzna")
+                            ->numeric()
                             ->required()
                             ->live(onBlur: true),
-                        Forms\Components\TextInput::make("lng")
+                        TextInput::make("long")
                             ->label("Długość geograficzna")
+                            ->numeric()
                             ->required()
                             ->live(onBlur: true),
-                        Forms\Components\TextInput::make('opened_at_year')
+                        TextInput::make('opened_at_year')
                             ->numeric()
                             ->minValue(1950)
                             ->maxValue(date('Y'))
                             ->label("Rok otwarcia"),
-                        Forms\Components\TextInput::make('closed_at_year')
+                        TextInput::make('closed_at_year')
                             ->numeric()
                             ->minValue(1950)
                             ->maxValue(date('Y'))
                             ->label("Rok zamknięcia"),
                     ]),
                     Section::make([
-                        Forms\Components\KeyValue::make('opening_hours')
+                        Repeater::make('opening_hours')
                             ->label('Godziny otwarcia')
-                            ->default(fn($state) => [
-                                "Poniedziałek" => '',
-                                "Wtorek" => '',
-                                "Środa" => '',
-                                "Czwartek" => '',
-                                "Piątek" => '',
-                                "Sobota" => '',
-                                "Niedziela" => '',
+                            ->schema([
+                                TextInput::make('day')
+                                    ->label('Dzień')
+                                    ->disabled()
+                                    ->default(fn($state, $record, $index) => [
+                                        'Poniedziałek', 'Wtorek', 'Środa',
+                                        'Czwartek', 'Piątek', 'Sobota', 'Niedziela'
+                                    ][$index]),
+                                TimePicker::make('from')
+                                    ->label('Od')
+                                    ->format('H:i')
+                                    ->timezone('Europe/Warsaw')
+                                    ->seconds(false)
+                                    ->nullable(),
+                                TimePicker::make('to')
+                                    ->label('Do')
+                                    ->format('H:i')
+                                    ->timezone('Europe/Warsaw')
+                                    ->seconds(false)
+                                    ->nullable(),
                             ])
+                            ->default(fn() => collect([
+                                ['day' => 'Poniedziałek', 'from' => null, 'to' => null],
+                                ['day' => 'Wtorek', 'from' => null, 'to' => null],
+                                ['day' => 'Środa', 'from' => null, 'to' => null],
+                                ['day' => 'Czwartek', 'from' => null, 'to' => null],
+                                ['day' => 'Piątek', 'from' => null, 'to' => null],
+                                ['day' => 'Sobota', 'from' => null, 'to' => null],
+                                ['day' => 'Niedziela', 'from' => null, 'to' => null],
+                            ])->toArray())
                             ->addable(false)
                             ->deletable(false)
-                            ->editableKeys(false)
-                            ->keyLabel('Dzień tygodnia')
-                            ->valueLabel('Godziny'),
-                        Forms\Components\Select::make("status")
+                            ->reorderable(false)
+                            ->columns(3),
+                        Select::make("status")
                             ->label("Status")
                             ->required()
                             ->options([
@@ -98,13 +122,24 @@ class KebabResource extends Resource
                                 "closed" => "Zamknięte",
                                 "planned" => "Planowane",
                             ]),
-                        Forms\Components\Select::make("location_type")
+                        Select::make("location_type")
                             ->label("Typ lokalizacji")
                             ->required()
                             ->options([
-//                                dine-in, food stand
                                 "dine-in" => "Lokal",
                                 "food stand" => "Buda",
+                            ]),
+                        Select::make("order_options")
+                            ->label("Opcje zamówienia")
+                            ->required()
+                            ->multiple()
+                            ->options([
+                                "phone" => "przez telefon",
+                                "glovo" => "glovo",
+                                "pyszne" => "pyszne.pl",
+                                "uber_eats" => "Uber Eats",
+                                "app" => "własna aplikacja",
+                                "web" => "własna strona",
                             ]),
                     ]),
                 ])->from("lg"),

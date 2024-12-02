@@ -10,9 +10,10 @@ use Illuminate\Support\Collection;
 
 /**
  * @property string $name
- * @property string $logo
+ * @property ?string $logo
  * @property string $address
- * @property array $coordinates
+ * @property string $lat
+ * @property string $long
  * @property ?string $opened_at_year
  * @property ?string $closed_at_year
  * @property array $opening_hours
@@ -35,7 +36,8 @@ class Kebab extends Model
         "name",
         "logo",
         "address",
-        "coordinates",
+        "lat",
+        "long",
         "opened_at_year",
         "closed_at_year",
         "opening_hours",
@@ -49,7 +51,6 @@ class Kebab extends Model
         "social_media",
     ];
     protected $casts = [
-        "coordinates" => "array",
         "opening_hours" => "array",
         "fillings" => "array",
         "sauces" => "array",
@@ -57,7 +58,28 @@ class Kebab extends Model
         "is_chain_restaurant" => "boolean",
         "order_options" => "array",
         "social_media" => "collection",
-        "opened_at_year" => "year",
-        "closed_at_year" => "year",
+        "opened_at_year" => "date:Y",
+        "closed_at_year" => "date:Y",
     ];
+
+    /**
+     *
+     * @param array $value
+     * @return void
+     */
+    protected function setOpeningHoursAttribute($value)
+    {
+        $days = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+
+        $formatted = collect($value)->map(function ($item, $index) use ($days) {
+            return [
+                'day' => $days[$index],
+                'from' => $item['from'] ?? null,
+                'to' => $item['to'] ?? null,
+            ];
+        })->toArray();
+
+        $this->attributes['opening_hours'] = json_encode($formatted);
+    }
+
 }

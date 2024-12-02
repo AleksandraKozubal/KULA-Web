@@ -11,20 +11,21 @@ return new class extends Migration
         Schema::create("kebabs", function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("logo");
+            $table->string("logo")->nullable();
             $table->string("address");
-            $table->json("coordinates");
+            $table->string("lat");
+            $table->string("long");
             $table->string("opened_at_year")->nullable();
             $table->string("closed_at_year")->nullable();
             $table->json("opening_hours");
-            $table->json("fillings");
-            $table->json("sauces");
+//            $table->json("fillings");
+//            $table->json("sauces");
             $table->string("status");
             $table->boolean("is_craft");
             $table->boolean("is_chain_restaurant");
             $table->string("location_type");
             $table->json("order_options");
-            $table->json("social_media");
+//            $table->json("social_media");
             $table->timestamps();
         });
     }
