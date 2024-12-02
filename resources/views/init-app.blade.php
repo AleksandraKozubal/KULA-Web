@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Init App</title>
-    <link rel="stylesheet" href="{{ asset('css/filament/filament/app.css') }}">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'vendor/filament/filament/resources/css/theme.css'])
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900">
@@ -28,14 +27,14 @@
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700 dark:text-gray-300">Nazwa</label>
                                 <input id="name" type="text" name="name"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
+                                    class="block w-full mt-1 border-gray-300 h-9 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
 
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="block text-gray-700 dark:text-gray-300">Email</label>
                                 <input id="email" type="email" name="email"
-                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
+                                    class="block w-full mt-1 border-gray-300 h-9 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
                             </div>
                             <x-password-field :name="'password'" :label="'Password'" />
