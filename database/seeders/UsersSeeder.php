@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class UsersSeeder extends Seeder
 {
-    protected const string DEFAULT_PASSWORD = "password";
+    protected const DEFAULT_PASSWORD = "password";
 
     public function run(): void
     {
