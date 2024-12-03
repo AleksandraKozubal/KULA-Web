@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UserRequest extends FormRequest
 {
@@ -13,17 +14,29 @@ class UserRequest extends FormRequest
 
     public function rules(): array
     {
-        return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => [
-                'required',
-                'regex:/^((?=.*[0-9])(?=.*[a-z])(?=.*([A-Z]|[!-\/:-@[-`{-~]))|(?=.*[A-Z])(?=.*[!-\/:-@[-`{-~])(?=.*([0-9]|[a-z])))[a-zA-Z0-9!-\/:-@[-`{-~]{8,}$/u',
-            ],
-            'password_confirmation' => 'required|same:password',
-        ];
-
+        if ($this->isMethod('post')) {
+            return [
+                'name' => 'required',
+                'email' => 'required|email|unique:users,email',
+                'password' => [
+                    'required',
+                    'regex:/^((?=.*[0-9])(?=.*[a-z])(?=.*([A-Z]|[!-\/:-@[-`{-~]))|(?=.*[A-Z])(?=.*[!-\/:-@[-`{-~])(?=.*([0-9]|[a-z])))[a-zA-Z0-9!-\/:-@[-`{-~]{8,}$/u',
+                ],
+                'password_confirmation' => 'required|same:password',
+            ];
+        } elseif ($this->isMethod('patch')) {
+            return [
+                'name' => 'sometimes|required',
+                'email' => 'sometimes|required|email|unique:users,email,' . auth()->id(),
+                'password' => [
+                    'nullable',
+                    'regex:/^((?=.*[0-9])(?=.*[a-z])(?=.*([A-Z]|[!-\/:-@[-`{-~]))|(?=.*[A-Z])(?=.*[!-\/:-@[-`{-~])(?=.*([0-9]|[a-z])))[a-zA-Z0-9!-\/:-@[-`{-~]{8,}$/u',
+                ],
+                'password_confirmation' => 'nullable|required_with:password|same:password',
+            ];
+        }
     }
+
     public function messages()
     {
         return [

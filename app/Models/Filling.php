@@ -16,4 +16,9 @@ class Filling extends Model
         'hex_color'
     ];
 
+    public function kebabPlaces()
+    {
+        return $this->belongsToMany(KebabPlace::class);
+    }
+
 }

@@ -12,12 +12,12 @@ use App\Models\Sauce;
 
 class KebabPlaceController extends Controller
 {
-    public function index(?User $user)
+    public function index()
     {
         $kebabPlaces = KebabPlace::paginate(20);
-        if ($user) {
+        if (auth()->check()) {
             foreach ($kebabPlaces as $kebabPlace) {
-                $kebabPlace->is_favorite = Favorites::where('user_id', $user->id)->where('kebab_place_id', $kebabPlace->id)->exists();
+                $kebabPlace->is_favorite = Favorites::where('user_id', auth()->id())->where('kebab_place_id', $kebabPlace->id)->exists();
             }
         }
         return json_encode($kebabPlaces);
@@ -42,15 +42,19 @@ class KebabPlaceController extends Controller
         $kebabPlace->save();
     }
 
-    public function show(KebabPlace $kebabPlace, ?User $user)
+    public function show(Request $request, ?User $user)
     {
-        $kebabPlace->is_favorite = Favorites::where('user_id', $user->id)->where('kebab_place_id', $kebabPlace->id)->exists();
-        $kebabPlace->comments = Comment::where('kebab_place_id', $kebabPlace->id)->get();
+        $kebabPlace = KebabPlace::find($request->kebabPlace);
+        if (auth()->check()) {
+            $kebabPlace->is_favorite = Favorites::where('user_id', auth()->id())->where('kebab_place_id', $request->kebabPlace)->exists();
+        }
+        $kebabPlace->comments = Comment::where('kebab_place_id', $request->kebabPlace)->get();
         $kebabPlace->comments->each(function ($comment) {
             $comment->is_owner = $comment->user_id === auth()->id();
         });
         $kebabPlace->fillings = Filling::where('id', $kebabPlace->fillings)->get();
         $kebabPlace->sauces = Sauce::where('id', $kebabPlace->sauces)->get();
+
         return json_encode($kebabPlace);
     }
 

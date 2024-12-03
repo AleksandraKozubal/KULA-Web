@@ -16,4 +16,9 @@ class Sauce extends Model
         'is_gluten_free',
         'hex_color'
     ];
+
+    public function kebabPlaces()
+    {
+        return $this->belongsToMany(KebabPlace::class);
+    }
 }

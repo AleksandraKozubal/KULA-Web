@@ -15,14 +15,47 @@ class FavoritesController extends Controller
 
     public function store(Request $request)
     {
+
+        $userId = auth()->id();
+        $kebabPlaceId = $request->kebabPlace;
+
+        // Check if the favorite already exists
+        $existingFavorite = Favorites::where('user_id', $userId)
+            ->where('kebab_place_id', $kebabPlaceId)
+            ->first();
+
+        if ($existingFavorite) {
+            return response()->json(['message' => 'Favorite already exists'], 409); // Conflict status code
+        }
+
+        // Create new favorite
         $favorite = new Favorites();
-        $favorite->user_id = $request->user_id;
-        $favorite->kebab_place_id = $request->kebabPlace_id;
+        $favorite->user_id = $userId;
+        $favorite->kebab_place_id = $kebabPlaceId;
         $favorite->save();
+
+        return response()->json($favorite, 201); // Created status code
     }
 
-    public function destroy(Favorites $favorites)
+
+    public function destroy()
     {
-        $favorites->delete();
+        $kebabPlaceId = request()->route('kebabPlace');
+        $userId = auth()->id();
+
+        $favorite = Favorites::where('user_id', $userId)
+            ->where('kebab_place_id', $kebabPlaceId)
+            ->first();
+
+        if ($favorite) {
+            $favorite->delete();
+        } else {
+            return response()->json(['message' => 'Favorite not found'], 404);
+        }
+
+        return response()->json(['message' => 'Favorite deleted successfully']);
     }
+
+
+
 }

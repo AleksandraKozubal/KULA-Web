@@ -37,8 +37,8 @@
                                     class="block w-full mt-1 border-gray-300 h-9 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
                             </div>
-                            <x-password-field :name="'password'" :label="'Password'" />
-                            <x-password-field :name="'password_confirmation'" :label="'Confirm_Password'" />
+                            <x-password-field :name="'password'" :label="'Hasło'" />
+                            <x-password-field :name="'password_confirmation'" :label="'Powtórz hasło'" />
 
                             <div class="text-center">
                                 <button type="submit"

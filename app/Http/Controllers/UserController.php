@@ -37,6 +37,18 @@ class UserController extends Controller
         ]);
     }
 
+    public function logout(Request $request)
+    {
+        // Get the token instance
+        $token = $request->user()->currentAccessToken();
+
+        // Delete the token
+        $token->delete();
+
+        return response()->json(['message' => 'Successfully logged out']);
+    }
+
+
     public function store(UserRequest $request)
     {
         $user = new User();
@@ -51,21 +63,35 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function show(User $user)
+    public function show()
     {
-        return json_encode($user);
+        return json_encode(auth()->user());
     }
 
-    public function edit(Request $request, User $user)
+    public function edit(UserRequest $request)
     {
-        $user->name ? $user->name = $request->name : null;
-        $user->email ? $user->email = $request->email : null;
-        $user->password ? $user->password = $request->password : null;
+        $user = User::find(auth()->id());
+
+        if ($request->filled('name')) {
+            $user->name = $request->input('name');
+        }
+
+        if ($request->filled('email')) {
+            $user->email = $request->input('email');
+        }
+
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password')); 
+        }
+
         $user->save();
+
+        return response()->json(['message' => 'User information updated successfully', 'user' => $user]);
     }
 
-    public function destroy(User $user)
+
+    public function destroy()
     {
-        $user->delete();
+        User::find(auth()->id())->delete();
     }
 }
