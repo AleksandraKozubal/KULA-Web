@@ -18,10 +18,11 @@ class SuggestionController extends Controller
         $suggestion = new Suggestion();
         $suggestion->name = $request->name;
         $suggestion->description = $request->description;
-        $suggestion->status = $request->status;
-        $suggestion->user_id = $request->user_id;
-        $suggestion->kebab_place_id = $request->kebab_place_id;
+        $suggestion->status = 'pending';
+        $suggestion->user_id = auth()->user()->id;
+        $suggestion->kebab_place_id = $request->kebabPlace;
         $suggestion->save();
+        return json_encode($suggestion);
     }
 
     public function updateState(Request $request, Suggestion $suggestion)

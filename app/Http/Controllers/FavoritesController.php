@@ -19,22 +19,20 @@ class FavoritesController extends Controller
         $userId = auth()->id();
         $kebabPlaceId = $request->kebabPlace;
 
-        // Check if the favorite already exists
         $existingFavorite = Favorites::where('user_id', $userId)
             ->where('kebab_place_id', $kebabPlaceId)
             ->first();
 
         if ($existingFavorite) {
-            return response()->json(['message' => 'Favorite already exists'], 409); // Conflict status code
+            return response()->json(['message' => 'Favorite already exists'], 409);
         }
 
-        // Create new favorite
         $favorite = new Favorites();
         $favorite->user_id = $userId;
         $favorite->kebab_place_id = $kebabPlaceId;
         $favorite->save();
 
-        return response()->json($favorite, 201); // Created status code
+        return response()->json($favorite, 201);
     }
 
 

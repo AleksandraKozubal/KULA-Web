@@ -25,6 +25,5 @@ Route::middleware('auth:sanctum')->delete('/kebab-places/{kebabPlace}/unfav', [F
 Route::middleware('auth:sanctum')->put('/kebab-places/{kebabPlace}/comment', [CommentController::class, 'store']);
 Route::middleware('auth:sanctum')->patch('/comment/{comment}', [CommentController::class, 'edit']);
 Route::middleware('auth:sanctum')->delete('/comment/{comment}', [CommentController::class, 'destroy']);
-// TODO: suggestions
-Route::middleware('auth:sanctum')->get('/kebab-places/{kebabPlace}/suggest', [SuggestionController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/mysuggestions', [SuggestionController::class, 'index']);
 Route::middleware('auth:sanctum')->post('/kebab-places/{kebabPlace}/suggest', [SuggestionController::class, 'store']);

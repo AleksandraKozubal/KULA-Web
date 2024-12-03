@@ -4,7 +4,7 @@ module.exports = {
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
-    './vendor/filament/**/*.blade.php', // Add Filament paths
+    './vendor/filament/**/*.blade.php', 
   ],
   theme: {
     extend: {
