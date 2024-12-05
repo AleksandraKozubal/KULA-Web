@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Filling;
 use App\Models\Kebab;
+use App\Models\Sauce;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -58,30 +60,28 @@ class KebabFactory extends Factory
                     "from" => "10:00",
                     "to" => "22:00",
                 ]
-                ],
-//            "fillings" => [
-//                "chicken",
-//                "beef",
-//                "lamb",
-//            ],
-//            "sauces" => [
-//                "garlic",
-//                "chilli",
-//                "mayo",
-//            ],
+            ],
+            "fillings" => fake()->randomElements(Filling::all()->pluck("id"), fake()->numberBetween(1, 3)),
+            "sauces" => fake()->randomElements(Sauce::all()->pluck("id"), fake()->numberBetween(0, 5)),
             "status" => fake()->randomElement(["open", "closed"]),
             "is_craft" => fake()->boolean(),
             "is_chain_restaurant" => fake()->boolean(),
-            "location_type" => "restaurant",
-            "order_options" => [
-                "takeaway",
-                "delivery",
+            "location_type" => fake()->randomElement(["dine-in", "food stand"]),
+            "order_options" => fake()->randomElement(["phone", "glovo", "pyszne", "uber_eats", "app", "web"]),
+            "social_media" => [
+                [
+                    "name" => "fb",
+                    "url" => fake()->url(),
+                ],
+                [
+                    "name" => "ig",
+                    "url" => fake()->url(),
+                ],
+                [
+                    "name" => "x",
+                    "url" => fake()->url(),
+                ],
             ],
-//            "social_media" => [
-//                    "facebook" => fake()->url(),
-//                    "instagram" => fake()->url(),
-//                    "twitter" => fake()->url(),
-//            ],
         ];
     }
 }

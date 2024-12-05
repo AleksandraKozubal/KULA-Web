@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Filling;
 use App\Models\Kebab;
+use App\Models\Sauce;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +16,8 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call(UsersSeeder::class);
-        Kebab::factory()->count(20)->create();
+        Filling::factory()->count(6)->create();
+        Sauce::factory()->count(6)->create();
+        Kebab::factory()->count(15)->create();
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Observers\KebabObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -17,8 +18,8 @@ use Illuminate\Support\Collection;
  * @property ?string $opened_at_year
  * @property ?string $closed_at_year
  * @property array $opening_hours
- * @property array $fillings
- * @property array $sauces
+ * @property ?array $fillings
+ * @property ?array $sauces
  * @property string $status
  * @property bool $is_craft
  * @property bool $is_chain_restaurant
@@ -82,4 +83,9 @@ class Kebab extends Model
         $this->attributes['opening_hours'] = json_encode($formatted);
     }
 
+    public static function boot(): void
+    {
+        parent::boot();
+        static::observe(KebabObserver::class);
+    }
 }
