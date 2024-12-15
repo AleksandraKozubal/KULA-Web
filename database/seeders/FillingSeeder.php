@@ -13,9 +13,9 @@ class FillingSeeder extends Seeder
      */
     public function run(): void
     {
-        Filling::create(['name' => 'Wołowina', 'is_vegan' => false, 'hex_color' => '#FFC107', 'is_gluten_free' => true]);
-        Filling::create(['name' => 'Kuciak', 'is_vegan' => false, 'hex_color' => '#8B4513', 'is_gluten_free' => true]);
-        Filling::create(['name' => 'Baranina', 'is_vegan' => false, 'hex_color' => '#800000', 'is_gluten_free' => true]);
-        Filling::create(['name' => 'Falafel', 'is_vegan' => true, 'hex_color' => '#D2691E', 'is_gluten_free' => false]);
+        Filling::create(['name' => 'Wołowina', 'is_vegan' => false, 'hex_color' => '#FFC107']);
+        Filling::create(['name' => 'Kuciak', 'is_vegan' => false, 'hex_color' => '#8B4513']);
+        Filling::create(['name' => 'Baranina', 'is_vegan' => false, 'hex_color' => '#800000']);
+        Filling::create(['name' => 'Falafel', 'is_vegan' => true, 'hex_color' => '#D2691E']);
     }
 }

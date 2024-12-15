@@ -20,9 +20,11 @@ return new class extends Migration
             $table->string('phone');
             $table->string('website')->nullable();
             $table->string('email')->nullable();
-            $table->string('fillings');
-            $table->string('sauces');
+            $table->string('fillings')->nullable();
+            $table->string('sauces')->nullable();
+            $table->string('opening_hours')->nullable();
             $table->string('image')->nullable();
+
             $table->timestamps();
         });
     }

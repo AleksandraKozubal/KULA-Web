@@ -35,7 +35,7 @@ class Favorites extends Model
         return $query;
     }
 
-    protected function getKeyForSaveQuery()
+    protected function getKeyForSaveQuery() : array
     {
         $keys = $this->getKeyName();
         if (!is_array($keys)) {
