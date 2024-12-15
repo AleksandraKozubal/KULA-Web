@@ -12,7 +12,7 @@ class InitAppController extends Controller
 {
     public function index()
     {
-        if (User::count() > 0) {
+        if (User::where('role', 'admin')->exists()) {
             return redirect('/');
         }
 

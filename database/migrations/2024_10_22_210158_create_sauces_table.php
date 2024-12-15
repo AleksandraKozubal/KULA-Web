@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('spiciness');
-            $table->string('is_vegan');
-            $table->string('is_gluten_free');
+            $table->boolean('is_vegan');
+            $table->boolean('is_gluten_free');
             $table->string('hex_color');
             $table->timestamps();
         });

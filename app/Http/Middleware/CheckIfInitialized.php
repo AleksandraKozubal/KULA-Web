@@ -12,8 +12,10 @@ class CheckIfInitialized
 {
     public function handle(Request $request, Closure $next)
     {
-        if (!User::count()) {
-            return redirect('/init-app');
+        if (User::where('role', 'admin')->doesntExist()) {
+            if ($request->path() !== 'init-app') {
+                return redirect('/init-app');
+            }
         }
 
         return $next($request);

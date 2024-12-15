@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('fillings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('is_vegan');
+            $table->boolean('is_vegan');
             $table->string('hex_color');
             $table->timestamps();
         });
