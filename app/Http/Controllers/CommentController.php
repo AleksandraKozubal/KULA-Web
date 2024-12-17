@@ -4,14 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class CommentController extends Controller
 {
+    /**
+     * @return JsonResponse
+     */
     public function index()
     {
-        return json_encode(Comment::all());
+        return response()->json(Comment::all());
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function store(Request $request)
     {
         if (!auth()->user()) {
@@ -19,21 +27,32 @@ class CommentController extends Controller
                 'message' => 'Unauthorized'
             ], 401);
         }
+
         $comment = new Comment();
         $comment->content = $request->content;
         $comment->user_id = auth()->user()->id;
         $comment->kebab_place_id = $request->kebabPlace;
         $comment->save();
+
         return response()->json([
-            'message' => 'Comment created'
+            'message' => 'Dodano komentarz',
         ]);
     }
 
+    /**
+     * @param  Comment  $comment
+     * @return JsonResponse
+     */
     public function show(Comment $comment)
     {
         return json_encode($comment);
     }
 
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function edit(Request $request)
     {
         if (!auth()->user()) {
@@ -41,19 +60,29 @@ class CommentController extends Controller
                 'message' => 'Unauthorized'
             ], 401);
         }
+
         $comment = Comment::find($request->comment);
-        if ($comment->user_id !== auth()->user()->id) {
+
+        if (!$comment || $comment->user_id !== auth()->user()->id) {
             return response()->json([
                 'message' => 'Unauthorized'
             ], 401);
         }
-        $comment->content ? $comment->content = $request->content : null;
-        $comment->save();
+
+        if ($request->has('content')) {
+            $comment->content = $request->content;
+            $comment->save();
+        }
+
         return response()->json([
-            'message' => 'Comment edited'
+            'message' => 'Edytowano komentarz'
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function destroy(Request $request)
     {
         if (!auth()->user()) {
@@ -69,7 +98,7 @@ class CommentController extends Controller
         }
         $comment->delete();
         return response()->json([
-            'message' => 'Comment deleted'
+            'message' => 'Komentarz usunięty'
         ]);
     }
 }

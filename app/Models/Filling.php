@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Filling extends Model
 {
@@ -16,6 +17,9 @@ class Filling extends Model
         'hex_color'
     ];
 
+    /**
+     * @return BelongsToMany
+     */
     public function kebabPlaces()
     {
         return $this->belongsToMany(KebabPlace::class);

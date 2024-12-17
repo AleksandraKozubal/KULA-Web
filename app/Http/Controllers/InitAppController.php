@@ -7,9 +7,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Enums\Role;
 use App\Http\Requests\UserRequest;
+use \Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class InitAppController extends Controller
 {
+    /**
+     * @return RedirectResponse|View
+     */
     public function index()
     {
         if (User::where('role', 'admin')->exists()) {
@@ -19,11 +24,12 @@ class InitAppController extends Controller
         return view('init-app');
     }
 
+    /**
+     * @param UserRequest $request
+     * @return RedirectResponse
+     */
     public function store(UserRequest $request)
     {
-        // how to check if validation fails, if so redirect back with errors
-
-
         $user = $this->createOrFindUser($request);
 
         auth()->login($user);
@@ -31,6 +37,10 @@ class InitAppController extends Controller
         return redirect('/');
     }
 
+    /**
+     * @param UserRequest $request
+     * @return User
+     */
     public function createOrFindUser(UserRequest $request)
     {
         return User::firstOrCreate(

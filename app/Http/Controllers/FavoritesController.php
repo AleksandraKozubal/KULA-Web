@@ -5,16 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\Favorites;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class FavoritesController extends Controller
 {
+    /**
+     * @param  User  $user
+     * @return string JSON encoded list of favorite kebab places
+     */
     public function index(User $user)
     {
         return json_encode(Favorites::where('user_id', $user->id)->get());
     }
 
+    /**
+     * @param  Request  $request
+     * @return Response
+     *
+     * @throws AuthorizationException
+     */
     public function store(Request $request)
     {
+        $this->authorize('create', Favorites::class);
 
         $userId = auth()->id();
         $kebabPlaceId = $request->kebabPlace;
@@ -24,7 +36,7 @@ class FavoritesController extends Controller
             ->first();
 
         if ($existingFavorite) {
-            return response()->json(['message' => 'Favorite already exists'], 409);
+            return response()->json(['message' => 'Polubienie już istnieje'], 409);
         }
 
         $favorite = new Favorites();
@@ -36,6 +48,9 @@ class FavoritesController extends Controller
     }
 
 
+    /**
+     * @return Response
+     */
     public function destroy()
     {
         $kebabPlaceId = request()->route('kebabPlace');
@@ -48,10 +63,10 @@ class FavoritesController extends Controller
         if ($favorite) {
             $favorite->delete();
         } else {
-            return response()->json(['message' => 'Favorite not found'], 404);
+            return response()->json(['message' => 'Nie znaleziono polubienia'], 404);
         }
 
-        return response()->json(['message' => 'Favorite deleted successfully']);
+        return response()->json(['message' => 'Polubienie usunięte']);
     }
 
 

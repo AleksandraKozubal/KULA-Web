@@ -6,13 +6,20 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
+    /**
+     * @return JsonResponse
+     */
     public function index()
     {
-        return json_encode(User::all());
+        return response()->json(User::all());
     }
+    /**
+     * @param UserRequest $request
+     */
     public function register(UserRequest $request)
     {
         $user = new User();
@@ -23,6 +30,10 @@ class UserController extends Controller
         $user->save();
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function login(Request $request)
     {
         $user = User::where('email', $request->email)->first();
@@ -37,6 +48,10 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function logout(Request $request)
     {
         $token = $request->user()->currentAccessToken();
@@ -47,6 +62,10 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @param UserRequest $request
+     * @return JsonResponse
+     */
     public function store(UserRequest $request)
     {
         $user = new User();
@@ -61,11 +80,18 @@ class UserController extends Controller
         ], 201);
     }
 
+    /**
+     * @return JsonResponse
+     */
     public function show()
     {
-        return json_encode(auth()->user());
+        return response()->json(auth()->user());
     }
 
+    /**
+     * @param UserRequest $request
+     * @return JsonResponse
+     */
     public function edit(UserRequest $request)
     {
         $user = User::find(auth()->id());
@@ -88,6 +114,9 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @return void
+     */
     public function destroy()
     {
         User::find(auth()->id())->delete();

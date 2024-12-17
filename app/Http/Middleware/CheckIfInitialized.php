@@ -10,6 +10,11 @@ use \Illuminate\Http\Request;
 
 class CheckIfInitialized
 {
+    /**
+     * @param  Request $request
+     * @param  Closure $next
+     * @return mixed
+     */
     public function handle(Request $request, Closure $next)
     {
         if (User::where('role', 'admin')->doesntExist()) {

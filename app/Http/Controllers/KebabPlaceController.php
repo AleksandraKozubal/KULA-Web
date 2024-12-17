@@ -12,6 +12,9 @@ use App\Models\Sauce;
 
 class KebabPlaceController extends Controller
 {
+    /**
+     * @return JsonResponse
+     */
     public function index()
     {
         $kebabPlaces = KebabPlace::paginate(20);
@@ -20,9 +23,13 @@ class KebabPlaceController extends Controller
                 $kebabPlace->is_favorite = Favorites::where('user_id', auth()->id())->where('kebab_place_id', $kebabPlace->id)->exists();
             }
         }
-        return json_encode($kebabPlaces);
+        return response()->json($kebabPlaces);
     }
 
+    /**
+     * @param  Request  $request
+     * @return JsonResponse
+     */
     public function store(Request $request)
     {
         $kebabPlace = new KebabPlace();
@@ -40,8 +47,15 @@ class KebabPlaceController extends Controller
         $kebabPlace->sauces = $request->sauces;
         $kebabPlace->image = $request->image;
         $kebabPlace->save();
+
+        return response()->json($kebabPlace, 201);
     }
 
+    /**
+     * @param  Request  $request
+     * @param  User  $user
+     * @return JsonResponse
+     */
     public function show(Request $request, ?User $user)
     {
         $kebabPlace = KebabPlace::find($request->kebabPlace);
@@ -55,9 +69,14 @@ class KebabPlaceController extends Controller
         $kebabPlace->fillings = Filling::where('id', $kebabPlace->fillings)->get();
         $kebabPlace->sauces = Sauce::where('id', $kebabPlace->sauces)->get();
 
-        return json_encode($kebabPlace);
+        return response()->json($kebabPlace, 200);
     }
 
+    /**
+     * @param  Request  $request
+     * @param  KebabPlace  $kebabPlace
+     * @return JsonResponse
+     */
     public function update(Request $request, KebabPlace $kebabPlace)
     {
         $kebabPlace->name ? $kebabPlace->name = $request->name : null;
@@ -74,10 +93,18 @@ class KebabPlaceController extends Controller
         $kebabPlace->sauces ? $kebabPlace->sauces = $request->sauces : null;
         $kebabPlace->image ? $kebabPlace->image = $request->image : null;
         $kebabPlace->save();
+
+        return response()->json("Zaktualizowano kebab", 200);
     }
 
+    /**
+     * @param  KebabPlace  $kebabPlace
+     * @return JsonResponse
+     */
     public function destroy(KebabPlace $kebabPlace)
     {
         $kebabPlace->delete();
+
+        return response()->json("Usunięto kebab", 200);
     }
 }

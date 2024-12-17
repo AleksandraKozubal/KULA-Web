@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class KebabPlace extends Model
 {
@@ -25,16 +27,25 @@ class KebabPlace extends Model
         'image'
     ];
 
+    /**
+     * @return BelongsToMany
+     */
     public function fillings()
     {
         return $this->belongsToMany(Filling::class);
     }
 
+    /**
+     * @return BelongsToMany
+     */
     public function sauces()
     {
         return $this->belongsToMany(Sauce::class);
     }
 
+    /**
+     * @return HasMany
+     */
     public function comments()
     {
         return $this->hasMany(Comment::class);
