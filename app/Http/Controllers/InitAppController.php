@@ -21,7 +21,8 @@ class InitAppController extends Controller
 
     public function store(UserRequest $request)
     {
-        $request->validate($request->rules());
+        // how to check if validation fails, if so redirect back with errors
+
 
         $user = $this->createOrFindUser($request);
 

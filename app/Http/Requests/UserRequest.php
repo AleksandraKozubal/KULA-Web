@@ -40,13 +40,13 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'The name field is required.',
-            'email.required' => 'The email field is required.',
-            'email.email' => 'The email must be a valid email address.',
-            'email.unique' => 'There is an existing account using this email.',
-            'password.required' => 'The password field is required.',
-            'password.min' => 'The password must be at least 8 characters.',
-            'password.confirmed' => 'The password confirmation does not match.',
+            'name.required' => 'Nazwa użytkownika jest wymagana.',
+            'email.required' => 'Adres email jest wymagany.',
+            'email.email' => 'Podaj poprawny adres email.',
+            'email.unique' => 'Ten email jest już zajęty.',
+            'password.required' => 'Hasło jest wymagane.',
+            'password.regex' => 'Hasło musi mieć przynajmniej 8 znaków, i spełniać co najmniej 3 wymagania: 1 dużą literę,  1 małą literę, 1 cyfrę, 1 znak specjalny',
+            'password_confirmation.same' => 'Hasła muszą być identyczne.',
         ];
     }
 }

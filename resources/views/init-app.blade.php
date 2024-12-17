@@ -7,6 +7,7 @@
     <title>Init App</title>
     @vite(['resources/css/app.css', 'vendor/filament/filament/resources/css/theme.css'])
 </head>
+
 <body class="bg-gray-100 dark:bg-gray-900">
     <div class="container fixed p-4 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div class="flex justify-center">
@@ -25,18 +26,38 @@
                             @csrf
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700 dark:text-gray-300">Nazwa</label>
-                                <input id="name" type="text" name="name"
+                                <input id="name" type="text" name="name" value="{{ old('name') }}"
                                     class="block w-full mt-1 border-gray-300 h-9 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
                             </div>
+                            @if ($errors->has('name'))
+                            <span class="invalid-feedback">
+                                <strong class="text-red-700 dark:text-red-500">{{ $errors->first('name') }}</strong>
+                            </span>
+                            @endif
                             <div class="mb-4">
                                 <label for="email" class="block text-gray-700 dark:text-gray-300">Email</label>
-                                <input id="email" type="email" name="email"
+                                <input id="email" type="email" name="email" value="{{ old('email') }}"
                                     class="block w-full mt-1 border-gray-300 h-9 rounded-md shadow-sm dark:border-gray-700 dark:text-white dark:bg-gray-900"
                                     required>
                             </div>
+                            @if ($errors->has('email'))
+                            <span class="invalid-feedback">
+                                <strong class="text-red-700 dark:text-red-500">{{ $errors->first('email') }}</strong>
+                            </span>
+                            @endif
                             <x-password-field :name="'password'" :label="'Hasło'" />
+                            @if ($errors->has('password'))
+                            <span class="invalid-feedback">
+                                <strong class="text-red-700 dark:text-red-500">{{ $errors->first('password') }}</strong>
+                            </span>
+                            @endif
                             <x-password-field :name="'password_confirmation'" :label="'Powtórz hasło'" />
+                            @if ($errors->has('password_confirmation'))
+                            <span class="invalid-feedback">
+                                <strong class="text-red-700 dark:text-red-500">{{ $errors->first('password_confirmation') }}</strong>
+                            </span>
+                            @endif
                             <div class="text-center">
                                 <button type="submit"
                                     class="px-4 py-2 text-white transition rounded-md dark:text-black bg-kula-light-500 dark:bg-kula-dark-600 hover:bg-kula-light-600 dark:hover:bg-kula-dark-700 disabled:bg-kula-light-300 dark:disabled:bg-kula-dark-100">Stwórz konto administratora</button>
@@ -48,5 +69,5 @@
         </div>
     </div>
 </body>
-<!--// TODO: Login info for user -->
+
 </html>
