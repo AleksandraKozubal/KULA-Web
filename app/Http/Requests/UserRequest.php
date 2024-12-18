@@ -45,7 +45,7 @@ class UserRequest extends FormRequest
             'email.email' => 'Podaj poprawny adres email.',
             'email.unique' => 'Ten email jest już zajęty.',
             'password.required' => 'Hasło jest wymagane.',
-            'password.regex' => 'Hasło musi mieć przynajmniej 8 znaków, i spełniać co najmniej 3 wymagania: 1 dużą literę,  1 małą literę, 1 cyfrę, 1 znak specjalny',
+            'password.regex' => 'Hasło musi mieć przynajmniej 8 znaków i spełniać co najmniej 3 wymagania: 1 dużą literę,  1 małą literę, 1 cyfrę, 1 znak specjalny',
             'password_confirmation.same' => 'Hasła muszą być identyczne.',
         ];
     }
