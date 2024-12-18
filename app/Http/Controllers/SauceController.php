@@ -8,19 +8,12 @@ use Illuminate\Http\JsonResponse;
 
 class SauceController extends Controller
 {
-    /**
-     * @return JsonResponse
-     */
-    public function index()
+    public function index(): JsonResponse
     {
         return response()->json(Sauce::all());
     }
 
-    /**
-     * @param  Request  $request
-     * @return JsonResponse
-     */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $sauce = new Sauce();
         $sauce->name = $request->name;
@@ -30,24 +23,15 @@ class SauceController extends Controller
         $sauce->hex_color = $request->hex_color;
         $sauce->save();
 
-        return json_encode($sauce);
+        return response()->json_encode($sauce);
     }
 
-    /**
-     * @param  Sauce  $sauce
-     * @return JsonResponse
-     */
-    public function show(Sauce $sauce)
+    public function show(Sauce $sauce): JsonResponse
     {
         return response()->json($sauce);
     }
 
-    /**
-     * @param  Request  $request
-     * @param  Sauce  $sauce
-     * @return JsonResponse
-     */
-    public function update(Request $request, Sauce $sauce)
+    public function update(Request $request, Sauce $sauce): JsonResponse
     {
         $sauce->name ? $sauce->name = $request->name : null;
         $sauce->spiciness ? $sauce->spicieness = $request->spiciness : null;
@@ -56,17 +40,13 @@ class SauceController extends Controller
         $sauce->hex_color ? $sauce->hex_color = $request->hex_color : null;
         $sauce->save();
 
-        return json_encode("Zaktualizowano sos");
+        return response()->json_encode("Zaktualizowano sos");
     }
 
-    /**
-     * @param  Sauce  $sauce
-     * @return JsonResponse
-     */
-    public function destroy(Sauce $sauce)
+    public function destroy(Sauce $sauce): JsonResponse
     {
         $sauce->delete();
 
-        return json_encode("Usunięto sos");
+        return response()->json_encode("Usunięto sos");
     }
 }

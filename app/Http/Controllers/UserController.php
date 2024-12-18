@@ -5,22 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Filament\Support\Assets\Js;
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
-    /**
-     * @return JsonResponse
-     */
-    public function index()
+    public function index(): JsonResponse
     {
         return response()->json(User::all());
     }
-    /**
-     * @param UserRequest $request
-     */
-    public function register(UserRequest $request)
+    public function register(UserRequest $request): JsonResponse
     {
         $user = new User();
         $user->name = $request->name;
@@ -28,13 +24,12 @@ class UserController extends Controller
         $user->role = "admin";
         $user->password = bcrypt($request->password);
         $user->save();
+
+        return response()->json(['message' => 'User created successfully', 'user' => $user]);
+
     }
 
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function login(Request $request)
+    public function login(Request $request): JsonResponse
     {
         $user = User::where('email', $request->email)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
@@ -48,11 +43,7 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function logout(Request $request)
+    public function logout(Request $request): JsonResponse
     {
         $token = $request->user()->currentAccessToken();
 
@@ -62,11 +53,7 @@ class UserController extends Controller
     }
 
 
-    /**
-     * @param UserRequest $request
-     * @return JsonResponse
-     */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): JsonResponse
     {
         $user = new User();
         $user->name = $request->name;
@@ -80,19 +67,12 @@ class UserController extends Controller
         ], 201);
     }
 
-    /**
-     * @return JsonResponse
-     */
-    public function show()
+    public function show(): JsonResponse
     {
         return response()->json(auth()->user());
     }
 
-    /**
-     * @param UserRequest $request
-     * @return JsonResponse
-     */
-    public function edit(UserRequest $request)
+    public function edit(UserRequest $request): JsonResponse
     {
         $user = User::find(auth()->id());
 
@@ -110,15 +90,13 @@ class UserController extends Controller
 
         $user->save();
 
-        return response()->json(['message' => 'User information updated successfully', 'user' => $user]);
+        return response()->json("Zaktualizowano dane", 200);
     }
 
 
-    /**
-     * @return void
-     */
-    public function destroy()
+    public function destroy(): JsonResponse
     {
         User::find(auth()->id())->delete();
+        return response()->json("Usunięto konto", 200);
     }
 }

@@ -11,9 +11,6 @@ enum Role: string implements HasLabel
     case Admin = "admin";
     case User = "user";
 
-    /**
-     * @return string|null
-     */
     public function getLabel(): ?string
     {
         return match ($this) {

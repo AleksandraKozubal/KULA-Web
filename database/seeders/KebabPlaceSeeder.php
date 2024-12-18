@@ -26,6 +26,9 @@ class KebabPlaceSeeder extends Seeder
             'email' => 'info@kebabking.legnica.pl',
             'fillings' => '1, 2, 3',
             'sauces' => '1, 2, 4',
+            'opening_hours' => 'Poniedziałek - Piątek: 11:00 - 22:00, Sobota: 11:00 - 20:00, Niedziela: 11:00 - 18:00',
+            'year_of_establishment' => '2020',
+            'number_of_employees' => '30',
             'image' => 'kebab_king_image.jpg'
         ]);
 
@@ -42,6 +45,8 @@ class KebabPlaceSeeder extends Seeder
             'email' => 'contact@kebabparadise.legnica.pl',
             'fillings' => '1, 3',
             'sauces' => '3, 5',
+            'opening_hours' => 'Poniedziałek - Piątek: 11:00 - 22:00, Sobota: 11:00 - 20:00, Niedziela: 11:00 - 18:00',
+            'year_of_establishment' => '2018',
             'image' => 'kebab_paradise_image.jpg'
         ]);
     }

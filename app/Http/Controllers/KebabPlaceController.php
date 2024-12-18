@@ -9,13 +9,11 @@ use App\Models\Favorites;
 use App\Models\Comment;
 use App\Models\Filling;
 use App\Models\Sauce;
+use Illuminate\Http\JsonResponse;
 
 class KebabPlaceController extends Controller
 {
-    /**
-     * @return JsonResponse
-     */
-    public function index()
+    public function index(): JsonResponse
     {
         $kebabPlaces = KebabPlace::paginate(20);
         if (auth()->check()) {
@@ -26,11 +24,7 @@ class KebabPlaceController extends Controller
         return response()->json($kebabPlaces);
     }
 
-    /**
-     * @param  Request  $request
-     * @return JsonResponse
-     */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $kebabPlace = new KebabPlace();
         $kebabPlace->name = $request->name;
@@ -51,12 +45,7 @@ class KebabPlaceController extends Controller
         return response()->json($kebabPlace, 201);
     }
 
-    /**
-     * @param  Request  $request
-     * @param  User  $user
-     * @return JsonResponse
-     */
-    public function show(Request $request, ?User $user)
+    public function show(Request $request, ?User $user): JsonResponse
     {
         $kebabPlace = KebabPlace::find($request->kebabPlace);
         if (auth()->check()) {
@@ -72,12 +61,7 @@ class KebabPlaceController extends Controller
         return response()->json($kebabPlace, 200);
     }
 
-    /**
-     * @param  Request  $request
-     * @param  KebabPlace  $kebabPlace
-     * @return JsonResponse
-     */
-    public function update(Request $request, KebabPlace $kebabPlace)
+    public function update(Request $request, KebabPlace $kebabPlace): JsonResponse
     {
         $kebabPlace->name ? $kebabPlace->name = $request->name : null;
         $kebabPlace->street ? $kebabPlace->street = $request->street : null;
@@ -97,11 +81,7 @@ class KebabPlaceController extends Controller
         return response()->json("Zaktualizowano kebab", 200);
     }
 
-    /**
-     * @param  KebabPlace  $kebabPlace
-     * @return JsonResponse
-     */
-    public function destroy(KebabPlace $kebabPlace)
+    public function destroy(KebabPlace $kebabPlace): JsonResponse
     {
         $kebabPlace->delete();
 

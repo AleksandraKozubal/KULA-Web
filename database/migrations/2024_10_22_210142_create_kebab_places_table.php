@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('fillings')->nullable();
             $table->string('sauces')->nullable();
             $table->string('opening_hours')->nullable();
+            $table->string('year_of_establishment')->nullable();
+            $table->boolean('is_kraft')->nullable();
             $table->string('image')->nullable();
 
             $table->timestamps();

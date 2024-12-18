@@ -9,19 +9,12 @@ use Illuminate\Http\JsonResponse;
 class SuggestionController extends Controller
 {
 
-    /**
-     * @return JsonResponse
-     */
-    public function index()
+    public function index(): JsonResponse
     {
         return response()->json(Suggestion::all());
     }
 
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $suggestion = new Suggestion();
         $suggestion->name = $request->name;
@@ -33,45 +26,28 @@ class SuggestionController extends Controller
         return response()->json("Dodano sugestie", 201);
     }
 
-    /**
-     * @param Request $request
-     * @param Suggestion $suggestion
-     * @return JsonResponse
-     */
-    public function updateState(Request $request, Suggestion $suggestion)
+    public function updateState(Request $request, Suggestion $suggestion): JsonResponse
     {
         $suggestion->status = $request->status;
         $suggestion->save();
         return response()->json("Zaktualizowano status");
     }
 
-    /**
-     * @param Suggestion $suggestion
-     * @return JsonResponse
-     */
-    public function softDelete(Suggestion $suggestion)
+    public function softDelete(Suggestion $suggestion): JsonResponse
     {
         $suggestion->delete();
 
         return response()->json("Usunięto sugestię");
     }
 
-    /**
-     * @param Suggestion $suggestion
-     * @return JsonResponse
-     */
-    public function restore(Suggestion $suggestion)
+    public function restore(Suggestion $suggestion): JsonResponse
     {
         $suggestion->restore();
 
         return response()->json("Przywrócono sugestię");
     }
 
-    /**
-     * @param Suggestion $suggestion
-     * @return JsonResponse
-     */
-    public function destroy(Suggestion $suggestion)
+    public function destroy(Suggestion $suggestion): JsonResponse
     {
         $suggestion->forceDelete();
 

@@ -8,19 +8,12 @@ use Illuminate\Http\JsonResponse;
 
 class CommentController extends Controller
 {
-    /**
-     * @return JsonResponse
-     */
-    public function index()
+    public function index(): JsonResponse
     {
         return response()->json(Comment::all());
     }
 
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         if (!auth()->user()) {
             return response()->json([
@@ -38,22 +31,12 @@ class CommentController extends Controller
             'message' => 'Dodano komentarz',
         ]);
     }
-
-    /**
-     * @param  Comment  $comment
-     * @return JsonResponse
-     */
-    public function show(Comment $comment)
+    public function show(Comment $comment): JsonResponse
     {
-        return json_encode($comment);
+        return response()->json_encode($comment);
     }
 
-
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function edit(Request $request)
+    public function edit(Request $request): JsonResponse
     {
         if (!auth()->user()) {
             return response()->json([
@@ -78,12 +61,7 @@ class CommentController extends Controller
             'message' => 'Edytowano komentarz'
         ]);
     }
-
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function destroy(Request $request)
+    public function destroy(Request $request): JsonResponse
     {
         if (!auth()->user()) {
             return response()->json([

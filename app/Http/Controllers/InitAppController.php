@@ -12,10 +12,7 @@ use Illuminate\View\View;
 
 class InitAppController extends Controller
 {
-    /**
-     * @return RedirectResponse|View
-     */
-    public function index()
+    public function index(): View
     {
         if (User::where('role', 'admin')->exists()) {
             return redirect('/');
@@ -24,11 +21,7 @@ class InitAppController extends Controller
         return view('init-app');
     }
 
-    /**
-     * @param UserRequest $request
-     * @return RedirectResponse
-     */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): RedirectResponse
     {
         $user = $this->createOrFindUser($request);
 
@@ -37,11 +30,7 @@ class InitAppController extends Controller
         return redirect('/');
     }
 
-    /**
-     * @param UserRequest $request
-     * @return User
-     */
-    public function createOrFindUser(UserRequest $request)
+    public function createOrFindUser(UserRequest $request): User
     {
         return User::firstOrCreate(
             ["email" => $request->email],

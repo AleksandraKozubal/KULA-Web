@@ -6,25 +6,17 @@ use App\Models\Favorites;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\AuthorizationException;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Http\JsonResponse;
 
 class FavoritesController extends Controller
 {
-    /**
-     * @param  User  $user
-     * @return string JSON encoded list of favorite kebab places
-     */
-    public function index(User $user)
+    public function index(User $user): JsonResponse
     {
-        return json_encode(Favorites::where('user_id', $user->id)->get());
+        return response()->json_encode(Favorites::where('user_id', $user->id)->get());
     }
 
-    /**
-     * @param  Request  $request
-     * @return Response
-     *
-     * @throws AuthorizationException
-     */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $this->authorize('create', Favorites::class);
 
@@ -48,10 +40,7 @@ class FavoritesController extends Controller
     }
 
 
-    /**
-     * @return Response
-     */
-    public function destroy()
+    public function destroy(): JsonResponse
     {
         $kebabPlaceId = request()->route('kebabPlace');
         $userId = auth()->id();
