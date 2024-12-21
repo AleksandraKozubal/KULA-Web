@@ -28,7 +28,6 @@ class KebabPlaceSeeder extends Seeder
             'sauces' => '1, 2, 4',
             'opening_hours' => 'Poniedziałek - Piątek: 11:00 - 22:00, Sobota: 11:00 - 20:00, Niedziela: 11:00 - 18:00',
             'year_of_establishment' => '2020',
-            'number_of_employees' => '30',
             'image' => 'kebab_king_image.jpg'
         ]);
 
