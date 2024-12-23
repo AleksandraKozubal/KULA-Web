@@ -18,10 +18,7 @@ class Suggestion extends Model
         'kebab_place_id'
     ];
 
-    /**
-     * @return BelongsTo
-     */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

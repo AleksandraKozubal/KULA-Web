@@ -19,18 +19,11 @@ class Favorites extends Model
         'user_id',
         'kebab_place_id'
     ];
-    /**
-     * @return string
-     */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->getAttribute($this->primaryKey[0]) . '_' . $this->getAttribute($this->primaryKey[1]);
     }
-    /**
-     * @param Builder $query
-     * @return Builder
-     */
-    protected function setKeysForSaveQuery($query)
+    protected function setKeysForSaveQuery($query): Builder
     {
         $keys = $this->getKeyName();
         if (!is_array($keys)) {
@@ -43,10 +36,6 @@ class Favorites extends Model
 
         return $query;
     }
-
-    /**
-     * @return array
-     */
     protected function getKeyForSaveQuery() : array
     {
         $keys = $this->getKeyName();
@@ -62,18 +51,12 @@ class Favorites extends Model
         return $result;
     }
 
-    /**
-     * @return BelongsTo
-     */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * @return BelongsTo
-     */
-    public function kebabPlace()
+    public function kebabPlace(): BelongsTo
     {
         return $this->belongsTo(KebabPlace::class);
     }

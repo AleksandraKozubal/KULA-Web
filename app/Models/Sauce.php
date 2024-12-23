@@ -20,10 +20,7 @@ class Sauce extends Model
         'hex_color'
     ];
 
-    /**
-     * @return BelongsToMany
-     */
-    public function kebabPlaces()
+    public function kebabPlaces(): BelongsToMany
     {
         return $this->belongsToMany(KebabPlace::class);
     }

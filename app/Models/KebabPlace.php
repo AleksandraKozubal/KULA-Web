@@ -27,26 +27,17 @@ class KebabPlace extends Model
         'image'
     ];
 
-    /**
-     * @return BelongsToMany
-     */
-    public function fillings()
+    public function fillings(): BelongsToMany
     {
         return $this->belongsToMany(Filling::class);
     }
 
-    /**
-     * @return BelongsToMany
-     */
-    public function sauces()
+    public function sauces(): BelongsToMany
     {
         return $this->belongsToMany(Sauce::class);
     }
 
-    /**
-     * @return HasMany
-     */
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
