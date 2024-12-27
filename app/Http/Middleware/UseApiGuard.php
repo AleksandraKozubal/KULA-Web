@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UseApiGuard
 {
-    public function handle($request, Closure $next): Response
-
+    public function handle($request, Closure $next): Closure
     {
         Auth::shouldUse('api');
 
