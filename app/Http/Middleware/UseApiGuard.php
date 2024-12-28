@@ -3,13 +3,12 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use GuzzleHttp\Psr7\Response;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class UseApiGuard
 {
-    public function handle($request, Closure $next): Closure
+    public function handle($request, Closure $next): JsonResponse
     {
         Auth::shouldUse('api');
 
