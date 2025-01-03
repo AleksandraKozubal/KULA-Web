@@ -1,13 +1,15 @@
 module.exports = {
   content: [
+    './index.html',
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
+    './vendor/filament/**/*.blade.php', 
   ],
   theme: {
     extend: {
       animation: {
-        'fade-in':  'fadeIn 0.15s ease-in-out forwards',
+        'fade-in': 'fadeIn 0.15s ease-in-out forwards',
         'fade-out': 'fadeOut 0.15s ease-in-out forwards',
       },
       keyframes: {

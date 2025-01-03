@@ -7,22 +7,22 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Enums\Role;
 use App\Http\Requests\UserRequest;
+use \Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class InitAppController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        if (User::count() > 0) {
+        if (User::where('role', 'admin')->exists()) {
             return redirect('/');
         }
 
         return view('init-app');
     }
 
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): RedirectResponse
     {
-        $request->validate($request->rules());
-
         $user = $this->createOrFindUser($request);
 
         auth()->login($user);
@@ -30,7 +30,7 @@ class InitAppController extends Controller
         return redirect('/');
     }
 
-    public function createOrFindUser(UserRequest $request)
+    public function createOrFindUser(UserRequest $request): User
     {
         return User::firstOrCreate(
             ["email" => $request->email],

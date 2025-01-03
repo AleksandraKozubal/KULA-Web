@@ -9,8 +9,13 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: '0.0.0.0',
+    host: '172.19.0.3',
     port: 5173,
+    cors: {
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    },
     watch: {
       usePolling: true,
     },
