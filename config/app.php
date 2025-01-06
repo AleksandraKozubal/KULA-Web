@@ -14,7 +14,7 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    'timezone' => "Europe/Warsaw",
+    'timezone' => 'Europe/Warsaw',
 
     'locale' => 'pl',
 

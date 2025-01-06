@@ -12,14 +12,14 @@ use Illuminate\Support\Str;
 
 class UsersSeeder extends Seeder
 {
-    protected const string DEFAULT_PASSWORD = "password";
+    protected const DEFAULT_PASSWORD = "aBcD12!?";
 
     public function run(): void
     {
         User::firstOrCreate(
-            ["email" => "admin@example.com"],
-            ["role" => Role::Admin,
-                "name" => "Administrator",
+            ["email" => "user@example.com"],
+            ["role" => Role::User,
+                "name" => "ExampleUser",
                 "email_verified_at" => now(),
                 "password" => Hash::make(static::DEFAULT_PASSWORD),
                 "remember_token" => Str::random(10),

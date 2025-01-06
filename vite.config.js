@@ -8,4 +8,16 @@ export default defineConfig({
       refresh: true,
     }),
   ],
+  server: {
+    host: '172.19.0.3',
+    port: 5173,
+    cors: {
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    },
+    watch: {
+      usePolling: true,
+    },
+  },
 })
