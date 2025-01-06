@@ -19,11 +19,11 @@ class FillingController extends Controller
 
     public function store(Request $request): JsonResponse
     {
-        $filling = new Filling();
-        $filling->name = $request->name;
-        $filling->is_vegan = $request->is_vegan;
-        $filling->is_gluten_free = $request->is_gluten_free;
-        $filling->save();
+        $filling = Filling::query()->create([
+            'name' => $request->name,
+            'is_vegan' => $request->is_vegan,
+            'hex_color' => $request->hex_color,
+        ]);
 
         return response()->json("Dodano wypełnienie", Response::HTTP_CREATED);
     }
@@ -35,10 +35,11 @@ class FillingController extends Controller
 
     public function update(Request $request, Filling $filling): JsonResponse
     {
-        $filling->name ? $filling->name = $request->name : null;
-        $filling->is_vegan ? $filling->is_vegan = $request->is_vegan : null;
-        $filling->is_gluten_free ? $filling->is_gluten_free = $request->is_gluten_free : null;
-        $filling->save();
+        $filling->update([
+            'name' => $request->name,
+            'is_vegan' => $request->is_vegan,
+            'hex_color' => $request->hex_color,
+        ]);
 
         return response()->json("Zaktualizowano wypełnienie");
     }

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\KebabPlaceLocationType;
+use App\Enums\KebabPlaceStatus;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
@@ -68,10 +70,10 @@ class KebabPlaceFactory extends Factory
             ],
             "fillings" => fake()->randomElements(Filling::all()->pluck("id"), fake()->numberBetween(1, 3)),
             "sauces" => fake()->randomElements(Sauce::all()->pluck("id"), fake()->numberBetween(0, 5)),
-            "status" => fake()->randomElement(["open", "closed"]),
+            "status" => fake()->randomElement(array_column(KebabPlaceStatus::cases(), "value")),
             "is_craft" => fake()->boolean(),
             "is_chain_restaurant" => fake()->boolean(),
-            "location_type" => fake()->randomElement(["dine-in", "food stand"]),
+            "location_type" => fake()->randomElement(array_column(KebabPlaceLocationType::cases(), "value")),
             "order_options" => fake()->randomElement(["phone", "glovo", "pyszne", "uber_eats", "app", "web"]),
             "social_media" => [
                 [

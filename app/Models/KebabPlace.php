@@ -53,8 +53,6 @@ class KebabPlace extends Model
         'fillings',
         'sauces',
         'opening_hours',
-        'fillings',
-        'sauces',
         'status',
         'is_craft',
         'is_chain_restaurant',

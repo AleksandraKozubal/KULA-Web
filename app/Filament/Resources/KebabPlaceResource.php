@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
+use App\Enums\KebabPlaceLocationType;
+use App\Enums\KebabPlaceStatus;
 use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
@@ -151,18 +153,11 @@ class KebabPlaceResource extends Resource
                             Select::make("status")
                                 ->label("Status")
                                 ->required()
-                                ->options([
-                                    "open" => "Otwarte",
-                                    "closed" => "Zamknięte",
-                                    "planned" => "Planowane",
-                                ]),
+                                ->options(array_column(KebabPlaceStatus::cases(), "value")),
                             Select::make("location_type")
                                 ->label("Typ lokalizacji")
                                 ->required()
-                                ->options([
-                                    "dine-in" => "Lokal",
-                                    "food stand" => "Buda",
-                                ]),
+                                ->options(array_column(KebabPlaceLocationType::cases(), "value")),
                             Select::make("order_options")
                                 ->label("Opcje zamówienia")
                                 ->required()

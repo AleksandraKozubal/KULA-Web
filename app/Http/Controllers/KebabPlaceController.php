@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KebabPlaceRequest;
 use App\Models\KebabPlace;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,29 +19,36 @@ class KebabPlaceController extends Controller
         $kebabPlaces = KebabPlace::paginate(20);
         if (auth()->check()) {
             foreach ($kebabPlaces as $kebabPlace) {
-                $kebabPlace->is_favorite = Favorites::where('user_id', auth()->id())->where('kebab_place_id', $kebabPlace->id)->exists();
+                $kebabPlace->is_favorite = Favorites::query()->where('user_id', auth()->id())->where('kebab_place_id', $kebabPlace->id)->exists();
             }
         }
         return response()->json($kebabPlaces);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(KebabPlaceRequest $request): JsonResponse
     {
-        $kebabPlace = new KebabPlace();
-        $kebabPlace->name = $request->name;
-        $kebabPlace->street = $request->street;
-        $kebabPlace->building_number = $request->building_number;
-        $kebabPlace->latitude = $request->latitude;
-        $kebabPlace->longitude = $request->longitude;
-        $kebabPlace->google_maps_url = $request->google_maps_url;
-        $kebabPlace->google_maps_rating = $request->google_maps_rating;
-        $kebabPlace->phone = $request->phone;
-        $kebabPlace->website = $request->website;
-        $kebabPlace->email = $request->email;
-        $kebabPlace->fillings = $request->fillings;
-        $kebabPlace->sauces = $request->sauces;
-        $kebabPlace->image = $request->image;
-        $kebabPlace->save();
+        $kebabPlace = KebabPlace::query()->create([
+            'name' => $request->name,
+            'street' => $request->street,
+            'building_number' => $request->building_number,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+            'google_maps_url' => $request->google_maps_url,
+            'google_maps_rating' => $request->google_maps_rating,
+            'phone' => $request->phone,
+            'website' => $request->website,
+            'email' => $request->email,
+            'fillings' => $request->fillings,
+            'sauces' => $request->sauces,
+            'opening_hours' => $request->opening_hours,
+            'status' => $request->status,
+            'is_craft' => $request->is_craft,
+            'is_chain_restaurant' => $request->is_chain_restaurant,
+            'location_type' => $request->location_type,
+            'order_options' => $request->order_options,
+            'social_media' => $request->social_media,
+            'image' => $request->image,
+        ]);
 
         return response()->json($kebabPlace, 201);
     }
@@ -61,22 +69,9 @@ class KebabPlaceController extends Controller
         return response()->json($kebabPlace, 200);
     }
 
-    public function update(Request $request, KebabPlace $kebabPlace): JsonResponse
+    public function update(KebabPlaceRequest $request, KebabPlace $kebabPlace): JsonResponse
     {
-        $kebabPlace->name ? $kebabPlace->name = $request->name : null;
-        $kebabPlace->street ? $kebabPlace->street = $request->street : null;
-        $kebabPlace->building_number ? $kebabPlace->building_number = $request->building_number : null;
-        $kebabPlace->latitude ? $kebabPlace->latitude = $request->latitude : null;
-        $kebabPlace->longitude ? $kebabPlace->longitude = $request->longitude : null;
-        $kebabPlace->google_maps_url ? $kebabPlace->google_maps_url = $request->google_maps_url : null;
-        $kebabPlace->google_maps_rating ? $kebabPlace->google_maps_rating = $request->google_maps_rating : null;
-        $kebabPlace->phone ? $kebabPlace->phone = $request->phone : null;
-        $kebabPlace->website ? $kebabPlace->website = $request->website : null;
-        $kebabPlace->email ? $kebabPlace->email = $request->email : null;
-        $kebabPlace->fillings ? $kebabPlace->fillings = $request->fillings : null;
-        $kebabPlace->sauces ? $kebabPlace->sauces = $request->sauces : null;
-        $kebabPlace->image ? $kebabPlace->image = $request->image : null;
-        $kebabPlace->save();
+        $kebabPlace->update($request->all());
 
         return response()->json("Zaktualizowano kebab", 200);
     }
