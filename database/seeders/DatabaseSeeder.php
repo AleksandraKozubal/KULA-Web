@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Database\Seeders\UsersSeeder;
+use App\Models\Filling;
+use App\Models\KebabPlace;
+use App\Models\Sauce;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +15,11 @@ class DatabaseSeeder extends Seeder
             return;
         }
         $this->call(UsersSeeder::class);
-        $this->call(KebabPlaceSeeder::class);
-        $this->call(SauceSeeder::class);
-        $this->call(FillingSeeder::class);
+
+        Filling::factory(10)->create();
+        Sauce::factory(10)->create();
+        KebabPlace::factory(10)->create();
+
         $this->call(CommentSeeder::class);
         $this->call(SuggestionSeeder::class);
         $this->call(FavoriteSeeder::class);

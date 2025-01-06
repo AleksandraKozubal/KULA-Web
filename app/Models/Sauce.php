@@ -13,6 +13,10 @@ use App\Models\KebabPlace;
 
 /**
  * @property string $name
+ * @property int $spiciness
+ * @property bool $is_vegan
+ * @property bool $is_gluten_free
+ * @property string $hex_color
  */
 class Sauce extends Model
 {

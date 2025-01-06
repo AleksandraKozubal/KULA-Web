@@ -29,6 +29,22 @@ class SauceResource extends Resource
                         ->label("Nazwa")
                         ->required()
                         ->maxLength(255),
+                    Forms\Components\Select::make("spiciness")
+                        ->label("Ostrość")
+                        ->options([
+                            1 => "Bardzo łagodny",
+                            2 => "Łagodny",
+                            3 => "Średni",
+                            4 => "Ostry",
+                            5 => "Bardzo ostry",
+                        ])
+                        ->required(),
+                    Forms\Components\Checkbox::make("is_vegan")
+                        ->label("Wegański"),
+                    Forms\Components\Checkbox::make("is_gluten_free")
+                        ->label("Bezglutenowy"),
+                    Forms\Components\ColorPicker::make("hex_color")
+                        ->label("Kolor"),
                 ]),
             ]);
     }
@@ -41,6 +57,18 @@ class SauceResource extends Resource
                     ->label("Sos")
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make("spiciness")
+                    ->label("Ostrość")
+                    ->sortable(),
+                Tables\Columns\BooleanColumn::make("is_vegan")
+                    ->label("Wegański")
+                    ->sortable(),
+                Tables\Columns\BooleanColumn::make("is_gluten_free")
+                    ->label("Bezglutenowy")
+                    ->sortable(),
+                Tables\Columns\ColorColumn::make("hex_color")
+                    ->label("Kolor")
+                    ->sortable(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

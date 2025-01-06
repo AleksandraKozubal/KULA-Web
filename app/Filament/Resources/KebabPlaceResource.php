@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KebabResource\Pages\CreateKebab;
-use App\Filament\Resources\KebabResource\Pages\EditKebab;
-use App\Filament\Resources\KebabResource\Pages\ListKebab;
+use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
+use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
+use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
 use App\Models\Filling;
 use App\Models\Kebab;
+use App\Models\KebabPlace;
 use App\Models\Sauce;
 use Exception;
 use Filament\Forms\Components\Checkbox;
@@ -26,9 +27,9 @@ use Filament\Tables;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
-class KebabResource extends Resource
+class KebabPlaceResource extends Resource
 {
-    protected static ?string $model = Kebab::class;
+    protected static ?string $model = KebabPlace::class;
     protected static ?string $label = "kebab";
     protected static ?string $pluralLabel = "Kebaby";
     protected static ?string $navigationIcon = "heroicon-o-building-storefront";
@@ -51,22 +52,27 @@ class KebabResource extends Resource
                             Checkbox::make("is_chain_restaurant")
                                 ->label("Sieciówka"),
                         ]),
-                        FileUpload::make("logo")
-                            ->label("Logo")
-                            ->directory(Kebab::PHOTOS_DIRECTORY)
+                        FileUpload::make("image")
+                            ->label("Zdjęcie")
+                            ->directory(KebabPlace::PHOTOS_DIRECTORY)
                             ->multiple(false),
-                        TextInput::make("address")
-                            ->label("Adres")
+                        TextInput::make("street")
+                            ->label("Ulica")
+                            ->required()
+                            ->maxLength(255)
+                            ->live(onBlur: true),
+                        TextInput::make("building_number")
+                            ->label("Numer budynku")
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true),
                         Grid::make(2)->schema([
-                            TextInput::make("lat")
+                            TextInput::make("latitude")
                                 ->label("Szerokość geograficzna")
                                 ->numeric()
                                 ->required()
                                 ->live(onBlur: true),
-                            TextInput::make("long")
+                            TextInput::make("longitude")
                                 ->label("Długość geograficzna")
                                 ->numeric()
                                 ->required()
@@ -115,6 +121,28 @@ class KebabResource extends Resource
                                 ->deletable()
                                 ->reorderable(false)
                                 ->columns(2),
+                            TextInput::make("google_maps_url")
+                                ->label("Google Maps URL")
+                                ->maxLength(255)
+                                ->live(onBlur: true),
+                            TextInput::make("google_maps_rating")
+                                ->label("Google Maps Ocena")
+                                ->numeric()
+                                ->live(onBlur: true),
+                            Grid::make(2)->schema([
+                            TextInput::make("phone")
+                                ->label("Telefon")
+                                ->maxLength(255)
+                                ->live(onBlur: true),
+                            TextInput::make("email")
+                                ->label("Email")
+                                ->maxLength(255)
+                                ->live(onBlur: true),
+                            ]),
+                            TextInput::make("website")
+                                ->label("Strona internetowa")
+                                ->maxLength(255)
+                                ->live(onBlur: true),
                         ]),
                     ]),
                     Section::make([
@@ -230,9 +258,9 @@ class KebabResource extends Resource
     public static function getPages(): array
     {
         return [
-            "index" => ListKebab::route("/"),
-            "create" => CreateKebab::route("/create"),
-            "edit" => EditKebab::route("/{record}/edit"),
+            "index" => ListKebabPlace::route("/"),
+            "create" => CreateKebabPlace::route("/create"),
+            "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
 }

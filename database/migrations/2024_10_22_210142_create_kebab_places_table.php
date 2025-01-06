@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('kebab_places', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->string('street');
             $table->string('building_number');
             $table->string('latitude');
@@ -20,13 +21,17 @@ return new class extends Migration
             $table->string('phone');
             $table->string('website')->nullable();
             $table->string('email')->nullable();
-            $table->string('fillings')->nullable();
-            $table->string('sauces')->nullable();
-            $table->string('opening_hours')->nullable();
-            $table->string('year_of_establishment')->nullable();
-            $table->boolean('is_kraft')->nullable();
-            $table->string('image')->nullable();
-
+            $table->string('opened_at_year')->nullable();
+            $table->string('closed_at_year')->nullable();
+            $table->json('opening_hours');
+            $table->json('fillings')->nullable();
+            $table->json('sauces')->nullable();
+            $table->string('status');
+            $table->boolean('is_craft')->nullable();
+            $table->boolean('is_chain_restaurant')->nullable();
+            $table->string("location_type");
+            $table->json('order_options');
+            $table->json('social_media');
             $table->timestamps();
         });
     }

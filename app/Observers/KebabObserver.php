@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace App\Observers;
 
 
-use App\Models\Kebab;
+use App\Models\KebabPlace;
 
 class KebabObserver
 {
-    public function creating(Kebab $kebab): void
+    public function creating(KebabPlace $kebab): void
     {
         $kebab->sauces = $this->prepareSauces($kebab->sauces);
     }
 
-    public function updating(Kebab $kebab): void
+    public function updating(KebabPlace $kebab): void
     {
         $kebab->sauces = $this->prepareSauces($kebab->sauces);
     }

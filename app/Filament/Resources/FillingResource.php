@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\FillingResource\Pages;
+use App\Models\Filling;
 use App\Models\Sauce;
-use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -15,7 +18,7 @@ use Filament\Tables\Table;
 
 class FillingResource extends Resource
 {
-    protected static ?string $model = Sauce::class;
+    protected static ?string $model = Filling::class;
     protected static ?string $label = "mięso";
     protected static ?string $pluralLabel = "Mięsa";
     protected static ?string $navigationIcon = "heroicon-o-circle-stack";
@@ -25,10 +28,16 @@ class FillingResource extends Resource
         return $form
             ->schema([
                 Section::make([
-                    Forms\Components\TextInput::make("name")
+                    TextInput::make("name")
                         ->label("Nazwa")
                         ->required()
                         ->maxLength(255),
+                    ColorPicker::make("hex_color")
+                        ->label("Kolor")
+                        ->required(),
+                    Checkbox::make("is_vegan")
+                        ->label("Czy wegański?")
+                        ->default(false),
                 ]),
             ]);
     }
@@ -41,6 +50,12 @@ class FillingResource extends Resource
                     ->label("Mięso")
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\BooleanColumn::make("is_vegan")
+                    ->label("Wegańskie")
+                    ->sortable(),
+                Tables\Columns\ColorColumn::make("hex_color")
+                    ->label("Kolor")
+                    ->sortable(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
