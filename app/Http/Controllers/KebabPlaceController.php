@@ -27,6 +27,8 @@ class KebabPlaceController extends Controller
 
     public function store(KebabPlaceRequest $request): JsonResponse
     {
+        $request = $request->validated();
+
         $kebabPlace = KebabPlace::query()->create([
             'name' => $request->name,
             'street' => $request->street,
@@ -50,6 +52,10 @@ class KebabPlaceController extends Controller
             'image' => $request->image,
         ]);
 
+        if ($request->hasFile('image')) {
+             $request->file('image')->store('kebab_places', 'public');
+        }
+
         return response()->json($kebabPlace, 201);
     }
 
@@ -71,7 +77,7 @@ class KebabPlaceController extends Controller
 
     public function update(KebabPlaceRequest $request, KebabPlace $kebabPlace): JsonResponse
     {
-        $kebabPlace->update($request->all());
+        $kebabPlace->update($request->validated());
 
         return response()->json("Zaktualizowano kebab", 200);
     }
