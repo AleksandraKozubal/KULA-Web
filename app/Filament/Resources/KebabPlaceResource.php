@@ -46,8 +46,7 @@ class KebabPlaceResource extends Resource
                         TextInput::make("name")
                             ->label("Nazwa")
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true),
+                            ->maxLength(255),
                         Grid::make(2)->schema([
                             Checkbox::make("is_craft")
                                 ->label("Mięso kraftowe"),
@@ -61,24 +60,29 @@ class KebabPlaceResource extends Resource
                         TextInput::make("street")
                             ->label("Ulica")
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true),
+                            ->maxLength(255),
                         TextInput::make("building_number")
                             ->label("Numer budynku")
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true),
+                            ->maxLength(255),
                         Grid::make(2)->schema([
                             TextInput::make("latitude")
                                 ->label("Szerokość geograficzna")
                                 ->numeric()
                                 ->required()
-                                ->live(onBlur: true),
-                            TextInput::make("longitude")
+,                            TextInput::make("longitude")
                                 ->label("Długość geograficzna")
                                 ->numeric()
-                                ->required()
-                                ->live(onBlur: true),
+                                ->required(),
+                            TextInput::make("google_maps_url")
+                                ->label("Google Maps URL")
+                                ->maxLength(255),
+                            TextInput::make("google_maps_rating")
+                                ->label("Google Maps Ocena")
+                                ->numeric()
+                                ->step(0.1)
+                                ->minValue(0)
+                                ->maxValue(5),
                         ]),
                         Grid::make(2)
                             ->schema([
@@ -123,33 +127,21 @@ class KebabPlaceResource extends Resource
                                 ->deletable()
                                 ->reorderable(false)
                                 ->columns(2),
-                            TextInput::make("google_maps_url")
-                                ->label("Google Maps URL")
-                                ->maxLength(255)
-                                ->live(onBlur: true),
-                            TextInput::make("google_maps_rating")
-                                ->label("Google Maps Ocena")
-                                ->numeric()
-                                ->live(onBlur: true),
                             Grid::make(2)->schema([
                             TextInput::make("phone")
                                 ->label("Telefon")
-                                ->maxLength(255)
-                                ->live(onBlur: true),
+                                ->maxLength(255),
                             TextInput::make("email")
                                 ->label("Email")
-                                ->maxLength(255)
-                                ->live(onBlur: true),
+                                ->maxLength(255),
                             ]),
                             TextInput::make("website")
                                 ->label("Strona internetowa")
-                                ->maxLength(255)
-                                ->live(onBlur: true),
+                                ->maxLength(255),
                         ]),
                     ]),
                     Section::make([
                         Grid::make(3)->schema([
-
                             Select::make("status")
                                 ->label("Status")
                                 ->required()
