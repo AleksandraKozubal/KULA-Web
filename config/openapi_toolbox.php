@@ -22,8 +22,8 @@ return [
         "single_source" => true,
         "title" => "Documentation",
         "routing" => [
-            "prefix" => "documentation",
-            "name" => "documentation",
+            "prefix" => "api-docs",
+            "name" => "api-docs",
             "middlewares" => [],
         ],
         "provider" => UIProvider::Elements,
