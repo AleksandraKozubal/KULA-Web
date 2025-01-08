@@ -55,8 +55,10 @@ class KebabPlaceController extends Controller
         $kebabPlace->comments->each(function ($comment) {
             $comment->is_owner = $comment->user_id === auth()->id();
         });
-        $kebabPlace->fillings = Filling::where('id', $kebabPlace->fillings)->get();
-        $kebabPlace->sauces = Sauce::where('id', $kebabPlace->sauces)->get();
+        $ids = explode(', ', $kebabPlace->fillings);
+        $kebabPlace->fillings = Filling::whereIn('id', $ids)->get();
+        $ids = explode(', ', $kebabPlace->sauces);
+        $kebabPlace->sauces = Sauce::whereIn('id', $ids)->get();
 
         return response()->json($kebabPlace, 200);
     }
