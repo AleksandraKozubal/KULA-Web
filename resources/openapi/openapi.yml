@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+
+servers:
+  - url: http://kula-web.localhost/api
+    description: Local development server
+
+paths:
+  /kebab-places:
+    get:
+      summary: Pobierz listę wszystkich miejsc z kebabami
+      description:
+      responses:
+        "200":
+          description: Lista miejsc z kebabami w formacie JSON z paginacją
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /kebab-places/{kebabPlace}:
+    get:
+      summary: Pobierz szczegóły miejsca z kebabami
+      description:
+      responses:
+        "200":
+          description: Szczegóły miejsca z kebabami w formacie JSON
+          content:
+            application/json:
+              schema:
+                type: object
+  /register:
+    post:
+      summary: Zarejestruj nowego użytkownika
+      description:
+      responses:
+        "201":
+          description: Użytkownik zarejestrowany
+          content:
+            application/json:
+              schema:
+                type: object
+  /login:
+    post:
+      summary: Zaloguj użytkownika
+      description:
+      responses:
+        "200":
+          description: Użytkownik zalogowany
+          content:
+            application/json:
+              schema:
+                type: object
+  /user:
+    get:
+      summary: Pobierz dane zalogowanego użytkownika
+      description:
+      responses:
+        "200":
+          description: Dane użytkownika
+          content:
+            application/json:
+              schema:
+                type: object
+    patch:
+      summary: Zaktualizuj dane zalogowanego użytkownika
+      description:
+      responses:
+        "200":
+          description: Dane użytkownika zaktualizowane
+          content:
+            application/json:
+              schema:
+                type: object
+  /logout:
+    post:
+      summary: Wyloguj użytkownika
+      description:
+      responses:
+        "200":
+          description: Użytkownik wylogowany
+          content:
+            application/json:
+              schema:
+                type: object
+  /sauces:
+    get:
+      summary: Pobierz listę wszystkich sosów
+      description:
+      responses:
+        "200":
+          description: Lista sosów w formacie JSON
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /fillings:
+    get:
+      summary: Pobierz listę wszystkich składników
+      description:
+      responses:
+        "200":
+          description: Lista składników w formacie JSON
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /kebab-places/{kebabPlace}/fav:
+    put:
+      summary: Dodaj miejsce do ulubionych
+      description:
+      responses:
+        "200":
+          description: Dodano do ulubionych
+          content:
+            application/json:
+              schema:
+                type: object
+  /kebab-places/{kebabPlace}/unfav:
+    delete:
+      summary: Usuń miejsce z ulubionych
+      description:
+      responses:
+        "200":
+          description: Usunięto z ulubionych
+          content:
+            application/json:
+              schema:
+                type: object
+  /kebab-places/{kebabPlace}/comment:
+    post:
+      summary: Dodaj komentarz do miejsca
+      description:
+      responses:
+        "200":
+          description: Dodano komentarz
+          content:
+            application/json:
+              schema:
+                type: object
+  /comment/{comment}:
+    patch:
+      summary: Edytuj komentarz
+      description:
+      responses:
+        "200":
+          description: Edytowano komentarz
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      summary: Usuń komentarz
+      description:
+      responses:
+        "200":
+          description: Komentarz usunięty
+          content:
+            application/json:
+              schema:
+                type: object
+  /kebab-places/{kebabPlace}/suggest:
+    post:
+      summary: Zarejestruj nowe sugestie
+      description:
+      responses:
+        "201":
+          description: Użytkownik zarejestrowany
+          content:
+            application/json:
+              schema:
+                type: object
+  /mysuggestions:
+    get:
+      summary: Pobierz sugestie użytkownika
+      description:
+      responses:
+        "200":
+          description: Lista sugestii
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
