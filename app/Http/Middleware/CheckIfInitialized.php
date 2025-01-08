@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 class CheckIfInitialized
 {
     public function handle(Request $request, Closure $next): Response | RedirectResponse
+
     {
         if (User::where('role', 'admin')->doesntExist()) {
             if ($request->path() !== 'init-app') {
