@@ -15,6 +15,7 @@ class FillingController extends Controller
     public function index(): JsonResponse
     {
         return response()->json(Filling::all());
+
     }
 
     public function store(Request $request): JsonResponse
@@ -31,6 +32,7 @@ class FillingController extends Controller
     public function show(Filling $filling): JsonResponse
     {
         return response()->json($filling);
+
     }
 
     public function update(Request $request, Filling $filling): JsonResponse
