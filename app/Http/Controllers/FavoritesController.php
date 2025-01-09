@@ -18,7 +18,6 @@ class FavoritesController extends Controller
 
     public function store(Request $request): JsonResponse
     {
-        $this->authorize('create', Favorites::class);
 
         $userId = auth()->id();
         $kebabPlaceId = $request->kebabPlace;
