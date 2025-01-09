@@ -41,6 +41,7 @@ make shell
 #### Production
 
 Remember to **secure your firewall** for initialization of the app, because during first run it will ask to make an **admin account**!
+
 #### API
 
 To see all available endpoints see the route **/api-docs**.
