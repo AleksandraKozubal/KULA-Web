@@ -21,8 +21,7 @@ class KebabPlaceFactory extends Factory
         return [
             "name" => fake()->name(),
             "image" => fake()->imageUrl(),
-            "street" => fake()->streetName(),
-            "building_number" => fake()->buildingNumber(),
+            "address" => fake()->address(),
             "latitude" => fake()->latitude(),
             "longitude" => fake()->longitude(),
             "google_maps_url" => fake()->url(),

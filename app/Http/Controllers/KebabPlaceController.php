@@ -35,8 +35,7 @@ class KebabPlaceController extends Controller
 
         $kebabPlace = KebabPlace::query()->create([
             "name" => $request->name,
-            "street" => $request->street,
-            "building_number" => $request->building_number,
+            "address" => $request->address,
             "latitude" => $request->latitude,
             "longitude" => $request->longitude,
             "google_maps_url" => $request->google_maps_url,

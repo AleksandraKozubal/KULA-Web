@@ -51,12 +51,8 @@ class KebabPlaceResource extends Resource
                             ->label("Zdjęcie")
                             ->directory(KebabPlace::PHOTOS_DIRECTORY)
                             ->multiple(false),
-                        TextInput::make("street")
-                            ->label("Ulica")
-                            ->required()
-                            ->maxLength(255),
-                        TextInput::make("building_number")
-                            ->label("Numer budynku")
+                        TextInput::make("address")
+                            ->label("Adres")
                             ->required()
                             ->maxLength(255),
                         Grid::make(2)->schema([

@@ -15,8 +15,7 @@ class KebabPlaceRequest extends FormRequest
     {
         return [
             "name" => ["required", "string", "max:255"],
-            "street" => ["required", "string", "max:255"],
-            "building_number" => ["required", "string", "max:255"],
+            "address" => ["required", "string", "max:255"],
             "latitude" => ["required", "string", "max:255"],
             "longitude" => ["required", "string", "max:255"],
             "google_maps_url" => ["required", "string", "max:255"],

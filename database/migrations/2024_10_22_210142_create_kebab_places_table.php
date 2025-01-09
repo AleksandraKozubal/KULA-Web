@@ -13,8 +13,7 @@ return new class() extends Migration {
             $table->id();
             $table->string("name");
             $table->string("image")->nullable();
-            $table->string("street");
-            $table->string("building_number");
+            $table->string("address");
             $table->string("latitude");
             $table->string("longitude");
             $table->string("google_maps_url");

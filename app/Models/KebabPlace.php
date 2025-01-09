@@ -14,8 +14,7 @@ use Illuminate\Support\Collection;
 /**
  * @property string $name
  * @property ?string $image
- * @property string $street
- * @property string $building_number
+ * @property string $address
  * @property string $latitude
  * @property string $longitude
  * @property string $google_maps_url
@@ -43,8 +42,7 @@ class KebabPlace extends Model
 
     protected $fillable = [
         "name",
-        "street",
-        "building_number",
+        "address",
         "latitude",
         "longitude",
         "google_maps_url",
