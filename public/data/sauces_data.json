@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ketchup",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "BBQ",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "czosnkowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "koperkowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "mieszany",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "ostry",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "łagodny",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "mocny czosnek",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "sriracha-mayo",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "miodowo-musztardowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "tzatziki",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "mango habanero",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#0000ff"
+  }
+]

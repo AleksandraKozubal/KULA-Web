@@ -1,0 +1,623 @@
+[
+  {
+    "name": "Cyrus Kebab",
+    "address": "Rynek 20",
+    "latitude": "51.20788328467099",
+    "longitude": "16.161068016930532",
+    "google_maps_url": "https://g.co/kgs/c3CxWnh",
+    "phone": "+48 509 969 117",
+    "website": "https://www.cyrus.pl/",
+    "email": "cyrus@cyrus.pl",
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+        {
+            "day": "Poniedziałek",
+            "hours": "10:00 - 22:00"
+        },
+        {
+            "day": "Wtorek",
+            "hours": "10:00 - 22:00"
+        },
+        {
+            "day": "Środa",
+            "hours": "10:00 - 22:00"
+        },
+        {
+            "day": "Czwartek",
+            "hours": "10:00 - 22:00"
+        },
+        {
+            "day": "Piątek",
+            "hours": "10:00 - 00:00"
+        },
+        {
+            "day": "Sobota",
+            "hours": "10:00 - 00:00"
+        },
+        {
+            "day": "Niedziela",
+            "hours": "10:00 - 22:00"
+        }
+    ],
+    "fillings": [],
+    "sauces": [],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": false,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "własna strona"],
+    "social_media": {
+        "fb": "https://www.facebook.com/cyruskebab/"
+    }
+  },
+  {
+    "name": "Kurczak Pieczony",
+    "address": "Kosmiczna 2",
+    "latitude": "51.20960667521959",
+    "longitude": "16.187620415522723",
+    "google_maps_url": "https://maps.app.goo.gl/kuUMqSf1FScGcpDu5",
+    "phone": "696 385 028",
+    "website": null,
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "10:00 - 19:00"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "10:00 - 19:00"
+      },
+      {
+        "day": "Środa",
+        "hours": "10:00 - 19:00"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "10:00 - 19:00"
+      },
+      {
+        "day": "Piątek",
+        "hours": "10:00 - 19:00"
+      },
+      {
+        "day": "Sobota",
+        "hours": "10:00 - 18:00"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "10:00 - 17:00"
+      }
+    ],
+    "fillings": [1,2],
+    "sauces": [],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": true,
+    "location_type": "buda",
+    "order_options": [],
+    "social_media": {
+      "fb": "https://www.facebook.com/kurczaki.pieczone.3/?locale=pl_PL"
+    }
+  },
+  {
+    "name": "Dino Kebab",
+    "address": "Jaworzyńska 41",
+    "latitude": "51.200633684016836",
+    "longitude": "16.159551796173226",
+    "google_maps_url": "https://g.co/kgs/YiEvi3R",
+    "phone": "576 904 806",
+    "website": null,
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [],
+    "fillings": [],
+    "sauces": [],
+    "status": "zamknięte",
+    "is_craft": false,
+    "is_chain_restaurant": false,
+    "location_type": "lokal",
+    "order_options": [],
+    "social_media": {
+      "fb": "https://www.facebook.com/dino.kabab/?locale=pl_PL"
+    }
+  },
+  {
+    "name": "Zahir Kebab Jaworzyńska",
+    "address": "Jaworzyńska 8",
+    "latitude": "51.20424397674176",
+    "longitude": "16.160210448143005",
+    "google_maps_url": "https://g.co/kgs/kdB523t",
+    "phone": "459 566 602",
+    "website": "https://zahirkebab.pl/menu/",
+    "android": "https://play.google.com/store/apps/details?id=com.restaumatic.zahir_kebab_kalisz_production",
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Środa",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Piątek",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Sobota",
+        "hours": "10:00 - 23:00"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "10:00 - 23:00"
+      }
+    ],
+    "fillings": [3,4,5,6],
+    "sauces": [1,2,3,4,5,6,7],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": true,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "pyszne.pl", "glovo"],
+    "social_media": {
+      "fb": "https://www.facebook.com/zahirkebab?locale=pl_PL"
+    }
+  },
+  {
+    "name": "Leo Kebab",
+    "address": "Jaworzyńska 4",
+    "latitude": "51.20440383503453",
+    "longitude": "16.159921511864013",
+    "google_maps_url": "https://g.co/kgs/Bqe8mNk",
+    "phone": "509 047 182",
+    "website": "https://www.leokebab-legnica.pl/",
+    "android": "https://play.google.com/store/apps/details?id=com.restaumatic.leo_kebab_production&pli=1",
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Środa",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Piątek",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Sobota",
+        "hours": "10:00 - 00:00"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "10:00 - 00:00"
+      }
+    ],
+    "fillings": [3,4,5,6,7],
+    "sauces": [7,6,3,5],
+    "status": "otwarte",
+    "is_craft": true,
+    "is_chain_restaurant": true,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "własna strona", "własna aplikacja", "pyszne.pl", "glovo"],
+    "social_media": {
+      "fb": "https://www.facebook.com/p/Leo-Kebab-Legnica-61555702835902/"
+    }
+  },
+  {
+    "name": "Piri Piri",
+    "address": "Szkolna 1",
+    "latitude": "51.2040685085953",
+    "longitude": "16.16069280262619",
+    "google_maps_url": "https://g.co/kgs/1Qvf1QU",
+    "phone": "790 884 360",
+    "website": null,
+    "email": "piripirilegnica@gmail.com",
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "11:00 - 22:00"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "11:00 - 22:00"
+      },
+      {
+        "day": "Środa",
+        "hours": "11:00 - 22:00"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "11:00 - 22:00"
+      },
+      {
+        "day": "Piątek",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Sobota",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "12:00 - 22:00"
+      }
+    ],
+    "fillings": [3,8,9],
+    "sauces": [7,6,5,8,9,10,11,12,1],
+    "status": "otwarte",
+    "is_craft": true,
+    "is_chain_restaurant": true,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "pyszne.pl", "glovo"],
+    "social_media": {
+      "fb": "https://www.facebook.com/piripirilublin/",
+      "tt": "https://www.tiktok.com/@piripirikebab"
+    }
+  },
+  {
+    "name": "Stambuł Kebab",
+    "address": "Chojnowska 21A",
+    "latitude": "51.207171497698724",
+    "longitude": "16.15698843481341",
+    "google_maps_url": "https://g.co/kgs/JAopaQb",
+    "phone": "453 244 469",
+    "website": null,
+    "email": "kizilelma.sp.z.o.o@gmail.com",
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Środa",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "11:00 - 23:00"
+      },
+      {
+        "day": "Piątek",
+        "hours": "11:00 - 01:00"
+      },
+      {
+        "day": "Sobota",
+        "hours": "11:00 - 01:00"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "12:00 - 23:00"
+      }
+    ],
+    "fillings": [3,5,4,6],
+    "sauces": [7,6,5,3],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": false,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "pyszne.pl"],
+    "social_media": null
+  },
+  {
+    "name": "Kavovarka - kebab kraft",
+    "address": "Górnicza 10B",
+
+
+    "latitude": "51.20552860580215",
+    "longitude": "16.186559038356293",
+    "google_maps_url": "https://g.co/kgs/zkfszFu",
+    "phone": "690 922 578",
+    "website": "https://www.kavovarka.pl/",
+    "email": "kavovarka2023@gmail.com",
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Wtorek",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Środa",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Czwartek",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Piątek",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Sobota",
+        "hours": "10:00 - 20:30"
+      },
+      {
+        "day": "Niedziela",
+        "hours": "10:00 - 20:30"
+      }
+    ],
+    "fillings": [],
+    "sauces": [],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": false,
+    "location_type": "lokal",
+    "order_options": ["przez telefon", "własna strona"],
+    "social_media": {
+      "fb": "https://www.facebook.com/cyruskebab/"
+    }
+  },
+  {
+    "name": "King House Kebab",
+    "location": {
+      "coordinates": [51.20462333765386, 16.188554530901975],
+      "address": "Piłsudskiego 38"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Kebab & Gyros",
+    "location": {
+      "coordinates": [51.18544929618131, 16.17237413997929],
+      "address": "Schumanna 17"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Bejrut Restauracja libańska",
+    "location": {
+      "coordinates": [51.205138423988146, 16.185351536443285],
+      "address": "Piłsudskiego 18"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Lara Döner Kebab Legnica",
+    "location": {
+      "coordinates": [51.20959448358735, 16.167796240447224],
+      "address": "Wrocławska 13"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Zahir Kebab Kolejowa",
+    "location": {
+      "coordinates": [51.21231665915741, 16.1686792330936],
+      "address": "Kolejowa 3"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Bafra Kebab Złotoryjska",
+    "location": {
+      "coordinates": [51.19281402860933, 16.128722115045626],
+      "address": "Złotoryjska 170"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Bafra Kebab Gwiezdna",
+    "location": {
+      "coordinates": [51.208439469019005, 16.181745589916925],
+      "address": "Gwiezdna 4"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Had Foot",
+    "location": {
+      "coordinates": [51.20677303064106, 16.17869613057113],
+      "address": "Fabryczna 13"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "AM AM Kebab",
+    "location": {
+      "coordinates": [51.20952045769188, 16.187051359374788],
+      "address": "Wrocławska 155"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Hallo Kebap",
+    "location": {
+      "coordinates": [51.21170885367406, 16.175237588475987],
+      "address": "Czarnieckiego 19c"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "MAXI Kebab",
+    "location": {
+      "coordinates": [51.20140320728768, 16.214000840314657],
+      "address": "Piłsudskiego 84"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Kebab Truck",
+    "location": {
+      "coordinates": [51.20792723252704, 16.21341613253819],
+      "address": "Iwaszkiewicza 1"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "MIX Kebab",
+    "location": {
+      "coordinates": [51.20922454986468, 16.169298227052437],
+      "address": "Wrocławska 23A"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "working"
+  },
+  {
+    "name": "Rulo Kebab",
+    "location": {
+      "coordinates": [51.205128470632545, 16.1545378995454],
+      "address": "Nowy Świat"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Queen Kebab Asynka",
+    "location": {
+      "coordinates": [51.20133491074013, 16.141212683191867],
+      "address": "Asynka 18d"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Queen Kebab Piłsudskiego",
+    "location": {
+      "coordinates": [51.20140320728768, 16.214000840314657],
+      "address": "Piłsudskiego 84"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Euro Döner Kebab",
+    "location": {
+      "coordinates": [51.20777731965639, 16.160579601110694],
+      "address": "Rynek 32"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Kebab Empire",
+    "location": {
+      "coordinates": [51.20677303064106, 16.17869613057113],
+      "address": "Fabryczna 13"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Kebab Mark",
+    "location": {
+      "coordinates": [51.20677303064106, 16.17869613057113],
+      "address": "Fabryczna 13"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Chili Blue",
+    "location": {
+      "coordinates": [51.19930113838938, 16.219397530166724],
+      "address": "Batalionu „Zośka” 36a"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Botan Kebab",
+    "location": {
+      "coordinates": [51.207171497698724, 16.15698843481341],
+      "address": "Chojnowska 21A"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "Kebab House",
+    "location": {
+      "coordinates": [51.20523547984742, 16.150942551540048],
+      "address": "Hutników 23"
+    },
+    "tags": [],
+    "lifespan": "",
+    "status": "closed"
+  },
+  {
+    "name": "KEBAB Sphinx",
+    "location": {
+      "coordinates": [51.209281018102246, 16.16491389168841],
+      "address": "Najświętszej Marii Panny"
+    },
+    "url": "https://www.facebook.com/profile.php?id=100064028922914",
+    "tags": [],
+    "lifespan": "2020",
+    "status": "closed"
+  }
+]
