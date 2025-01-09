@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Observers\KebabObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 
 /**
@@ -40,38 +42,43 @@ class KebabPlace extends Model
     public const string PHOTOS_DIRECTORY = "kebab";
 
     protected $fillable = [
-        'name',
-        'street',
-        'building_number',
-        'latitude',
-        'longitude',
-        'google_maps_url',
-        'google_maps_rating',
-        'phone',
-        'website',
-        'email',
-        'fillings',
-        'sauces',
-        'opening_hours',
-        'status',
-        'is_craft',
-        'is_chain_restaurant',
-        'location_type',
-        'order_options',
-        'social_media',
+        "name",
+        "street",
+        "building_number",
+        "latitude",
+        "longitude",
+        "google_maps_url",
+        "google_maps_rating",
+        "phone",
+        "website",
+        "email",
+        "fillings",
+        "sauces",
+        "opening_hours",
+        "status",
+        "is_craft",
+        "is_chain_restaurant",
+        "location_type",
+        "order_options",
+        "social_media",
+    ];
+    protected $casts = [
+        "opening_hours" => "array",
+        "fillings" => "array",
+        "sauces" => "array",
+        "is_craft" => "boolean",
+        "is_chain_restaurant" => "boolean",
+        "order_options" => "array",
+        "social_media" => "collection",
+        "opened_at_year" => "date:Y",
+        "closed_at_year" => "date:Y",
     ];
 
-    protected $casts = [
-        'opening_hours' => 'array',
-        'fillings' => 'array',
-        'sauces' => 'array',
-        'is_craft' => 'boolean',
-        'is_chain_restaurant' => 'boolean',
-        'order_options' => 'array',
-        'social_media' => 'collection',
-        'opened_at_year' => 'date:Y',
-        'closed_at_year' => 'date:Y',
-    ];
+    public static function boot(): void
+    {
+        parent::boot();
+        static::observe(KebabObserver::class);
+    }
 
     public function fillings(): BelongsToMany
     {
@@ -89,28 +96,18 @@ class KebabPlace extends Model
     }
 
     /**
-     *
      * @param array $value
-     * @return void
      */
-    protected function setOpeningHoursAttribute($value)
+    protected function setOpeningHoursAttribute($value): void
     {
-        $days = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+        $days = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
 
-        $formatted = collect($value)->map(function ($item, $index) use ($days) {
-            return [
-                'day' => $days[$index],
-                'from' => $item['from'] ?? null,
-                'to' => $item['to'] ?? null,
-            ];
-        })->toArray();
+        $formatted = collect($value)->map(fn($item, $index) => [
+            "day" => $days[$index],
+            "from" => $item["from"] ?? null,
+            "to" => $item["to"] ?? null,
+        ])->toArray();
 
-        $this->attributes['opening_hours'] = json_encode($formatted);
-    }
-
-    public static function boot(): void
-    {
-        parent::boot();
-        static::observe(KebabObserver::class);
+        $this->attributes["opening_hours"] = json_encode($formatted);
     }
 }

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Sauce;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class SauceController extends Controller
 {
@@ -16,11 +18,11 @@ class SauceController extends Controller
     public function store(Request $request): JsonResponse
     {
         $sauce = Sauce::query()->create([
-            'name' => $request->name,
-            'spiciness' => $request->spiciness,
-            'is_vegan' => $request->is_vegan,
-            'is_gluten_free' => $request->is_gluten_free,
-            'hex_color' => $request->hex_color,
+            "name" => $request->name,
+            "spiciness" => $request->spiciness,
+            "is_vegan" => $request->is_vegan,
+            "is_gluten_free" => $request->is_gluten_free,
+            "hex_color" => $request->hex_color,
         ]);
 
         return response()->json_encode($sauce);
@@ -34,11 +36,11 @@ class SauceController extends Controller
     public function update(Request $request, Sauce $sauce): JsonResponse
     {
         $sauce->update([
-            'name' => $request->name,
-            'spiciness' => $request->spiciness,
-            'is_vegan' => $request->is_vegan,
-            'is_gluten_free' => $request->is_gluten_free,
-            'hex_color' => $request->hex_color,
+            "name" => $request->name,
+            "spiciness" => $request->spiciness,
+            "is_vegan" => $request->is_vegan,
+            "is_gluten_free" => $request->is_gluten_free,
+            "hex_color" => $request->hex_color,
         ]);
 
         return response()->json_encode("Zaktualizowano sos");

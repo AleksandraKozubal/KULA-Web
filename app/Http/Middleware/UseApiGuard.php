@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -10,7 +12,7 @@ class UseApiGuard
 {
     public function handle($request, Closure $next): JsonResponse
     {
-        Auth::shouldUse('api');
+        Auth::shouldUse("api");
 
         return $next($request);
     }

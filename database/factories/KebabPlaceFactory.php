@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Enums\KebabPlaceLocationType;
@@ -14,7 +16,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class KebabPlaceFactory extends Factory
 {
-
     public function definition(): array
     {
         return [
@@ -66,7 +67,7 @@ class KebabPlaceFactory extends Factory
                     "day" => "niedziela",
                     "from" => "10:00",
                     "to" => "22:00",
-                ]
+                ],
             ],
             "fillings" => fake()->randomElements(Filling::all()->pluck("id"), fake()->numberBetween(1, 3)),
             "sauces" => fake()->randomElements(Sauce::all()->pluck("id"), fake()->numberBetween(0, 5)),

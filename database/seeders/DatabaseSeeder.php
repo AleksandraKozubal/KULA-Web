@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Filling;
@@ -23,6 +25,5 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentSeeder::class);
         $this->call(SuggestionSeeder::class);
         $this->call(FavoriteSeeder::class);
-
     }
 }

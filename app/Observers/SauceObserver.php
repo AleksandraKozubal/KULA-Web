@@ -11,9 +11,7 @@ class SauceObserver
 {
     public function __construct(
         protected RemoveSauceFromKebabAction $removeSauceFromKebabAction,
-    )
-    {
-    }
+    ) {}
 
     public function deleted(Sauce $sauce): void
     {

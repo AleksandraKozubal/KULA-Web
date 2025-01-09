@@ -11,9 +11,7 @@ class FillingObserver
 {
     public function __construct(
         protected RemoveFillingFromKebabAction $removeFillingFromKebabAction,
-    )
-    {
-    }
+    ) {}
 
     public function deleted(Filling $filling): void
     {

@@ -19,18 +19,19 @@ class Filling extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'is_vegan',
-        'hex_color'
+        "name",
+        "is_vegan",
+        "hex_color",
     ];
 
-    public function kebabPlaces(): BelongsToMany
-    {
-        return $this->belongsToMany(KebabPlace::class);
-    }
     public static function boot(): void
     {
         parent::boot();
         static::observe(FillingObserver::class);
+    }
+
+    public function kebabPlaces(): BelongsToMany
+    {
+        return $this->belongsToMany(KebabPlace::class);
     }
 }

@@ -21,11 +21,6 @@ use Filament\Tables\Table;
 
 class SauceResource extends Resource
 {
-    protected static ?string $model = Sauce::class;
-    protected static ?string $label = "sos";
-    protected static ?string $pluralLabel = "Sosy";
-    protected static ?string $navigationIcon = "heroicon-o-beaker";
-
     public static function form(Form $form): Form
     {
         return $form
@@ -97,4 +92,9 @@ class SauceResource extends Resource
             "edit" => Pages\EditSauce::route("/{record}/edit"),
         ];
     }
+
+    protected static ?string $model = Sauce::class;
+    protected static ?string $label = "sos";
+    protected static ?string $pluralLabel = "Sosy";
+    protected static ?string $navigationIcon = "heroicon-o-beaker";
 }

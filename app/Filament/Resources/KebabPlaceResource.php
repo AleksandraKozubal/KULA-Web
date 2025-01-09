@@ -31,12 +31,6 @@ use Filament\Tables\Table;
 
 class KebabPlaceResource extends Resource
 {
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
-
     public static function form(Form $form): Form
     {
         return $form
@@ -86,15 +80,15 @@ class KebabPlaceResource extends Resource
                         ]),
                         Grid::make(2)
                             ->schema([
-                                TextInput::make('opened_at_year')
+                                TextInput::make("opened_at_year")
                                     ->numeric()
                                     ->minValue(1950)
-                                    ->maxValue(date('Y'))
+                                    ->maxValue(date("Y"))
                                     ->label("Rok otwarcia"),
-                                TextInput::make('closed_at_year')
+                                TextInput::make("closed_at_year")
                                     ->numeric()
                                     ->minValue(1950)
-                                    ->maxValue(date('Y'))
+                                    ->maxValue(date("Y"))
                                     ->label("Rok zamknięcia"),
                             ]),
                         Grid::make(2)->schema([
@@ -108,19 +102,19 @@ class KebabPlaceResource extends Resource
                                 ->options(Filling::all()->pluck("name", "id")->toArray()),
                         ]),
                         Section::make([
-                            Repeater::make('social_media')
-                                ->label('Media społecznościowe')
+                            Repeater::make("social_media")
+                                ->label("Media społecznościowe")
                                 ->schema([
-                                    Select::make('Name')
-                                        ->label('Nazwa')
+                                    Select::make("Name")
+                                        ->label("Nazwa")
                                         ->options([
-                                            'fb' => 'Facebook',
-                                            'ig' => 'Instagram',
-                                            'tt' => 'Tiktok',
-                                            'x' => 'X',
+                                            "fb" => "Facebook",
+                                            "ig" => "Instagram",
+                                            "tt" => "Tiktok",
+                                            "x" => "X",
                                         ]),
-                                    TextInput::make('url')
-                                        ->label('url')
+                                    TextInput::make("url")
+                                        ->label("url")
                                         ->nullable(),
                                 ])
                                 ->addable()
@@ -128,12 +122,12 @@ class KebabPlaceResource extends Resource
                                 ->reorderable(false)
                                 ->columns(2),
                             Grid::make(2)->schema([
-                            TextInput::make("phone")
-                                ->label("Telefon")
-                                ->maxLength(255),
-                            TextInput::make("email")
-                                ->label("Email")
-                                ->maxLength(255),
+                                TextInput::make("phone")
+                                    ->label("Telefon")
+                                    ->maxLength(255),
+                                TextInput::make("email")
+                                    ->label("Email")
+                                    ->maxLength(255),
                             ]),
                             TextInput::make("website")
                                 ->label("Strona internetowa")
@@ -163,37 +157,37 @@ class KebabPlaceResource extends Resource
                                     "web" => "własna strona",
                                 ]),
                         ]),
-                        Repeater::make('opening_hours')
-                            ->label('Godziny otwarcia')
+                        Repeater::make("opening_hours")
+                            ->label("Godziny otwarcia")
                             ->schema([
-                                TextInput::make('day')
-                                    ->label('Dzień')
+                                TextInput::make("day")
+                                    ->label("Dzień")
                                     ->disabled()
                                     ->default(fn($state, $record, $index) => [
-                                        'Poniedziałek', 'Wtorek', 'Środa',
-                                        'Czwartek', 'Piątek', 'Sobota', 'Niedziela'
+                                        "Poniedziałek", "Wtorek", "Środa",
+                                        "Czwartek", "Piątek", "Sobota", "Niedziela",
                                     ][$index]),
-                                TimePicker::make('from')
-                                    ->label('Od')
-                                    ->format('H:i')
-                                    ->timezone('Europe/Warsaw')
+                                TimePicker::make("from")
+                                    ->label("Od")
+                                    ->format("H:i")
+                                    ->timezone("Europe/Warsaw")
                                     ->seconds(false)
                                     ->nullable(),
-                                TimePicker::make('to')
-                                    ->label('Do')
-                                    ->format('H:i')
-                                    ->timezone('Europe/Warsaw')
+                                TimePicker::make("to")
+                                    ->label("Do")
+                                    ->format("H:i")
+                                    ->timezone("Europe/Warsaw")
                                     ->seconds(false)
                                     ->nullable(),
                             ])
                             ->default(fn() => collect([
-                                ['day' => 'Poniedziałek', 'from' => null, 'to' => null],
-                                ['day' => 'Wtorek', 'from' => null, 'to' => null],
-                                ['day' => 'Środa', 'from' => null, 'to' => null],
-                                ['day' => 'Czwartek', 'from' => null, 'to' => null],
-                                ['day' => 'Piątek', 'from' => null, 'to' => null],
-                                ['day' => 'Sobota', 'from' => null, 'to' => null],
-                                ['day' => 'Niedziela', 'from' => null, 'to' => null],
+                                ["day" => "Poniedziałek", "from" => null, "to" => null],
+                                ["day" => "Wtorek", "from" => null, "to" => null],
+                                ["day" => "Środa", "from" => null, "to" => null],
+                                ["day" => "Czwartek", "from" => null, "to" => null],
+                                ["day" => "Piątek", "from" => null, "to" => null],
+                                ["day" => "Sobota", "from" => null, "to" => null],
+                                ["day" => "Niedziela", "from" => null, "to" => null],
                             ])->toArray())
                             ->addable(false)
                             ->deletable(false)
@@ -251,4 +245,10 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
+
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
 }
