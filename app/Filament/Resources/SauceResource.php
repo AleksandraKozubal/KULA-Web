@@ -6,11 +6,17 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\SauceResource\Pages;
 use App\Models\Sauce;
-use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ColorColumn;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class SauceResource extends Resource
@@ -25,11 +31,11 @@ class SauceResource extends Resource
         return $form
             ->schema([
                 Section::make([
-                    Forms\Components\TextInput::make("name")
+                    TextInput::make("name")
                         ->label("Nazwa")
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Select::make("spiciness")
+                    Select::make("spiciness")
                         ->label("Ostrość")
                         ->options([
                             1 => "Bardzo łagodny",
@@ -39,11 +45,11 @@ class SauceResource extends Resource
                             5 => "Bardzo ostry",
                         ])
                         ->required(),
-                    Forms\Components\Checkbox::make("is_vegan")
+                    Checkbox::make("is_vegan")
                         ->label("Wegański"),
-                    Forms\Components\Checkbox::make("is_gluten_free")
+                    Checkbox::make("is_gluten_free")
                         ->label("Bezglutenowy"),
-                    Forms\Components\ColorPicker::make("hex_color")
+                    ColorPicker::make("hex_color")
                         ->label("Kolor"),
                 ]),
             ]);
@@ -53,20 +59,22 @@ class SauceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("name")
+                TextColumn::make("name")
                     ->label("Sos")
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make("spiciness")
+                TextColumn::make("spiciness")
                     ->label("Ostrość")
                     ->sortable(),
-                Tables\Columns\BooleanColumn::make("is_vegan")
+                IconColumn::make("is_vegan")
                     ->label("Wegański")
+                    ->boolean()
                     ->sortable(),
-                Tables\Columns\BooleanColumn::make("is_gluten_free")
+                IconColumn::make("is_gluten_free")
                     ->label("Bezglutenowy")
+                    ->boolean()
                     ->sortable(),
-                Tables\Columns\ColorColumn::make("hex_color")
+                ColorColumn::make("hex_color")
                     ->label("Kolor")
                     ->sortable(),
             ])

@@ -10,7 +10,6 @@ use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
 use App\Models\Filling;
-use App\Models\Kebab;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
 use Exception;
@@ -26,6 +25,7 @@ use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
@@ -69,8 +69,8 @@ class KebabPlaceResource extends Resource
                             TextInput::make("latitude")
                                 ->label("Szerokość geograficzna")
                                 ->numeric()
-                                ->required()
-,                            TextInput::make("longitude")
+                                ->required(),
+                            TextInput::make("longitude")
                                 ->label("Długość geograficzna")
                                 ->numeric()
                                 ->required(),
@@ -211,17 +211,18 @@ class KebabPlaceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("name")
+                TextColumn::make("name")
                     ->label("Nazwa")
                     ->searchable(),
-                Tables\Columns\TextColumn::make("status")
+                TextColumn::make("status")
                     ->label("Status")
                     ->searchable(),
-                Tables\Columns\TextColumn::make("location_type")
+                TextColumn::make("location_type")
                     ->label("Typ lokalizacji")
                     ->searchable(),
-                Tables\Columns\CheckboxColumn::make("is_craft")
-                    ->label("Mięso kraftowe"),
+                Tables\Columns\IconColumn::make("is_craft")
+                    ->label("Mięso kraftowe")
+                    ->boolean(),
             ])
             ->filters([
                 TernaryFilter::make("is_craft")

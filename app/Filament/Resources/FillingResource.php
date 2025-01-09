@@ -6,7 +6,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\FillingResource\Pages;
 use App\Models\Filling;
-use App\Models\Sauce;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Section;
@@ -14,6 +13,9 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ColorColumn;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class FillingResource extends Resource
@@ -46,14 +48,15 @@ class FillingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("name")
+                TextColumn::make("name")
                     ->label("Mięso")
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\BooleanColumn::make("is_vegan")
+                IconColumn::make("is_vegan")
                     ->label("Wegańskie")
+                    ->boolean()
                     ->sortable(),
-                Tables\Columns\ColorColumn::make("hex_color")
+                ColorColumn::make("hex_color")
                     ->label("Kolor")
                     ->sortable(),
             ])
