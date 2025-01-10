@@ -70,5 +70,83 @@
     "is_vege": true,
     "is_gluten_free": true,
     "hex_color": "#0000ff"
+  },
+  {
+    "name": "ziołowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "pasta czosnkowa",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "miętowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "sweet chili",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "pomidorowy pikantny",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "jogurtowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "drwala",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "sambal",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "musztardowo-ziołowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "ogórkowo-czosnkowy",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "salsa",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "ostry sriracha",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "majonez",
+    "is_vege": true,
+    "is_gluten_free": true,
+    "hex_color": "#ff0000"
   }
 ]

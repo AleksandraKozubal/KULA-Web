@@ -20,7 +20,7 @@ class FillingController extends Controller
     {
         $filling = Filling::query()->create([
             "name" => $request->name,
-            "is_vegan" => $request->is_vegan,
+            "is_vege" => $request->is_vege,
             "hex_color" => $request->hex_color,
         ]);
 
@@ -36,7 +36,7 @@ class FillingController extends Controller
     {
         $filling->update([
             "name" => $request->name,
-            "is_vegan" => $request->is_vegan,
+            "is_vege" => $request->is_vege,
             "hex_color" => $request->hex_color,
         ]);
 

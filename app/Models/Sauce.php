@@ -11,9 +11,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property string $name
- * @property int $spiciness
- * @property bool $is_vegan
- * @property bool $is_gluten_free
  * @property string $hex_color
  */
 class Sauce extends Model
@@ -22,9 +19,6 @@ class Sauce extends Model
 
     protected $fillable = [
         "name",
-        "spiciness",
-        "is_vegan",
-        "is_gluten_free",
         "hex_color",
     ];
 

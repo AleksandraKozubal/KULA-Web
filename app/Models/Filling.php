@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property string $name
- * @property bool $is_vegan
+ * @property bool $is_vege
  * @property string $hex_color
  */
 class Filling extends Model
@@ -20,7 +20,7 @@ class Filling extends Model
 
     protected $fillable = [
         "name",
-        "is_vegan",
+        "is_vege",
         "hex_color",
     ];
 

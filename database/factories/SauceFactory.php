@@ -16,9 +16,6 @@ class SauceFactory extends Factory
     {
         return [
             "name" => fake()->word,
-            "spiciness" => fake()->numberBetween(1, 5),
-            "is_vegan" => fake()->boolean,
-            "is_gluten_free" => fake()->boolean,
             "hex_color" => fake()->hexColor,
         ];
     }

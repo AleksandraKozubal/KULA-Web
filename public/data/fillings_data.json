@@ -43,5 +43,25 @@
     "name": "wołowo-baranie",
     "is_vege": false,
     "hex_color": "#ff00ff"
+  },
+  {
+    "name": "baranina",
+    "is_vege": false,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "drobiowe",
+    "is_vege": false,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "wieprzowo-wołowe",
+    "is_vege": false,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "wieprzowe",
+    "is_vege": false,
+    "hex_color": "#ff0000"
   }
 ]
