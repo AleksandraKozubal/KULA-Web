@@ -13,16 +13,16 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        if (config("app.env") !== "local") {
-            $this->call(ProductionSeeder::class);
+        $this->call(ProductionSeeder::class);
 
+        if (config("app.env") !== "local") {
             return;
         }
         $this->call(UsersSeeder::class);
 
-        Filling::factory(10)->create();
-        Sauce::factory(10)->create();
-        KebabPlace::factory(10)->create();
+//        Filling::factory(10)->create();
+//        Sauce::factory(10)->create();
+//        KebabPlace::factory(10)->create();
 
         $this->call(CommentSeeder::class);
         $this->call(SuggestionSeeder::class);

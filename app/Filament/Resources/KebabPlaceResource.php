@@ -49,6 +49,8 @@ class KebabPlaceResource extends Resource
                         ]),
                         FileUpload::make("image")
                             ->label("Zdjęcie")
+                            ->image()
+                            ->imageEditor()
                             ->directory(KebabPlace::PHOTOS_DIRECTORY)
                             ->multiple(false),
                         TextInput::make("address")
@@ -135,14 +137,13 @@ class KebabPlaceResource extends Resource
                             Select::make("status")
                                 ->label("Status")
                                 ->required()
-                                ->options(array_column(KebabPlaceStatus::cases(), "value")),
+                                ->options(KebabPlaceStatus::class),
                             Select::make("location_type")
                                 ->label("Typ lokalizacji")
                                 ->required()
-                                ->options(array_column(KebabPlaceLocationType::cases(), "value")),
+                                ->options(KebabPlaceLocationType::class),
                             Select::make("order_options")
                                 ->label("Opcje zamówienia")
-                                ->required()
                                 ->multiple()
                                 ->options([
                                     "phone" => "przez telefon",
@@ -204,6 +205,8 @@ class KebabPlaceResource extends Resource
                 TextColumn::make("name")
                     ->label("Nazwa")
                     ->searchable(),
+                Tables\Columns\ImageColumn::make("image")
+                    ->label("Zdjęcie"),
                 TextColumn::make("status")
                     ->label("Status")
                     ->searchable(),

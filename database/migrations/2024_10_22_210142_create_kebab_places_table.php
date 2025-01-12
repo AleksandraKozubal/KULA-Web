@@ -16,10 +16,12 @@ return new class() extends Migration {
             $table->string("address");
             $table->string("latitude");
             $table->string("longitude");
-            $table->string("google_maps_url");
-            $table->string("google_maps_rating");
-            $table->string("phone");
+            $table->string("google_maps_url")->nullable();
+            $table->string("google_maps_rating")->nullable();
+            $table->string("phone")->nullable();
             $table->string("website")->nullable();
+            $table->string("android")->nullable();
+            $table->string("ios")->nullable();
             $table->string("email")->nullable();
             $table->string("opened_at_year")->nullable();
             $table->string("closed_at_year")->nullable();
