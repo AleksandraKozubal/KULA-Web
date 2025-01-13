@@ -24,8 +24,8 @@ use Illuminate\Support\Collection;
  * @property ?string $android
  * @property ?string $ios
  * @property ?string $email
- * @property ?string $opened_at_year
- * @property ?string $closed_at_year
+ * @property ?int $opened_at_year
+ * @property ?int $closed_at_year
  * @property array $opening_hours
  * @property ?array $fillings
  * @property ?array $sauces
@@ -73,8 +73,8 @@ class KebabPlace extends Model
         "is_chain_restaurant" => "boolean",
         "order_options" => "array",
         "social_media" => "array",
-        "opened_at_year" => "date:Y",
-        "closed_at_year" => "date:Y",
+        "opened_at_year" => "integer",
+        "closed_at_year" => "integer",
     ];
 
     public static function boot(): void

@@ -49,10 +49,15 @@
       }
     ],
     "fillings": [
-      "111"
+      4,
+      5,
+      6
     ],
     "sauces": [
-      "111"
+      3,
+      5,
+      6,
+      7
     ],
     "status": "otwarte",
     "is_craft": false,
@@ -121,9 +126,7 @@
       1,
       2
     ],
-    "sauces": [
-      "!!!"
-    ],
+    "sauces": [],
     "status": "otwarte",
     "is_craft": false,
     "is_chain_restaurant": true,
@@ -543,7 +546,7 @@
       24
     ],
     "status": "otwarte",
-    "is_craft": false,
+    "is_craft": true,
     "is_chain_restaurant": false,
     "location_type": "lokal",
     "order_options": [
@@ -1763,6 +1766,7 @@
   },
   {
     "name": "KEBAB Sphinx",
+    "image": "kebab-place/sphinx-kebab.jpg",
     "address": "Najświętszej Marii Panny",
     "latitude": "51.209281018102246",
     "longitude": "16.16491389168841",
@@ -1854,19 +1858,96 @@
         "to": null
       }
     ],
-    "fillings": [
-      "111"
-    ],
-    "sauces": [
-      "111"
-    ],
+    "fillings": [],
+    "sauces": [],
     "status": "otwarte",
     "is_craft": false,
     "is_chain_restaurant": false,
-    "location_type": "111",
+    "location_type": "lokal",
+    "order_options": [],
+    "social_media": []
+  },
+  {
+    "name": "King Kebab",
+    "image": "kebab-place/king-kebab.jpg",
+    "address": "Pocztowa 5",
+    "latitude": "51.212185928118465",
+    "longitude": "16.16581084232893",
+    "google_maps_url": "https://maps.app.goo.gl/FCps6GZRGy2ZBTiM8",
+    "phone": "697 483 834",
+    "website": null,
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [],
+    "fillings": [],
+    "sauces": [],
+    "status": "zamknięte",
+    "is_craft": false,
+    "is_chain_restaurant": false,
+    "location_type": "lokal",
+    "order_options": [],
+    "social_media": []
+  },
+  {
+    "name": "Kurczak z rożna Franciszkańska",
+    "image": "kebab-place/kurczak-z-rozna.jpg",
+    "address": "Pocztowa 5",
+    "latitude": "51.20728291605775",
+    "longitude": "16.15196427301321",
+    "google_maps_url": "https://maps.app.goo.gl/VBTCViMjhgujzfgy9",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "opened_at_year": null,
+    "closed_at_year": null,
+    "opening_hours": [
+      {
+        "day": "Poniedziałek",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Wtorek",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Środa",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Czwartek",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Piątek",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Sobota",
+        "from": "10:00",
+        "to": "18:00"
+      },
+      {
+        "day": "Niedziela",
+        "from": null,
+        "to": null
+      }
+    ],
+    "fillings": [
+      1,
+      2
+    ],
+    "sauces": [],
+    "status": "otwarte",
+    "is_craft": false,
+    "is_chain_restaurant": true,
+    "location_type": "buda",
     "order_options": [],
     "social_media": []
   }
-  kurczak z rożna franciszkańska
-  kimg kebab pocztowa
 ]

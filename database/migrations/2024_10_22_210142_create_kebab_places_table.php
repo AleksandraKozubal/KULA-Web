@@ -23,8 +23,8 @@ return new class() extends Migration {
             $table->string("android")->nullable();
             $table->string("ios")->nullable();
             $table->string("email")->nullable();
-            $table->string("opened_at_year")->nullable();
-            $table->string("closed_at_year")->nullable();
+            $table->smallInteger("opened_at_year")->nullable();
+            $table->smallInteger("closed_at_year")->nullable();
             $table->json("opening_hours");
             $table->json("fillings")->nullable();
             $table->json("sauces")->nullable();
