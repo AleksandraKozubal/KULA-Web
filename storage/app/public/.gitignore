@@ -1,3 +1,4 @@
 *
 !.gitignore
-!kebab-place
+!kebab-place/
+!kebab-place/**
