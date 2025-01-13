@@ -103,7 +103,7 @@ class KebabPlaceResource extends Resource
                             Repeater::make("social_media")
                                 ->label("Media społecznościowe")
                                 ->schema([
-                                    Select::make("Name")
+                                    Select::make("name")
                                         ->label("Nazwa")
                                         ->options([
                                             "fb" => "Facebook",

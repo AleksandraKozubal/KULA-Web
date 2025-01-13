@@ -69,7 +69,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/cyruskebab/"
+        "name": "fb",
+        "url": "https://www.facebook.com/cyruskebab/"
       }
     ]
   },
@@ -134,7 +135,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/kurczaki.pieczone.3/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/kurczaki.pieczone.3/?locale=pl_PL"
       }
     ]
   },
@@ -172,7 +174,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/dino.kabab/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/dino.kabab/?locale=pl_PL"
       }
     ]
   },
@@ -252,7 +255,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/zahirkebab?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/zahirkebab?locale=pl_PL"
       }
     ]
   },
@@ -332,7 +336,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/p/Leo-Kebab-Legnica-61555702835902/"
+        "name": "fb",
+        "url": "https://www.facebook.com/p/Leo-Kebab-Legnica-61555702835902/"
       }
     ]
   },
@@ -412,8 +417,12 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/piripirilublin/",
-        "tt": "https://www.tiktok.com/@piripirikebab"
+        "name": "fb",
+        "url": "https://www.facebook.com/piripirilublin/"
+      },
+      {
+        "name": "tt",
+        "url": "https://www.tiktok.com/@piripirikebab"
       }
     ]
   },
@@ -632,7 +641,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/people/King-House-KEBAB/100088738987179/"
+        "name": "fb",
+        "url": "https://www.facebook.com/people/King-House-KEBAB/100088738987179/"
       }
     ]
   },
@@ -709,7 +719,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/p/Kebab-and-Gyros-Legnica-100064753820065/"
+        "name": "fb",
+        "url": "https://www.facebook.com/p/Kebab-and-Gyros-Legnica-100064753820065/"
       }
     ]
   },
@@ -855,7 +866,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/share/1CzDQ4ZJHj/?mibextid=wwXIfr"
+        "name": "fb",
+        "url": "https://www.facebook.com/share/1CzDQ4ZJHj/?mibextid=wwXIfr"
       }
     ]
   },
@@ -1008,8 +1020,12 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/bafrakebablegnica2/",
-        "ig": "https://www.instagram.com/bafra_kebab_legnica/"
+        "name": "fb",
+        "url": "https://www.facebook.com/bafrakebablegnica2/"
+      },
+      {
+        "name": "ig",
+        "url": "https://www.instagram.com/bafra_kebab_legnica/"
       }
     ]
   },
@@ -1089,8 +1105,12 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/bafralegnica/",
-        "ig": "https://www.instagram.com/bafra_kebab_legnica/"
+        "name": "fb",
+        "url": "https://www.facebook.com/bafralegnica/"
+      },
+      {
+        "name": "ig",
+        "url": "https://www.instagram.com/bafra_kebab_legnica/"
       }
     ]
   },
@@ -1163,7 +1183,11 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/hadfoodlegnica/reels/",
+        "name": "fb",
+        "fb": "https://www.facebook.com/hadfoodlegnica/reels/"
+      },
+      {
+        "name": "ig",
         "ig": "https://www.instagram.com/had_food_legnica/"
       }
     ]
@@ -1238,7 +1262,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/amam.kebab.lca/"
+        "name": "fb",
+        "url": "https://www.facebook.com/amam.kebab.lca/"
       }
     ]
   },
@@ -1313,7 +1338,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/people/Hallo-Kebap-Legnica/61560832913919/"
+        "name": "fb",
+        "url": "https://www.facebook.com/people/Hallo-Kebap-Legnica/61560832913919/"
       }
     ]
   },
@@ -1366,12 +1392,8 @@
         "to": null
       }
     ],
-    "fillings": [
-      "!!!"
-    ],
-    "sauces": [
-      "!!!"
-    ],
+    "fillings": [],
+    "sauces": [],
     "status": "otwarte",
     "is_craft": false,
     "is_chain_restaurant": false,
@@ -1381,7 +1403,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/people/MAXI-Kebab-Legnica/61559822421040/"
+        "name": "fb",
+        "url": "https://www.facebook.com/people/MAXI-Kebab-Legnica/61559822421040/"
       }
     ]
   },
@@ -1454,7 +1477,8 @@
     ],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/KEBABTRUCK/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/KEBABTRUCK/?locale=pl_PL"
       }
     ]
   },
@@ -1585,7 +1609,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
       }
     ]
   },
@@ -1611,7 +1636,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
       }
     ]
   },
@@ -1637,7 +1663,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/DunyaDonerKebabLegnica/?locale=pl_PL"
+        "name": "fb",
+        "url": "https://www.facebook.com/DunyaDonerKebabLegnica/?locale=pl_PL"
       }
     ]
   },
@@ -1673,7 +1700,8 @@
     "order_options": [],
     "social_media": [
       {
-        "fb": "https://www.facebook.com/p/Kebab-Empire-Legnica-100086383969163/"
+        "name": "fb",
+        "url": "https://www.facebook.com/p/Kebab-Empire-Legnica-100086383969163/"
       }
     ]
   },
@@ -1785,7 +1813,8 @@
     "location_type": "lokal",
     "order_options": [],
     "social_media": {
-      "fb": "https://www.facebook.com/people/Kebab-Sphinx-Legnica/100064028922914/"
+      "name": "fb",
+      "url": "https://www.facebook.com/people/Kebab-Sphinx-Legnica/100064028922914/"
     }
   },
   {
