@@ -17,13 +17,15 @@ use Illuminate\Support\Collection;
  * @property string $address
  * @property string $latitude
  * @property string $longitude
- * @property string $google_maps_url
- * @property string $google_maps_rating
+ * @property ?string $google_maps_url
+ * @property ?string $google_maps_rating
  * @property string $phone
  * @property ?string $website
+ * @property ?string $android
+ * @property ?string $ios
  * @property ?string $email
- * @property ?string $opened_at_year
- * @property ?string $closed_at_year
+ * @property ?int $opened_at_year
+ * @property ?int $closed_at_year
  * @property array $opening_hours
  * @property ?array $fillings
  * @property ?array $sauces
@@ -38,10 +40,11 @@ class KebabPlace extends Model
 {
     use HasFactory;
 
-    public const string PHOTOS_DIRECTORY = "kebab";
+    public const string PHOTOS_DIRECTORY = "kebab-place";
 
     protected $fillable = [
         "name",
+        "image",
         "address",
         "latitude",
         "longitude",
@@ -49,6 +52,8 @@ class KebabPlace extends Model
         "google_maps_rating",
         "phone",
         "website",
+        "android",
+        "ios",
         "email",
         "fillings",
         "sauces",
@@ -67,9 +72,9 @@ class KebabPlace extends Model
         "is_craft" => "boolean",
         "is_chain_restaurant" => "boolean",
         "order_options" => "array",
-        "social_media" => "collection",
-        "opened_at_year" => "date:Y",
-        "closed_at_year" => "date:Y",
+        "social_media" => "array",
+        "opened_at_year" => "integer",
+        "closed_at_year" => "integer",
     ];
 
     public static function boot(): void

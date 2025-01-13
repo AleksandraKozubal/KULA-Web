@@ -1,0 +1,102 @@
+[
+  {
+    "name": "ketchup",
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "BBQ",
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "czosnkowy",
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "koperkowy",
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "mieszany",
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "ostry",
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "łagodny",
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "mocny czosnek",
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "sriracha-mayo",
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "miodowo-musztardowy",
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "tzatziki",
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "mango habanero",
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "ziołowy",
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "pasta czosnkowa",
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "miętowy",
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "sweet chili",
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "pomidorowy pikantny",
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "jogurtowy",
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "drwala",
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "sambal",
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "musztardowo-ziołowy",
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "ogórkowo-czosnkowy",
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "salsa",
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "ostry sriracha",
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "majonez",
+    "hex_color": "#ff0000"
+  }
+]

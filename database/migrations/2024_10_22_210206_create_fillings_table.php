@@ -12,7 +12,7 @@ return new class() extends Migration {
         Schema::create("fillings", function (Blueprint $table): void {
             $table->id();
             $table->string("name");
-            $table->boolean("is_vegan");
+            $table->boolean("is_vege");
             $table->string("hex_color");
             $table->timestamps();
         });

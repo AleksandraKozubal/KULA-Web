@@ -32,8 +32,8 @@ class FillingResource extends Resource
                     ColorPicker::make("hex_color")
                         ->label("Kolor")
                         ->required(),
-                    Checkbox::make("is_vegan")
-                        ->label("Czy wegański?")
+                    Checkbox::make("is_vege")
+                        ->label("Czy wege?")
                         ->default(false),
                 ]),
             ]);
@@ -47,8 +47,8 @@ class FillingResource extends Resource
                     ->label("Mięso")
                     ->sortable()
                     ->searchable(),
-                IconColumn::make("is_vegan")
-                    ->label("Wegańskie")
+                IconColumn::make("is_vege")
+                    ->label("Wege")
                     ->boolean()
                     ->sortable(),
                 ColorColumn::make("hex_color")

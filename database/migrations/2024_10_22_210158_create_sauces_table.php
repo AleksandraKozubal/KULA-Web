@@ -12,9 +12,6 @@ return new class() extends Migration {
         Schema::create("sauces", function (Blueprint $table): void {
             $table->id();
             $table->string("name");
-            $table->string("spiciness");
-            $table->boolean("is_vegan");
-            $table->boolean("is_gluten_free");
             $table->string("hex_color");
             $table->timestamps();
         });

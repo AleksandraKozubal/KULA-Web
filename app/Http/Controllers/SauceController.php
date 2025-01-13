@@ -19,9 +19,6 @@ class SauceController extends Controller
     {
         $sauce = Sauce::query()->create([
             "name" => $request->name,
-            "spiciness" => $request->spiciness,
-            "is_vegan" => $request->is_vegan,
-            "is_gluten_free" => $request->is_gluten_free,
             "hex_color" => $request->hex_color,
         ]);
 
@@ -37,9 +34,6 @@ class SauceController extends Controller
     {
         $sauce->update([
             "name" => $request->name,
-            "spiciness" => $request->spiciness,
-            "is_vegan" => $request->is_vegan,
-            "is_gluten_free" => $request->is_gluten_free,
             "hex_color" => $request->hex_color,
         ]);
 

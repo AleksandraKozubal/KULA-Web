@@ -16,7 +16,7 @@ class FillingFactory extends Factory
     {
         return [
             "name" => fake()->word,
-            "is_vegan" => fake()->boolean,
+            "is_vege" => fake()->boolean,
             "hex_color" => fake()->hexColor,
         ];
     }
