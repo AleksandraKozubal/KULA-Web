@@ -99,36 +99,42 @@ class KebabPlaceResource extends Resource
                                 ->multiple()
                                 ->options(Filling::all()->pluck("name", "id")->toArray()),
                         ]),
-                        Section::make([
-                            Repeater::make("social_media")
-                                ->label("Media społecznościowe")
-                                ->schema([
-                                    Select::make("name")
-                                        ->label("Nazwa")
-                                        ->options([
-                                            "fb" => "Facebook",
-                                            "ig" => "Instagram",
-                                            "tt" => "Tiktok",
-                                            "x" => "X",
-                                        ]),
-                                    TextInput::make("url")
-                                        ->label("url")
-                                        ->nullable(),
-                                ])
-                                ->addable()
-                                ->deletable()
-                                ->reorderable(false)
-                                ->columns(2),
-                            Grid::make(2)->schema([
-                                TextInput::make("phone")
-                                    ->label("Telefon")
-                                    ->maxLength(255),
-                                TextInput::make("email")
-                                    ->label("Email")
-                                    ->maxLength(255),
-                            ]),
-                            TextInput::make("website")
-                                ->label("Strona internetowa")
+                        Repeater::make("social_media")
+                            ->label("Media społecznościowe")
+                            ->schema([
+                                Select::make("name")
+                                    ->label("Nazwa")
+                                    ->options([
+                                        "fb" => "Facebook",
+                                        "ig" => "Instagram",
+                                        "tt" => "Tiktok",
+                                        "x" => "X",
+                                    ]),
+                                TextInput::make("url")
+                                    ->label("url")
+                                    ->nullable(),
+                            ])
+                            ->addable()
+                            ->deletable()
+                            ->reorderable(false)
+                            ->columns(2),
+                        Grid::make(2)->schema([
+                            TextInput::make("phone")
+                                ->label("Telefon")
+                                ->maxLength(255),
+                            TextInput::make("email")
+                                ->label("Email")
+                                ->maxLength(255),
+                        ]),
+                        TextInput::make("website")
+                            ->label("Strona internetowa")
+                            ->maxLength(255),
+                        Grid::make(2)->schema([
+                            TextInput::make("android")
+                                ->label("Link do aplikacji na androida")
+                                ->maxLength(255),
+                            TextInput::make("ios")
+                                ->label("Link do aplikacji na iOS")
                                 ->maxLength(255),
                         ]),
                     ]),

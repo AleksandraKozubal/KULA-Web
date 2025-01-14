@@ -44,7 +44,7 @@ class FillingResource extends Resource
         return $table
             ->columns([
                 TextColumn::make("name")
-                    ->label("Mięso")
+                    ->label("Nazwa")
                     ->sortable()
                     ->searchable(),
                 IconColumn::make("is_vege")
@@ -76,7 +76,7 @@ class FillingResource extends Resource
     }
 
     protected static ?string $model = Filling::class;
-    protected static ?string $label = "mięso";
-    protected static ?string $pluralLabel = "Mięsa";
+    protected static ?string $label = "główny składnik";
+    protected static ?string $pluralLabel = "Główne składniki";
     protected static ?string $navigationIcon = "heroicon-o-circle-stack";
 }
