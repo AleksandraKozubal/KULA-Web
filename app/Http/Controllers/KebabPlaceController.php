@@ -16,9 +16,26 @@ use Illuminate\Http\Request;
 
 class KebabPlaceController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $kebabPlaces = KebabPlace::paginate(20);
+        $paginate = $request->paginate ?? 20;
+        $sby = $request->sby ?? "id";
+        $sdirection = $request->sdirection ?? "asc";
+        $ffillings = $request->ffillings ? json_decode($request->ffillings, true) : null;
+        $fsauces = $request->fsauces ? json_decode($request->fsauces, true) : null;
+        $fkraft = $request->fkraft ?? null;
+        $kebabPlaces = KebabPlace::
+                when($ffillings, function ($query) use ($ffillings) {
+                    return $query->whereJsonContains("fillings", $ffillings);
+                })
+                ->when($fsauces, function ($query) use ($fsauces) {
+                        return $query->whereJsonContains('sauces', $fsauces);
+                    })
+                ->when($fkraft, function ($query) use ($fkraft) {
+                    return $query->where("is_craft", $fkraft);
+                })
+                ->orderBy($sby, $sdirection)
+                ->paginate($paginate);
 
         if (auth()->check()) {
             foreach ($kebabPlaces as $kebabPlace) {
@@ -73,10 +90,8 @@ class KebabPlaceController extends Controller
         $kebabPlace->comments->each(function ($comment): void {
             $comment->is_owner = $comment->user_id === auth()->id();
         });
-        $ids = explode(", ", $kebabPlace->fillings);
-        $kebabPlace->fillings = Filling::whereIn("id", $ids)->get();
-        $ids = explode(", ", $kebabPlace->sauces);
-        $kebabPlace->sauces = Sauce::whereIn("id", $ids)->get();
+        $kebabPlace->fillings = Filling::whereIn("id", $kebabPlace->fillings)->get();
+        $kebabPlace->sauces = Sauce::whereIn("id", $kebabPlace->sauces)->get();
 
         return response()->json($kebabPlace, 200);
     }
