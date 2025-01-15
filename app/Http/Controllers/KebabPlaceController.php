@@ -26,17 +26,11 @@ class KebabPlaceController extends Controller
         $fsauces = $request->fsauces ? json_decode($request->fsauces, true) : null;
         $fkraft = $request->fkraft ?? null;
         $kebabPlaces = KebabPlace::
-                when($ffillings, function ($query) use ($ffillings) {
-                    return $query->whereJsonContains("fillings", $ffillings);
-                })
-                ->when($fsauces, function ($query) use ($fsauces) {
-                        return $query->whereJsonContains('sauces', $fsauces);
-                    })
-                ->when($fkraft, function ($query) use ($fkraft) {
-                    return $query->where("is_craft", $fkraft);
-                })
-                ->orderBy($sby, $sdirection)
-                ->paginate($paginate);
+                when($ffillings, fn($query) => $query->whereJsonContains("fillings", $ffillings))
+                    ->when($fsauces, fn($query) => $query->whereJsonContains("sauces", $fsauces))
+                    ->when($fkraft, fn($query) => $query->where("is_craft", $fkraft))
+                    ->orderBy($sby, $sdirection)
+                    ->paginate($paginate);
 
         if (auth()->check()) {
             foreach ($kebabPlaces as $kebabPlace) {

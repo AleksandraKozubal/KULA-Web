@@ -6,7 +6,7 @@ namespace App\Enums;
 
 use Filament\Support\Contracts\HasLabel;
 
-enum KebabPlaceSortByCriteria : string implements HasLabel
+enum KebabPlaceSortByCriteria: string implements HasLabel
 {
     case id = "id";
     case rating = "google_maps_rating";
