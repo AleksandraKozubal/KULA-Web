@@ -173,7 +173,7 @@ paths:
       description:
       responses:
         "201":
-          description: Użytkownik zarejestrowany
+          description: Sugestie zarejestrowane
           content:
             application/json:
               schema:

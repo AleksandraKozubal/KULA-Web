@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KebabPlaceFilterRequest;
 use App\Http\Requests\KebabPlaceRequest;
 use App\Models\Comment;
 use App\Models\Favorites;
@@ -16,7 +17,7 @@ use Illuminate\Http\Request;
 
 class KebabPlaceController extends Controller
 {
-    public function index(Request $request): JsonResponse
+    public function index(KebabPlaceFilterRequest $request): JsonResponse
     {
         $paginate = $request->paginate ?? 20;
         $sby = $request->sby ?? "id";
