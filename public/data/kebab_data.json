@@ -1,0 +1,1984 @@
+[
+    {
+        "name": "Cyrus Kebab",
+        "image": "kebab-place/cyrus-kebab.jpg",
+        "address": "Rynek 20",
+        "latitude": "51.20788328467099",
+        "longitude": "16.161068016930532",
+        "google_maps_url": "https://g.co/kgs/c3CxWnh",
+        "phone": "+48 509 969 117",
+        "website": "https://www.cyrus.pl/",
+        "email": "cyrus@cyrus.pl",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "22:00"
+            }
+        ],
+        "fillings": [
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            3,
+            5,
+            6,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "własna strona"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/cyruskebab/"
+            }
+        ]
+    },
+    {
+        "name": "Kurczak Pieczony",
+        "image": "kebab-place/kurczak-pieczony-kosmiczna.jpg",
+        "address": "Kosmiczna 2",
+        "latitude": "51.20960667521959",
+        "longitude": "16.187620415522723",
+        "google_maps_url": "https://maps.app.goo.gl/kuUMqSf1FScGcpDu5",
+        "phone": "696 385 028",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "17:00"
+            }
+        ],
+        "fillings": [
+            1,
+            2
+        ],
+        "sauces": [],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "buda",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/kurczaki.pieczone.3/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Dino Kebab",
+        "image": "kebab-place/dino-kebab.jpg",
+        "address": "Jaworzyńska 41",
+        "latitude": "51.200633684016836",
+        "longitude": "16.159551796173226",
+        "google_maps_url": "https://g.co/kgs/YiEvi3R",
+        "phone": "576 904 806",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            1,
+            3,
+            5,
+            6,
+            13,
+            17
+        ],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/dino.kabab/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Zahir Kebab Jaworzyńska",
+        "image": "kebab-place/zahir-kebab-jaworzynska.jpg",
+        "address": "Jaworzyńska 8",
+        "latitude": "51.20424397674176",
+        "longitude": "16.160210448143005",
+        "google_maps_url": "https://g.co/kgs/kdB523t",
+        "phone": "459 566 602",
+        "website": "https://zahirkebab.pl/menu/",
+        "android": "https://play.google.com/store/apps/details?id=com.restaumatic.zahir_kebab_kalisz_production",
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "23:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/zahirkebab?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Leo Kebab",
+        "image": "kebab-place/leo-kebab.jpeg",
+        "address": "Jaworzyńska 4",
+        "latitude": "51.20440383503453",
+        "longitude": "16.159921511864013",
+        "google_maps_url": "https://g.co/kgs/Bqe8mNk",
+        "phone": "509 047 182",
+        "website": "https://www.leokebab-legnica.pl/",
+        "android": "https://play.google.com/store/apps/details?id=com.restaumatic.leo_kebab_production&pli=1",
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "00:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "sauces": [
+            7,
+            6,
+            3,
+            5
+        ],
+        "status": "otwarte",
+        "is_craft": true,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "własna strona",
+            "własna aplikacja",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/p/Leo-Kebab-Legnica-61555702835902/"
+            }
+        ]
+    },
+    {
+        "name": "Piri Piri",
+        "image": "kebab-place/piri-piri.jpg",
+        "address": "Szkolna 1",
+        "latitude": "51.2040685085953",
+        "longitude": "16.16069280262619",
+        "google_maps_url": "https://g.co/kgs/1Qvf1QU",
+        "phone": "790 884 360",
+        "website": null,
+        "email": "piripirilegnica@gmail.com",
+        "opened_at_year": "2024",
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "11:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "11:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Środa",
+                "from": "11:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "11:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "22:00"
+            }
+        ],
+        "fillings": [
+            3,
+            8,
+            9
+        ],
+        "sauces": [
+            7,
+            6,
+            5,
+            8,
+            9,
+            10,
+            11,
+            12,
+            1
+        ],
+        "status": "otwarte",
+        "is_craft": true,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/piripirilublin/"
+            },
+            {
+                "name": "tt",
+                "url": "https://www.tiktok.com/@piripirikebab"
+            }
+        ]
+    },
+    {
+        "name": "Stambuł Kebab",
+        "image": "kebab-place/stambul-kebab.jpg",
+        "address": "Chojnowska 21A",
+        "latitude": "51.207171497698724",
+        "longitude": "16.15698843481341",
+        "google_maps_url": "https://g.co/kgs/JAopaQb",
+        "phone": "453 244 469",
+        "website": null,
+        "email": "kizilelma.sp.z.o.o@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Środa",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "11:00",
+                "to": "23:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "11:00",
+                "to": "01:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "11:00",
+                "to": "01:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "23:00"
+            }
+        ],
+        "fillings": [
+            3,
+            5,
+            4,
+            6
+        ],
+        "sauces": [
+            7,
+            6,
+            5,
+            3
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": []
+    },
+    {
+        "name": "Kavovarka - kebab kraft",
+        "image": "kebab-place/kavovarka.jpg",
+        "address": "Górnicza 10B",
+        "latitude": "51.20552860580215",
+        "longitude": "16.186559038356293",
+        "google_maps_url": "https://g.co/kgs/zkfszFu",
+        "phone": "690 922 578",
+        "website": "https://www.kavovarka.pl/",
+        "email": "kavovarka2023@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "20:30"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "20:30"
+            }
+        ],
+        "fillings": [
+            9
+        ],
+        "sauces": [
+            22,
+            23,
+            24
+        ],
+        "status": "otwarte",
+        "is_craft": true,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "własna strona"
+        ],
+        "social_media": []
+    },
+    {
+        "name": "King House Kebab",
+        "image": "kebab-place/king-house-kebab.jpg",
+        "address": "Piłsudskiego 38",
+        "latitude": "51.20462333765386",
+        "longitude": "16.188554530901975",
+        "google_maps_url": "https://g.co/kgs/c1Sy1cV",
+        "phone": "789 977 721",
+        "website": "https://www.kinghousekebab.pl/",
+        "android": "https://play.google.com/store/apps/details?id=com.restaumatic.king_house_kebab_production",
+        "ios": "https://apps.apple.com/us/app/king-house-kebab/id1666591662",
+        "email": "kinghousekebab@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": null,
+                "to": null
+            },
+            {
+                "day": "Wtorek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Środa",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Czwartek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Piątek",
+                "from": "12:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "12:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "21:00"
+            }
+        ],
+        "fillings": [
+            10,
+            3,
+            4,
+            6
+        ],
+        "sauces": [
+            3,
+            6,
+            7,
+            1,
+            2
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "własna strona",
+            "własna aplikacja",
+            "pysze.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/people/King-House-KEBAB/100088738987179/"
+            }
+        ]
+    },
+    {
+        "name": "Kebab & Gyros",
+        "image": "kebab-place/kebab-and-gyros.jpg",
+        "address": "Schumanna 17",
+        "latitude": "51.18544929618131",
+        "longitude": "16.17237413997929",
+        "google_maps_url": "https://maps.app.goo.gl/DXQrka5zatDiJqzW7",
+        "phone": "501 953 031",
+        "website": "https://www.kebablegnica.pl/",
+        "email": "mirer23@interia.pl",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": null,
+                "to": null
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            3,
+            13,
+            6,
+            5
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "buda",
+        "order_options": [
+            "przez telefon",
+            "własna strona",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/p/Kebab-and-Gyros-Legnica-100064753820065/"
+            }
+        ]
+    },
+    {
+        "name": "Bejrut Restauracja libańska",
+        "image": "kebab-place/bejrut-kebab.jpg",
+        "address": "Piłsudskiego 18",
+        "latitude": "51.205138423988146",
+        "longitude": "16.185351536443285",
+        "google_maps_url": "https://g.co/kgs/HcJyfbm",
+        "phone": "696 727 433",
+        "website": null,
+        "email": "nasim68@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "02:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "02:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "00:00"
+            }
+        ],
+        "fillings": [
+            3,
+            9,
+            4
+        ],
+        "sauces": [
+            6,
+            7,
+            5,
+            14
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": []
+    },
+    {
+        "name": "Lara Döner Kebab Legnica",
+        "image": "kebab-place/lara-doner-kebab.jpg",
+        "address": "Wrocławska 13",
+        "latitude": "51.20959448358735",
+        "longitude": "16.167796240447224",
+        "google_maps_url": "https://maps.app.goo.gl/SnyJ9bbT3jPEXL5FA",
+        "phone": "661 037 017",
+        "website": null,
+        "email": "patrycja2194@wp.pl",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "22:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5
+        ],
+        "sauces": [
+            3,
+            6,
+            13,
+            1,
+            15
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/share/1CzDQ4ZJHj/?mibextid=wwXIfr"
+            }
+        ]
+    },
+    {
+        "name": "Zahir Kebab Kolejowa",
+        "image": "kebab-place/zahir-kebab-kolejowa.jpg",
+        "address": "Kolejowa 3",
+        "latitude": "51.21231665915741",
+        "longitude": "16.1686792330936",
+        "google_maps_url": "https://maps.app.goo.gl/HN9mKrMTFiJ9oE76A",
+        "phone": "577 122 801",
+        "website": "https://zahirkebab.pl/lokale/legnica/legnica-kolejowa/",
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "02:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "02:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "11:00",
+                "to": "00:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5
+        ],
+        "sauces": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": []
+    },
+    {
+        "name": "Bafra Kebab Złotoryjska",
+        "image": "kebab-place/bafra-kebab-zlotoryjska.jpg",
+        "address": "Złotoryjska 170",
+        "latitude": "51.19281402860933",
+        "longitude": "16.128722115045626",
+        "google_maps_url": "https://maps.app.goo.gl/oJVjA3zeZrZeumRu8",
+        "phone": "575 245 777",
+        "website": "https://www.bafrakebablegnica.pl/restauracja/bafra-kebab-zlotoryjska",
+        "android": "https://play.google.com/store/apps/details?id=com.restaumatic.bafra_kebab_legnica_2_production",
+        "email": "bafralegnica@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "11:00",
+                "to": "20:00"
+            }
+        ],
+        "fillings": [
+            11,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            6,
+            7,
+            3,
+            16,
+            5
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "buda",
+        "order_options": [
+            "przez telefon",
+            "własna strona",
+            "własna aplikacja",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/bafrakebablegnica2/"
+            },
+            {
+                "name": "ig",
+                "url": "https://www.instagram.com/bafra_kebab_legnica/"
+            }
+        ]
+    },
+    {
+        "name": "Bafra Kebab Gwiezdna",
+        "image": "kebab-place/bafra-kebab-gwiezdna.jpg",
+        "address": "Gwiezdna 4",
+        "latitude": "51.208439469019005",
+        "longitude": "16.181745589916925",
+        "google_maps_url": "https://maps.app.goo.gl/wgtYCwa6YsP7mqf78",
+        "phone": "793 142 594",
+        "website": "https://www.bafrakebablegnica.pl/restauracja/bafra-kebab-gwiezdna",
+        "android": "https://play.google.com/store/apps/details?id=com.restaumatic.bafra_kebab_legnica_2_production",
+        "email": "bafralegnica@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "11:00",
+                "to": "20:00"
+            }
+        ],
+        "fillings": [
+            11,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            6,
+            7,
+            3,
+            16,
+            5
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "buda",
+        "order_options": [
+            "przez telefon",
+            "własna strona",
+            "własna aplikacja",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/bafralegnica/"
+            },
+            {
+                "name": "ig",
+                "url": "https://www.instagram.com/bafra_kebab_legnica/"
+            }
+        ]
+    },
+    {
+        "name": "Had Food",
+        "image": "kebab-place/had-food.jpg",
+        "address": "Fabryczna 13",
+        "latitude": "51.20677303064106",
+        "longitude": "16.17869613057113",
+        "google_maps_url": "https://maps.app.goo.gl/RnXjLTGHRiQ14vXDA",
+        "phone": "573 677 536",
+        "website": "https://www.hadfood-legnica.pl/",
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Wtorek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Środa",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Czwartek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Piątek",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Sobota",
+                "from": "12:00",
+                "to": "21:30"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "20:30"
+            }
+        ],
+        "fillings": [
+            3,
+            9,
+            4
+        ],
+        "sauces": [
+            3,
+            17,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": true,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "fb": "https://www.facebook.com/hadfoodlegnica/reels/"
+            },
+            {
+                "name": "ig",
+                "ig": "https://www.instagram.com/had_food_legnica/"
+            }
+        ]
+    },
+    {
+        "name": "AM AM Kebab",
+        "image": "kebab-place/am-am-kebab.jpg",
+        "address": "Wrocławska 155",
+        "latitude": "51.20952045769188",
+        "longitude": "16.187051359374788",
+        "google_maps_url": "https://maps.app.goo.gl/iaBdt1vkkTZmgE6u7",
+        "phone": "531 877 968",
+        "website": null,
+        "email": "amamkebab.legnica@gmail.com",
+        "opened_at_year": "2024",
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "11:00",
+                "to": "20:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            5
+        ],
+        "sauces": [
+            5,
+            6,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl",
+            "glovo"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/amam.kebab.lca/"
+            }
+        ]
+    },
+    {
+        "name": "Hallo Kebap",
+        "image": "kebab-place/hallo-kebap.jpg",
+        "address": "Czarnieckiego 19c",
+        "latitude": "51.21170885367406",
+        "longitude": "16.175237588475987",
+        "google_maps_url": "https://maps.app.goo.gl/kuUMqSf1FScGcpDu5",
+        "phone": null,
+        "website": null,
+        "email": null,
+        "opened_at_year": "2024",
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "22:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "00:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "10:00",
+                "to": "22:00"
+            }
+        ],
+        "fillings": [
+            4,
+            9
+        ],
+        "sauces": [
+            3,
+            1,
+            18,
+            19,
+            20,
+            21
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/people/Hallo-Kebap-Legnica/61560832913919/"
+            }
+        ]
+    },
+    {
+        "name": "MAXI Kebab",
+        "image": "kebab-place/maxi-kebab.jpg",
+        "address": "Piłsudskiego 84",
+        "latitude": "51.20140320728768",
+        "longitude": "16.214000840314657",
+        "google_maps_url": "https://maps.app.goo.gl/zhSzNDgdpmw18MQq5",
+        "phone": "883 118 848",
+        "website": null,
+        "email": "joana2105@wp.pl",
+        "opened_at_year": "2024",
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Środa",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "11:30",
+                "to": "20:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": null,
+                "to": null
+            }
+        ],
+        "fillings": [],
+        "sauces": [],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "buda",
+        "order_options": [
+            "przez telefon"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/people/MAXI-Kebab-Legnica/61559822421040/"
+            }
+        ]
+    },
+    {
+        "name": "Kebab Truck",
+        "image": "kebab-place/kebab-truck.jpg",
+        "address": "Iwaszkiewicza 1",
+        "latitude": "51.20792723252704",
+        "longitude": "16.21341613253819",
+        "google_maps_url": "https://maps.app.goo.gl/G8r4tk17dVR3Hx5W9",
+        "phone": "735 602 702",
+        "website": null,
+        "email": "www.kebabtruck@wp.pl",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "19:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": null,
+                "to": null
+            }
+        ],
+        "fillings": [
+            12,
+            11
+        ],
+        "sauces": [
+            1,
+            3,
+            6,
+            13
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "buda",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/KEBABTRUCK/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "MIX Kebab",
+        "image": "kebab-place/mix-kebab.jpg",
+        "address": "Wrocławska 23A",
+        "latitude": "51.20922454986468",
+        "longitude": "16.169298227052437",
+        "google_maps_url": "https://maps.app.goo.gl/Qmt449kF1UguW1c68",
+        "phone": "576 765 815",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "11:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "11:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Środa",
+                "from": "11:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "11:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "11:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "12:00",
+                "to": "21:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": "12:00",
+                "to": "21:00"
+            }
+        ],
+        "fillings": [
+            3,
+            4,
+            13,
+            6
+        ],
+        "sauces": [
+            3,
+            6,
+            7
+        ],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [
+            "przez telefon",
+            "pyszne.pl"
+        ],
+        "social_media": []
+    },
+    {
+        "name": "Rulo Kebab",
+        "image": "kebab-place/rulo-kebab.jpg",
+        "address": "Nowy Świat",
+        "latitude": "51.205128470632545",
+        "longitude": "16.1545378995454",
+        "google_maps_url": "https://maps.app.goo.gl/QHozQGXuoWRrd7US7",
+        "phone": "669 721 401",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "buda",
+        "order_options": [],
+        "social_media": [
+            {
+                "fb": "https://www.facebook.com/RuloKebab/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Queen Kebab Asnyka",
+        "image": "kebab-place/queen-kebab-asnyka.jpeg",
+        "address": "Asnyka 18d",
+        "latitude": "51.20133491074013",
+        "longitude": "16.141212683191867",
+        "google_maps_url": null,
+        "phone": "605 674 302",
+        "website": null,
+        "email": "annarybaczyk@wp.pl",
+        "opened_at_year": null,
+        "closed_at_year": 2022,
+        "opening_hours": null,
+        "fillings": [
+            5,
+            14
+        ],
+        "sauces": [
+            1,
+            3,
+            5,
+            6,
+            7
+        ],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Queen Kebab Piłsudskiego",
+        "image": "kebab-place/queen-kebab-pilsudskiego.jpeg",
+        "address": "Piłsudskiego 84",
+        "latitude": "51.20140320728768",
+        "longitude": "16.214000840314657",
+        "google_maps_url": null,
+        "phone": "796 145 169",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "buda",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/p/Queen-Kebab-Legnica-100063609152357/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Euro Döner Kebab / Dünya Döner Kebab",
+        "image": "kebab-place/euro-doner.jpg",
+        "address": "Rynek 32",
+        "latitude": "51.20777731965639",
+        "longitude": "16.160579600694",
+        "google_maps_url": "https://maps.app.goo.gl/VGBSaBjifFwoZ5jt9",
+        "phone": null,
+        "website": null,
+        "email": null,
+        "opened_at_year": "2012",
+        "closed_at_year": "2021",
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/DunyaDonerKebabLegnica/?locale=pl_PL"
+            }
+        ]
+    },
+    {
+        "name": "Kebab Empire",
+        "image": "kebab-place/kebab-empire.jpg",
+        "address": "Fabryczna 13",
+        "latitude": "51.20677303064106",
+        "longitude": "16.17869613057113",
+        "google_maps_url": "https://maps.app.goo.gl/X7hFNX8eWv5KnMn1A",
+        "phone": "573 683 905",
+        "website": null,
+        "email": "kebabmarklubin@gmail.com",
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [],
+        "fillings": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "sauces": [
+            3,
+            5,
+            6,
+            7
+        ],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/p/Kebab-Empire-Legnica-100086383969163/"
+            }
+        ]
+    },
+    {
+        "name": "Kebab Mark",
+        "image": "kebab-place/kebab-mark.jpg",
+        "address": "Fabryczna 13",
+        "latitude": "51.20677303064106",
+        "longitude": "16.17869613057113",
+        "google_maps_url": null,
+        "phone": "573 683 905",
+        "website": null,
+        "email": null,
+        "opened_at_year": "2022",
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "Chili Blue",
+        "address": "Batalionu „Zośka” 36a",
+        "latitude": "51.19930113838938",
+        "longitude": "16.219397530166724",
+        "google_maps_url": "https://maps.app.goo.gl/9FmhqTjCsL22U6oB7",
+        "phone": null,
+        "website": null,
+        "email": null,
+        "opened_at_year": "2022",
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": true,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "Botan Kebab",
+        "image": "kebab-place/botan-kebab.png",
+        "address": "Chojnowska 21A",
+        "latitude": "51.207171497698724",
+        "longitude": "16.15698843481341",
+        "google_maps_url": "https://maps.app.goo.gl/ySZMFoxX5kMzhE3eA",
+        "phone": "768545664",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "Kebab House",
+        "image": "kebab-place/kebab-house.jpg",
+        "address": "Hutników 23",
+        "latitude": "51.20523547984742",
+        "longitude": "16.150942551540048",
+        "google_maps_url": "https://maps.app.goo.gl/NgVkHPmpWFUFvQLP9",
+        "phone": "669406095",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "KEBAB Sphinx",
+        "image": "kebab-place/sphinx-kebab.jpg",
+        "address": "Najświętszej Marii Panny",
+        "latitude": "51.209281018102246",
+        "longitude": "16.16491389168841",
+        "google_maps_url": null,
+        "phone": "574 179 918",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": "2020",
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": [
+            {
+                "name": "fb",
+                "url": "https://www.facebook.com/people/Kebab-Sphinx-Legnica/100064028922914/"
+            }
+        ]
+    },
+    {
+        "name": "Kebabowo",
+        "image": "kebab-place/kebabowo.jpg",
+        "address": "Marsa Pawilon",
+        "latitude": "51.206183035565644",
+        "longitude": "16.191148257671063",
+        "google_maps_url": "https://maps.app.goo.gl/ANqDZ8cop8uf45UQ8",
+        "phone": "780519788",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": null,
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "Karmnik",
+        "address": "Wrocławska 10A",
+        "latitude": "51.209807033960686",
+        "longitude": "16.168548395615964",
+        "google_maps_url": "https://maps.app.goo.gl/DzMrgmFr65HS5cbL7",
+        "phone": null,
+        "website": null,
+        "email": null,
+        "opened_at_year": "2025",
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Środa",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "01:00",
+                "to": "20:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": null,
+                "to": null
+            }
+        ],
+        "fillings": [],
+        "sauces": [],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "King Kebab",
+        "image": "kebab-place/king-kebab.jpg",
+        "address": "Pocztowa 5",
+        "latitude": "51.212185928118465",
+        "longitude": "16.16581084232893",
+        "google_maps_url": "https://maps.app.goo.gl/FCps6GZRGy2ZBTiM8",
+        "phone": "697 483 834",
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [],
+        "fillings": [],
+        "sauces": [],
+        "status": "zamknięte",
+        "is_craft": false,
+        "is_chain_restaurant": false,
+        "location_type": "lokal",
+        "order_options": [],
+        "social_media": []
+    },
+    {
+        "name": "Kurczak z rożna Franciszkańska",
+        "image": "kebab-place/kurczak-z-rozna.jpg",
+        "address": "Pocztowa 5",
+        "latitude": "51.20728291605775",
+        "longitude": "16.15196427301321",
+        "google_maps_url": "https://maps.app.goo.gl/VBTCViMjhgujzfgy9",
+        "phone": null,
+        "website": null,
+        "email": null,
+        "opened_at_year": null,
+        "closed_at_year": null,
+        "opening_hours": [
+            {
+                "day": "Poniedziałek",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Wtorek",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Środa",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Czwartek",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Piątek",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Sobota",
+                "from": "10:00",
+                "to": "18:00"
+            },
+            {
+                "day": "Niedziela",
+                "from": null,
+                "to": null
+            }
+        ],
+        "fillings": [
+            1,
+            2
+        ],
+        "sauces": [],
+        "status": "otwarte",
+        "is_craft": false,
+        "is_chain_restaurant": true,
+        "location_type": "buda",
+        "order_options": [],
+        "social_media": []
+    }
+]

@@ -1,14 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Suggestion;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class SuggestionController extends Controller
 {
-
     public function index(): JsonResponse
     {
         return response()->json(Suggestion::all());
@@ -19,10 +20,11 @@ class SuggestionController extends Controller
         $suggestion = new Suggestion();
         $suggestion->name = $request->name;
         $suggestion->description = $request->description;
-        $suggestion->status = 'pending';
+        $suggestion->status = "pending";
         $suggestion->user_id = auth()->user()->id;
         $suggestion->kebab_place_id = $request->kebabPlace;
         $suggestion->save();
+
         return response()->json("Dodano sugestie", 201);
     }
 
@@ -30,6 +32,7 @@ class SuggestionController extends Controller
     {
         $suggestion->status = $request->status;
         $suggestion->save();
+
         return response()->json("Zaktualizowano status");
     }
 

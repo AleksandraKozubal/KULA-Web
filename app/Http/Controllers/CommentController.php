@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -17,7 +19,7 @@ class CommentController extends Controller
     {
         if (!auth()->user()) {
             return response()->json([
-                'message' => 'Unauthorized'
+                "message" => "Unauthorized",
             ], 401);
         }
 
@@ -28,9 +30,10 @@ class CommentController extends Controller
         $comment->save();
 
         return response()->json([
-            'message' => 'Dodano komentarz',
+            "message" => "Dodano komentarz",
         ]);
     }
+
     public function show(Comment $comment): JsonResponse
     {
         return response()->json_encode($comment);
@@ -40,7 +43,7 @@ class CommentController extends Controller
     {
         if (!auth()->user()) {
             return response()->json([
-                'message' => 'Unauthorized'
+                "message" => "Unauthorized",
             ], 401);
         }
 
@@ -48,35 +51,38 @@ class CommentController extends Controller
 
         if (!$comment || $comment->user_id !== auth()->user()->id) {
             return response()->json([
-                'message' => 'Unauthorized'
+                "message" => "Unauthorized",
             ], 401);
         }
 
-        if ($request->has('content')) {
+        if ($request->has("content")) {
             $comment->content = $request->content;
             $comment->save();
         }
 
         return response()->json([
-            'message' => 'Edytowano komentarz'
+            "message" => "Edytowano komentarz",
         ]);
     }
+
     public function destroy(Request $request): JsonResponse
     {
         if (!auth()->user()) {
             return response()->json([
-                'message' => 'Unauthorized'
+                "message" => "Unauthorized",
             ], 401);
         }
         $comment = Comment::find($request->comment);
+
         if ($comment->user_id !== auth()->user()->id) {
             return response()->json([
-                'message' => 'Unauthorized'
+                "message" => "Unauthorized",
             ], 401);
         }
         $comment->delete();
+
         return response()->json([
-            'message' => 'Komentarz usunięty'
+            "message" => "Komentarz usunięty",
         ]);
     }
 }

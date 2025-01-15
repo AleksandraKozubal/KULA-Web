@@ -1,47 +1,51 @@
 <?php
 
+declare(strict_types=1);
+
+use App\Providers\AppServiceProvider;
+use App\Providers\AuthServiceProvider;
+use App\Providers\EventServiceProvider;
+use App\Providers\Filament\AdminPanelProvider;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-    'name' => env('APP_NAME', 'Laravel'),
+    "name" => env("APP_NAME", "Laravel"),
 
-    'env' => env('APP_ENV', 'production'),
+    "env" => env("APP_ENV", "production"),
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    "debug" => (bool)env("APP_DEBUG", false),
 
-    'url' => env('APP_URL', 'http://localhost'),
+    "url" => env("APP_URL", "http://localhost"),
 
-    'asset_url' => env('ASSET_URL'),
+    "asset_url" => env("ASSET_URL"),
 
-    'timezone' => 'Europe/Warsaw',
+    "timezone" => "Europe/Warsaw",
 
-    'locale' => 'pl',
+    "locale" => "pl",
 
-    'fallback_locale' => 'en',
+    "fallback_locale" => "en",
 
-    'faker_locale' => 'pl',
+    "faker_locale" => "pl",
 
-    'key' => env('APP_KEY'),
+    "key" => env("APP_KEY"),
 
-    'cipher' => 'AES-256-CBC',
+    "cipher" => "AES-256-CBC",
 
-    'maintenance' => [
-        'driver' => 'file',
+    "maintenance" => [
+        "driver" => "file",
         // 'store' => 'redis',
     ],
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+    "providers" => ServiceProvider::defaultProviders()->merge([
+        AppServiceProvider::class,
+        AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\Filament\AdminPanelProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        EventServiceProvider::class,
+        AdminPanelProvider::class,
+        RouteServiceProvider::class,
     ])->toArray(),
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
-
+    "aliases" => Facade::defaultAliases()->merge([])->toArray(),
 ];

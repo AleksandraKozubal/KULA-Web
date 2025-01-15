@@ -1,33 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Favorites;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Auth\Access\AuthorizationException;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class FavoritesController extends Controller
 {
     public function index(User $user): JsonResponse
     {
-        return response()->json_encode(Favorites::where('user_id', $user->id)->get());
+        return response()->json_encode(Favorites::where("user_id", $user->id)->get());
     }
 
     public function store(Request $request): JsonResponse
     {
-
         $userId = auth()->id();
         $kebabPlaceId = $request->kebabPlace;
 
-        $existingFavorite = Favorites::where('user_id', $userId)
-            ->where('kebab_place_id', $kebabPlaceId)
+        $existingFavorite = Favorites::where("user_id", $userId)
+            ->where("kebab_place_id", $kebabPlaceId)
             ->first();
 
         if ($existingFavorite) {
-            return response()->json(['message' => 'Polubienie już istnieje'], 409);
+            return response()->json(["message" => "Polubienie już istnieje"], 409);
         }
 
         $favorite = new Favorites();
@@ -38,25 +37,21 @@ class FavoritesController extends Controller
         return response()->json($favorite, 201);
     }
 
-
     public function destroy(): JsonResponse
     {
-        $kebabPlaceId = request()->route('kebabPlace');
+        $kebabPlaceId = request()->route("kebabPlace");
         $userId = auth()->id();
 
-        $favorite = Favorites::where('user_id', $userId)
-            ->where('kebab_place_id', $kebabPlaceId)
+        $favorite = Favorites::where("user_id", $userId)
+            ->where("kebab_place_id", $kebabPlaceId)
             ->first();
 
         if ($favorite) {
             $favorite->delete();
         } else {
-            return response()->json(['message' => 'Nie znaleziono polubienia'], 404);
+            return response()->json(["message" => "Nie znaleziono polubienia"], 404);
         }
 
-        return response()->json(['message' => 'Polubienie usunięte']);
+        return response()->json(["message" => "Polubienie usunięte"]);
     }
-
-
-
 }

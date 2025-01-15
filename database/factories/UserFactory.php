@@ -1,19 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Enums\Role;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends User
  */
 class UserFactory extends Factory
 {
-    protected static ?string $password;
-
     /**
      * @return array<string, mixed>
      */
@@ -32,8 +33,10 @@ class UserFactory extends Factory
 
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
+        return $this->state(fn(array $attributes) => [
+            "email_verified_at" => null,
         ]);
     }
+
+    protected static ?string $password;
 }

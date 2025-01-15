@@ -1,0 +1,67 @@
+[
+  {
+    "name": "gyros",
+    "is_vege": false,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "ser żółty",
+    "is_vege": true,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "kurczak",
+    "is_vege": false,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "mieszane",
+    "is_vege": false,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "wołowina",
+    "is_vege": false,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "falafel",
+    "is_vege": true,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "kraftowe",
+    "is_vege": false,
+    "hex_color": "#ff0000"
+  },
+  {
+    "name": "karkówka",
+    "is_vege": false,
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "wołowo-baranie",
+    "is_vege": false,
+    "hex_color": "#ff00ff"
+  },
+  {
+    "name": "baranina",
+    "is_vege": false,
+    "hex_color": "#00ff00"
+  },
+  {
+    "name": "drobiowe",
+    "is_vege": false,
+    "hex_color": "#00ffff"
+  },
+  {
+    "name": "wieprzowo-wołowe",
+    "is_vege": false,
+    "hex_color": "#0000ff"
+  },
+  {
+    "name": "wieprzowe",
+    "is_vege": false,
+    "hex_color": "#ff0000"
+  }
+]
