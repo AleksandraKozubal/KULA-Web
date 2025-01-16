@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    "default" => env("BROADCAST_DRIVER", "pusher"), // Changed from "null" to "pusher"
+    "default" => env("BROADCAST_DRIVER", "pusher"),
 
     "connections" => [
         "pusher" => [
@@ -38,6 +38,18 @@ return [
 
         "null" => [
             "driver" => "null",
+        ],
+
+        "reverb" => [
+            "driver" => "reverb",
+            "key" => env("REVERB_APP_KEY"),
+            "secret" => env("REVERB_APP_SECRET"),
+            "app_id" => env("REVERB_APP_ID"),
+            "options" => [
+                "host" => env("REVERB_HOST", "localhost"),
+                "port" => env("REVERB_PORT", 8080),
+                "scheme" => env("REVERB_SCHEME", "http"),
+            ],
         ],
     ],
 ];
