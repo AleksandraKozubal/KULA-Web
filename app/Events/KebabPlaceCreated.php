@@ -24,9 +24,7 @@ class KebabPlaceCreated implements ShouldBroadcast
 
     public function broadcastOn(): array
     {
-        return [
-            new PrivateChannel('kebab-places'),
-        ];
+        return new Channel('kebab-places');
     }
 
     public function broadcastWith(): array
