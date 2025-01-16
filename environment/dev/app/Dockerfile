@@ -60,6 +60,7 @@ RUN apt-get update \
     intl \
     bcmath \
     calendar \
+    pcntl \
     && docker-php-ext-enable \
     redis
 

@@ -41,7 +41,7 @@ return [
     "providers" => ServiceProvider::defaultProviders()->merge([
         AppServiceProvider::class,
         AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         EventServiceProvider::class,
         AdminPanelProvider::class,
         RouteServiceProvider::class,

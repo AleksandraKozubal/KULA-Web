@@ -6,9 +6,9 @@ namespace App\Filament\Resources;
 
 use App\Enums\KebabPlaceLocationType;
 use App\Enums\KebabPlaceStatus;
-use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\CreateKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\EditKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\ListKebabPlace;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
