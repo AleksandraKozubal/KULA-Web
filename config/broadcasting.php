@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    "default" => env("BROADCAST_DRIVER", "null"),
+    "default" => env("BROADCAST_DRIVER", "pusher"), // Changed from "null" to "pusher"
 
     "connections" => [
         "pusher" => [
