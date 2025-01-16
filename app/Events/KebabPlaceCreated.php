@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
+use App\Models\KebabPlace;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,15 +15,29 @@ class KebabPlaceCreated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $kebabPlace;
+    public KebabPlace $kebabPlace;
 
-    public function __construct($kebabPlace)
+    public function __construct(KebabPlace $kebabPlace)
     {
         $this->kebabPlace = $kebabPlace;
     }
 
-    public function broadcastOn()
+    public function broadcastOn(): array
     {
-        return new Channel('kebab-place-created');
+        return [
+            new PrivateChannel('kebab-places'),
+        ];
+    }
+
+    public function broadcastWith(): array
+    {
+        return [
+            'id' => $this->kebabPlace->id,
+            'name' => $this->kebabPlace->name,
+            'location' => [
+                'latitude' => $this->kebabPlace->latitude,
+                'longitude' => $this->kebabPlace->longitude,
+            ],
+        ];
     }
 }
