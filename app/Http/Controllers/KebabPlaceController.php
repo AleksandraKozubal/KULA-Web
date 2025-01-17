@@ -13,7 +13,6 @@ use App\Models\KebabPlace;
 use App\Models\Sauce;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -30,7 +29,7 @@ class KebabPlaceController extends Controller
         $kebabPlaces = KebabPlace::query()
             ->when($ffillings, fn($query): Builder => $query->whereJsonContains("fillings", $ffillings))
             ->when($fsauces, fn($query): Builder => $query->whereJsonContains("sauces", $fsauces))
-            ->when($fkraft, fn($query):Builder => $query->where("is_craft", $fkraft))
+            ->when($fkraft, fn($query): Builder => $query->where("is_craft", $fkraft))
             ->orderBy($sby, $sdirection)
             ->paginate($paginate);
 
