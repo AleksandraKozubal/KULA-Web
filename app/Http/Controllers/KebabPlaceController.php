@@ -12,6 +12,8 @@ use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -25,12 +27,12 @@ class KebabPlaceController extends Controller
         $ffillings = $request->ffillings ? json_decode($request->ffillings, true) : null;
         $fsauces = $request->fsauces ? json_decode($request->fsauces, true) : null;
         $fkraft = $request->fkraft ?? null;
-        $kebabPlaces = KebabPlace::
-                when($ffillings, fn($query) => $query->whereJsonContains("fillings", $ffillings))
-                    ->when($fsauces, fn($query) => $query->whereJsonContains("sauces", $fsauces))
-                    ->when($fkraft, fn($query) => $query->where("is_craft", $fkraft))
-                    ->orderBy($sby, $sdirection)
-                    ->paginate($paginate);
+        $kebabPlaces = KebabPlace::query()
+            ->when($ffillings, fn($query): Builder => $query->whereJsonContains("fillings", $ffillings))
+            ->when($fsauces, fn($query): Builder => $query->whereJsonContains("sauces", $fsauces))
+            ->when($fkraft, fn($query):Builder => $query->where("is_craft", $fkraft))
+            ->orderBy($sby, $sdirection)
+            ->paginate($paginate);
 
         if (auth()->check()) {
             foreach ($kebabPlaces as $kebabPlace) {
