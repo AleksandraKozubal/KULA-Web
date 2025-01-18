@@ -11,43 +11,8 @@
         "email": "cyrus@cyrus.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "22:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [22,22,22,22,0,0,22],
         "fillings": [
             4,
             5,
@@ -86,43 +51,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "17:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [19,19,19,19,19,18,17],
         "fillings": [
             1,
             2
@@ -152,7 +82,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [
             3,
             4,
@@ -192,43 +123,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "23:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [23,23,23,23,23,23,23],
         "fillings": [
             3,
             4,
@@ -273,43 +169,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "00:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [0,0,0,0,0,0,0],
         "fillings": [
             3,
             4,
@@ -353,43 +214,8 @@
         "email": "piripirilegnica@gmail.com",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "11:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "11:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Środa",
-                "from": "11:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "11:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "22:00"
-            }
-        ],
+        "open_from": [11,11,11,11,11,11,12],
+        "open_to": [22,22,22,22,23,23,22],
         "fillings": [
             3,
             8,
@@ -438,43 +264,8 @@
         "email": "kizilelma.sp.z.o.o@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Środa",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "11:00",
-                "to": "23:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "11:00",
-                "to": "01:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "11:00",
-                "to": "01:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "23:00"
-            }
-        ],
+        "open_from": [11,11,11,11,11,11,12],
+        "open_to": [23,23,23,23,1,1,23],
         "fillings": [
             3,
             5,
@@ -509,43 +300,8 @@
         "email": "kavovarka2023@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "20:30"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "20:30"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [20.5,20.5,20.5,20.5,20.5,20.5,20.5],
         "fillings": [
             9
         ],
@@ -578,43 +334,8 @@
         "email": "kinghousekebab@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": null,
-                "to": null
-            },
-            {
-                "day": "Wtorek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Środa",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Czwartek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Piątek",
-                "from": "12:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "12:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "21:00"
-            }
-        ],
+        "open_from": [null,12,12,12,12,12,12],
+        "open_to": [null,21.5,21.5,21.5,0,0,21],
         "fillings": [
             10,
             3,
@@ -658,43 +379,8 @@
         "email": "mirer23@interia.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": null,
-                "to": null
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,null],
+        "open_to": [20,20,20,20,20,20,null],
         "fillings": [
             3,
             4,
@@ -736,43 +422,8 @@
         "email": "nasim68@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "02:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "02:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "00:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [0,0,0,0,0,0,0],
         "fillings": [
             3,
             9,
@@ -807,43 +458,8 @@
         "email": "patrycja2194@wp.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "22:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,12],
+        "open_to": [22,22,22,22,22,22,22],
         "fillings": [
             3,
             4,
@@ -883,43 +499,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "02:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "02:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "11:00",
-                "to": "00:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,11],
+        "open_to": [0,0,0,0,2,2,0],
         "fillings": [
             3,
             4,
@@ -957,43 +538,8 @@
         "email": "bafralegnica@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "11:00",
-                "to": "20:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,11],
+        "open_to": [21,21,21,21,21,21,20],
         "fillings": [
             11,
             4,
@@ -1042,43 +588,8 @@
         "email": "bafralegnica@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "11:00",
-                "to": "20:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,11],
+        "open_to": [21,21,21,21,21,21,20],
         "fillings": [
             11,
             4,
@@ -1126,43 +637,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Wtorek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Środa",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Czwartek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Piątek",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Sobota",
-                "from": "12:00",
-                "to": "21:30"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "20:30"
-            }
-        ],
+        "open_from": [12,12,12,12,12,12,12],
+        "open_to": [21.5,21.5,21.5,21.5,21.5,21.5,20.5],
         "fillings": [
             3,
             9,
@@ -1204,43 +680,8 @@
         "email": "amamkebab.legnica@gmail.com",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "11:00",
-                "to": "20:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,11],
+        "open_to": [20,20,20,20,20,20,20],
         "fillings": [
             3,
             4,
@@ -1279,43 +720,8 @@
         "email": null,
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "22:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "00:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "10:00",
-                "to": "22:00"
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,10],
+        "open_to": [22,22,22,22,0,0,22],
         "fillings": [
             4,
             9
@@ -1355,43 +761,8 @@
         "email": "joana2105@wp.pl",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Środa",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "11:30",
-                "to": "20:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": null,
-                "to": null
-            }
-        ],
+        "open_from": [11.5,11.5,11.5,11.5,11.5,11.5,null],
+        "open_to": [20,20,20,20,20,20,null],
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -1420,43 +791,8 @@
         "email": "www.kebabtruck@wp.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "19:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": null,
-                "to": null
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,null],
+        "open_to": [19,19,19,19,19,19,null],
         "fillings": [
             12,
             11
@@ -1494,43 +830,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "11:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "11:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Środa",
-                "from": "11:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "11:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "11:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "12:00",
-                "to": "21:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": "12:00",
-                "to": "21:00"
-            }
-        ],
+        "open_from": [11,11,11,11,11,12,12],
+        "open_to": [21,21,21,21,21,21,21],
         "fillings": [
             3,
             4,
@@ -1564,7 +865,6 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1590,7 +890,8 @@
         "email": "annarybaczyk@wp.pl",
         "opened_at_year": null,
         "closed_at_year": 2022,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [
             5,
             14
@@ -1626,7 +927,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1653,7 +955,8 @@
         "email": null,
         "opened_at_year": "2012",
         "closed_at_year": "2021",
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -1680,7 +983,8 @@
         "email": "kebabmarklubin@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [],
+        "open_from": null,
+        "open_to": null,
         "fillings": [
             3,
             4,
@@ -1717,7 +1021,8 @@
         "email": null,
         "opened_at_year": "2022",
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1738,7 +1043,8 @@
         "email": null,
         "opened_at_year": "2022",
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1760,7 +1066,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1782,7 +1089,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1804,7 +1112,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": "2020",
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1831,7 +1140,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": null,
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1852,43 +1162,8 @@
         "email": null,
         "opened_at_year": "2025",
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Środa",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "01:00",
-                "to": "20:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": null,
-                "to": null
-            }
-        ],
+        "open_from": [1,1,1,1,1,1,null],
+        "open_to": [20,20,20,20,20,20,null],
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -1910,7 +1185,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [],
+        "open_from": null,
+        "open_to": null,
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1932,43 +1208,8 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours": [
-            {
-                "day": "Poniedziałek",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Wtorek",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Środa",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Czwartek",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Piątek",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Sobota",
-                "from": "10:00",
-                "to": "18:00"
-            },
-            {
-                "day": "Niedziela",
-                "from": null,
-                "to": null
-            }
-        ],
+        "open_from": [10,10,10,10,10,10,null],
+        "open_to": [18,18,18,18,18,18,null],
         "fillings": [
             1,
             2

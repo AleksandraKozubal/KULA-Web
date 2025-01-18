@@ -25,15 +25,16 @@ return new class() extends Migration {
             $table->string("email")->nullable();
             $table->smallInteger("opened_at_year")->nullable();
             $table->smallInteger("closed_at_year")->nullable();
-            $table->json("opening_hours");
-            $table->json("fillings")->nullable();
-            $table->json("sauces")->nullable();
+            $table->text("open_from")->nullable();
+            $table->text("open_to")->nullable();
+            $table->json("fillings")->nullable()->default(json_encode([]));
+            $table->json("sauces")->nullable()->default(json_encode([]));
             $table->string("status");
             $table->boolean("is_craft")->nullable();
             $table->boolean("is_chain_restaurant")->nullable();
             $table->string("location_type");
-            $table->json("order_options");
-            $table->json("social_media");
+            $table->json("order_options")->default(json_encode([]));
+            $table->json("social_media")->default(json_encode([]));
             $table->timestamps();
         });
     }

@@ -31,42 +31,11 @@ class KebabPlaceFactory extends Factory
             "email" => fake()->optional()->email(),
             "opened_at_year" => fake()->year(),
             "closed_at_year" => fake()->optional()->year(),
-            "opening_hours" => [
-                [
-                    "day" => "poniedziałek",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "wtorek",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "środa",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "czwartek",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "piątek",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "sobota",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
-                [
-                    "day" => "niedziela",
-                    "from" => "10:00",
-                    "to" => "22:00",
-                ],
+            "open_from" => [
+                10,10,10,10,10,10,10
+            ],
+            "open_to" => [
+                22,22,22,22,22,22,22
             ],
             "fillings" => fake()->randomElements(Filling::all()->pluck("id"), fake()->numberBetween(1, 3)),
             "sauces" => fake()->randomElements(Sauce::all()->pluck("id"), fake()->numberBetween(0, 5)),
