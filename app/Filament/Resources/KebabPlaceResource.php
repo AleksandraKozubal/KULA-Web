@@ -236,7 +236,7 @@ class KebabPlaceResource extends Resource
                     ->boolean(),
                 RatingStar::make("google_maps_rating")
                     ->label("Ocena Google Maps")
-                    ->size('sm')
+                    ->size("sm")
                     ->searchable(),
             ])
             ->filters([
