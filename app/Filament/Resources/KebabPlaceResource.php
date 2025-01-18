@@ -31,6 +31,12 @@ use Filament\Tables\Table;
 
 class KebabPlaceResource extends Resource
 {
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -66,8 +72,8 @@ class KebabPlaceResource extends Resource
                                 ->label("Długość geograficzna")
                                 ->numeric()
                                 ->required(),
-                            TextInput::make("google_maps_url")
-                                ->label("Google Maps URL")
+                            TextInput::make("place_id")
+                                ->label("Google ID miejsca")
                                 ->maxLength(255),
                             TextInput::make("google_maps_rating")
                                 ->label("Google Maps Ocena")
@@ -131,10 +137,10 @@ class KebabPlaceResource extends Resource
                             ->maxLength(255),
                         Grid::make(2)->schema([
                             TextInput::make("android")
-                                ->label("Link do aplikacji na androida")
+                                ->label("Aplikacja android")
                                 ->maxLength(255),
                             TextInput::make("ios")
-                                ->label("Link do aplikacji na iOS")
+                                ->label("Aplikacja iOS")
                                 ->maxLength(255),
                         ]),
                     ]),
@@ -212,9 +218,17 @@ class KebabPlaceResource extends Resource
                     ->label("Nazwa")
                     ->searchable(),
                 Tables\Columns\ImageColumn::make("image")
-                    ->label("Zdjęcie"),
+                    ->label("Zdjęcie")
+                    ->square(),
                 TextColumn::make("status")
                     ->label("Status")
+                    ->badge()
+                    ->color(fn(KebabPlace $kebabPlace) => match ($kebabPlace->status) {
+                        "otwarte" => "success",
+                        "planowane" => "info",
+                        "zamknięte" => "danger",
+                        default => "warning",
+                    })
                     ->searchable(),
                 TextColumn::make("location_type")
                     ->label("Typ lokalizacji")
@@ -250,10 +264,4 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
-
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
 }

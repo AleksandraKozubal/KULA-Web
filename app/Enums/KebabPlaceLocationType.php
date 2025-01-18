@@ -8,14 +8,14 @@ use Filament\Support\Contracts\HasLabel;
 
 enum KebabPlaceLocationType: string implements HasLabel
 {
-    case dineIn = "lokal";
-    case foodStand = "buda";
+    case DineIn = "lokal";
+    case FoodStand = "buda";
 
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::dineIn => "Lokal",
-            self::foodStand => "Buda",
+            self::DineIn => "Lokal",
+            self::FoodStand => "Buda",
         };
     }
 }
