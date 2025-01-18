@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\SuggestionResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\BaseResource\Pages\BaseEditRecord;
-use App\Filament\Resources\SuggestionResource;
+use App\Filament\Resources\UserResource;
 use Filament\Actions;
 
-class EditSuggestion extends BaseEditRecord
+class EditUser extends BaseEditRecord
 {
-    protected static string $resource = SuggestionResource::class;
+    protected static string $resource = UserResource::class;
 
     protected function getHeaderActions(): array
     {
