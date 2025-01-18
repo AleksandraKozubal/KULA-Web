@@ -28,6 +28,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
 
 class KebabPlaceResource extends Resource
 {
@@ -230,12 +231,13 @@ class KebabPlaceResource extends Resource
                         default => "warning",
                     })
                     ->searchable(),
-                TextColumn::make("location_type")
-                    ->label("Typ lokalizacji")
-                    ->searchable(),
                 Tables\Columns\IconColumn::make("is_craft")
                     ->label("Mięso kraftowe")
                     ->boolean(),
+                RatingStar::make("google_maps_rating")
+                    ->label("Ocena Google Maps")
+                    ->size('sm')
+                    ->searchable(),
             ])
             ->filters([
                 TernaryFilter::make("is_craft")

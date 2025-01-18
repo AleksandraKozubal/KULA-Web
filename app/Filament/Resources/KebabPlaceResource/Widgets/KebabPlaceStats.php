@@ -9,7 +9,7 @@ use Filament\Widgets\ChartWidget;
 
 class KebabPlaceStats extends ChartWidget
 {
-    protected static ?string $heading = "Chart";
+    protected static ?string $heading = "Statusy kebabów";
 
     protected function getData(): array
     {
