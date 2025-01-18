@@ -8,17 +8,18 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class KebabPlaceCreated
+class KebabPlaceCreated implements ShouldBroadcast
 {
     public Model $kebabPlace;
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-
     public function __construct(Model $kebabPlace)
     {
         $this->kebabPlace = $kebabPlace;
+        \Log::info('KebabPlaceCreated event dispatched', ['kebabPlace' => $kebabPlace]);
     }
 
     /**
@@ -29,7 +30,12 @@ class KebabPlaceCreated
     public function broadcastOn(): array
     {
         return [
-            new Channel('kebab-place'),
+            new Channel('kebab-places'),
         ];
+    }
+
+    public function broadcastAs(): string
+    {
+        return 'KebabPlaceCreated';
     }
 }

@@ -19,7 +19,11 @@ return [
 
                 'cluster' => env('PUSHER_CLUSTER'),
 
+                'useTLS' => true,
+
                 'encrypted' => true,
+
+                'log' => true,
 
             ],
             "client_options" => [],
