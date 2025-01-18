@@ -35,4 +35,23 @@ class KebabPlaceStats extends ChartWidget
     {
         return "doughnut";
     }
+
+    protected function getOptions(): array
+    {
+        return [
+            "plugins" => [
+                "legend" => [
+                    "display" => true,
+                ],
+            ],
+            "scales" => [
+                "x" => [
+                    "display" => false,
+                ],
+                "y" => [
+                    "display" => false,
+                ],
+            ],
+        ];
+    }
 }
