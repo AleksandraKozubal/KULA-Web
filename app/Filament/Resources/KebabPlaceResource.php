@@ -25,7 +25,9 @@ use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
@@ -225,7 +227,7 @@ class KebabPlaceResource extends Resource
                 TextColumn::make("location_type")
                     ->label("Typ lokalizacji")
                     ->searchable(),
-                Tables\Columns\IconColumn::make("is_craft")
+                IconColumn::make("is_craft")
                     ->label("Mięso kraftowe")
                     ->boolean(),
             ])
@@ -240,10 +242,10 @@ class KebabPlaceResource extends Resource
                     ->placeholder("Wszystkie")
                     ->trueLabel("sieciówka")
                     ->falseLabel("indywidualna"),
-                Tables\Filters\SelectFilter::make("status")
+                SelectFilter::make("status")
                     ->label("Status")
                     ->options(KebabPlaceStatus::class),
-                Tables\Filters\SelectFilter::make("location_type")
+                SelectFilter::make("location_type")
                     ->label("Typ lokalizacji")
                     ->options(KebabPlaceLocationType::class),
             ])

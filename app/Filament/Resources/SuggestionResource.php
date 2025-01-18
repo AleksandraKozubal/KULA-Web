@@ -18,6 +18,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -118,17 +119,17 @@ class SuggestionResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make("status")
+                SelectFilter::make("status")
                     ->label("Status")
                     ->options(SuggestionStatus::class),
-                Tables\Filters\SelectFilter::make("user_id")
+                SelectFilter::make("user_id")
                     ->label("Użytkownik")
                     ->options(
                         User::all()
                             ->pluck("name", "id")
                             ->toArray(),
                     ),
-                Tables\Filters\SelectFilter::make("kebab_place_id")
+                SelectFilter::make("kebab_place_id")
                     ->label("Kebab")
                     ->options(
                         KebabPlace::all()
@@ -139,7 +140,7 @@ class SuggestionResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()->close(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
