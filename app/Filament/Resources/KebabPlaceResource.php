@@ -172,7 +172,7 @@ class KebabPlaceResource extends Resource
                                 TextInput::make("day")
                                     ->label("Dzień")
                                     ->disabled()
-                                    ->default(fn($state, $record, $index) => [
+                                    ->default(fn($state, $record, $index): string => [
                                         "Poniedziałek", "Wtorek", "Środa",
                                         "Czwartek", "Piątek", "Sobota", "Niedziela",
                                     ][$index]),
@@ -189,7 +189,7 @@ class KebabPlaceResource extends Resource
                                     ->seconds(false)
                                     ->nullable(),
                             ])
-                            ->default(fn() => collect([
+                            ->default(fn(): array => collect([
                                 ["day" => "Poniedziałek", "from" => null, "to" => null],
                                 ["day" => "Wtorek", "from" => null, "to" => null],
                                 ["day" => "Środa", "from" => null, "to" => null],
@@ -223,7 +223,7 @@ class KebabPlaceResource extends Resource
                 TextColumn::make("status")
                     ->label("Status")
                     ->badge()
-                    ->color(fn(KebabPlace $kebabPlace) => match ($kebabPlace->status) {
+                    ->color(fn(KebabPlace $kebabPlace): string => match ($kebabPlace->status) {
                         "otwarte" => "success",
                         "planowane" => "info",
                         "zamknięte" => "danger",
