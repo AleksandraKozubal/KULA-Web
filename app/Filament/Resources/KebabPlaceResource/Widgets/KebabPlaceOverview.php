@@ -24,13 +24,13 @@ class KebabPlaceOverview extends BaseWidget
                 TextColumn::make("name"),
                 RatingStar::make("google_maps_rating")
                     ->label("Ocena"),
-                //                TextColumn::make("status")->badge()
-                //                    ->color(fn(KebabPlace $kebabPlace): string => match ($kebabPlace->status) {
-                //                        "otwarte" => "success",
-                //                        "planowane" => "info",
-                //                        "zamknięte" => "danger",
-                //                        default => "warning",
-                //                    }),
+                TextColumn::make("status")->badge()
+                    ->color(fn(KebabPlace $kebabPlace): string => match ($kebabPlace->status) {
+                        "otwarte" => "success",
+                        "planowane" => "info",
+                        "zamknięte" => "danger",
+                        default => "warning",
+                    }),
             ])
             ->defaultPaginationPageOption(5);
     }
