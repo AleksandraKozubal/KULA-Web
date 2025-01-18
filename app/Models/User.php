@@ -36,7 +36,6 @@ class User extends Authenticatable implements FilamentUser
         "email",
         "password",
         "role",
-        "moderator",
         "active",
     ];
     protected $hidden = [
@@ -53,7 +52,7 @@ class User extends Authenticatable implements FilamentUser
     #[\Override]
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->active && ($this->isAdmin() || $this->isModerator());
+        return $this->active && ($this->isAdmin());
     }
 
     public function isAdmin(): bool
