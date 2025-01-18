@@ -20,12 +20,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserResource extends Resource
 {
-    protected static ?string $model = User::class;
-    protected static ?string $label = "użytkownika";
-    protected static ?string $pluralLabel = "Użytkownicy";
-    protected static ?string $navigationIcon = "heroicon-o-users";
-    protected static bool $hasTitleCaseModelLabel = false;
-
     public static function form(Form $form): Form
     {
         return $form
@@ -116,4 +110,10 @@ class UserResource extends Resource
     {
         return $record->role !== Role::Admin;
     }
+
+    protected static ?string $model = User::class;
+    protected static ?string $label = "użytkownika";
+    protected static ?string $pluralLabel = "Użytkownicy";
+    protected static ?string $navigationIcon = "heroicon-o-users";
+    protected static bool $hasTitleCaseModelLabel = false;
 }

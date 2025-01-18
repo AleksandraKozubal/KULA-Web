@@ -6,9 +6,9 @@ namespace App\Filament\Resources;
 
 use App\Enums\KebabPlaceLocationType;
 use App\Enums\KebabPlaceStatus;
-use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\CreateKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\EditKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\ListKebabPlace;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
@@ -33,12 +33,6 @@ use Filament\Tables\Table;
 
 class KebabPlaceResource extends Resource
 {
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
-
     public static function form(Form $form): Form
     {
         return $form
@@ -269,4 +263,10 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
+
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
 }
