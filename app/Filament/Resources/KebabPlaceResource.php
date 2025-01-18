@@ -31,6 +31,12 @@ use Filament\Tables\Table;
 
 class KebabPlaceResource extends Resource
 {
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -229,6 +235,17 @@ class KebabPlaceResource extends Resource
                     ->placeholder("Wszystkie")
                     ->trueLabel("Kraftowe")
                     ->falseLabel("Kula"),
+                TernaryFilter::make("is_chain_restaurant")
+                    ->label("Rodzaj marki")
+                    ->placeholder("Wszystkie")
+                    ->trueLabel("sieciówka")
+                    ->falseLabel("indywidualna"),
+                Tables\Filters\SelectFilter::make("status")
+                    ->label("Status")
+                    ->options(KebabPlaceStatus::class),
+                Tables\Filters\SelectFilter::make("location_type")
+                    ->label("Typ lokalizacji")
+                    ->options(KebabPlaceLocationType::class),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -250,10 +267,4 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
-
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
 }

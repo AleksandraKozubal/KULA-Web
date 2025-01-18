@@ -31,7 +31,6 @@ class Suggestion extends Model
         "kebab_place_id",
         "comment",
     ];
-
     protected $casts = [
         "status" => SuggestionStatus::class,
     ];

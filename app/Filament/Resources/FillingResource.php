@@ -20,6 +20,11 @@ use Filament\Tables\Table;
 
 class FillingResource extends Resource
 {
+    protected static ?string $model = Filling::class;
+    protected static ?string $label = "główny składnik";
+    protected static ?string $pluralLabel = "Główne składniki";
+    protected static ?string $navigationIcon = "heroicon-o-circle-stack";
+
     public static function form(Form $form): Form
     {
         return $form
@@ -55,6 +60,15 @@ class FillingResource extends Resource
                     ->label("Kolor")
                     ->sortable(),
             ])
+            ->filters([
+                Tables\Filters\TernaryFilter::make("is_vege")
+                    ->label("Czy wege")
+                    ->placeholder("Wszystkie")
+                    ->options([
+                        "true" => "tak",
+                        "false" => "nie",
+                    ]),
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
@@ -74,9 +88,4 @@ class FillingResource extends Resource
             "edit" => Pages\EditFilling::route("/{record}/edit"),
         ];
     }
-
-    protected static ?string $model = Filling::class;
-    protected static ?string $label = "główny składnik";
-    protected static ?string $pluralLabel = "Główne składniki";
-    protected static ?string $navigationIcon = "heroicon-o-circle-stack";
 }

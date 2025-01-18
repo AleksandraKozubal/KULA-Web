@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Enums\SuggestionStatus;
+use App\Http\Requests\SuggestionRequest;
 use App\Models\Suggestion;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class SuggestionController extends Controller
 {
@@ -15,45 +16,18 @@ class SuggestionController extends Controller
         return response()->json(Suggestion::all());
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(SuggestionRequest $request): JsonResponse
     {
-        $suggestion = new Suggestion();
-        $suggestion->name = $request->name;
-        $suggestion->description = $request->description;
-        $suggestion->status = "pending";
-        $suggestion->user_id = auth()->user()->id;
-        $suggestion->kebab_place_id = $request->kebabPlace;
-        $suggestion->save();
+        $request = $request->validated();
+
+        Suggestion::query()->create([
+            "name" => $request->name,
+            "description" => $request->description,
+            "kebab_place_id" => $request->kebabPlace,
+            "user_id" => auth()->user(),
+            "status" => SuggestionStatus::Pending,
+        ]);
 
         return response()->json("Dodano sugestie", 201);
-    }
-
-    public function updateState(Request $request, Suggestion $suggestion): JsonResponse
-    {
-        $suggestion->status = $request->status;
-        $suggestion->save();
-
-        return response()->json("Zaktualizowano status");
-    }
-
-    public function softDelete(Suggestion $suggestion): JsonResponse
-    {
-        $suggestion->delete();
-
-        return response()->json("Usunięto sugestię");
-    }
-
-    public function restore(Suggestion $suggestion): JsonResponse
-    {
-        $suggestion->restore();
-
-        return response()->json("Przywrócono sugestię");
-    }
-
-    public function destroy(Suggestion $suggestion): JsonResponse
-    {
-        $suggestion->forceDelete();
-
-        return response()->json("Usunięto sugestię trwale");
     }
 }
