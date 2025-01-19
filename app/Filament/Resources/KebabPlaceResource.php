@@ -6,9 +6,9 @@ namespace App\Filament\Resources;
 
 use App\Enums\KebabPlaceLocationType;
 use App\Enums\KebabPlaceStatus;
-use App\Filament\Resources\KebabResource\Pages\CreateKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\CreateKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\EditKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\ListKebabPlace;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
@@ -25,7 +25,9 @@ use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
@@ -287,7 +289,7 @@ class KebabPlaceResource extends Resource
                         default => "warning",
                     })
                     ->searchable(),
-                Tables\Columns\IconColumn::make("is_craft")
+                IconColumn::make("is_craft")
                     ->label("Mięso kraftowe")
                     ->boolean(),
                 RatingStar::make("google_maps_rating")
@@ -301,6 +303,17 @@ class KebabPlaceResource extends Resource
                     ->placeholder("Wszystkie")
                     ->trueLabel("Kraftowe")
                     ->falseLabel("Kula"),
+                TernaryFilter::make("is_chain_restaurant")
+                    ->label("Rodzaj marki")
+                    ->placeholder("Wszystkie")
+                    ->trueLabel("sieciówka")
+                    ->falseLabel("indywidualna"),
+                SelectFilter::make("status")
+                    ->label("Status")
+                    ->options(KebabPlaceStatus::class),
+                SelectFilter::make("location_type")
+                    ->label("Typ lokalizacji")
+                    ->options(KebabPlaceLocationType::class),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

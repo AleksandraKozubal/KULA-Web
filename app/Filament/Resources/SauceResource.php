@@ -28,7 +28,8 @@ class SauceResource extends Resource
                         ->required()
                         ->maxLength(255),
                     ColorPicker::make("hex_color")
-                        ->label("Kolor"),
+                        ->label("Kolor")
+                        ->required(),
                 ]),
             ]);
     }
