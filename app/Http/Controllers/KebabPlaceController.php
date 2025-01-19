@@ -141,15 +141,14 @@ class KebabPlaceController extends Controller
             ->when($this->fordering, fn(Builder $query) => $query->whereJsonContains("order_options", $this->fordering))
             ->when($this->fopen === "open", function (Builder $query): void {
                 $query->where(function (Builder $query): void {
-                    // compare the hours as floats
                     $query->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 0, ':', '.') AS FLOAT) <= ?"), [floatval($this->time->format("H.i"))])
                         ->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 1, ':', '.') AS FLOAT) > ?"), [floatval($this->time->format("H.i"))]);
                 });
             })
             ->when($this->fopen === "closed", function (Builder $query): void {
                 $query->where(function (Builder $query): void {
-                    $query->whereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 0 > ?"), [floatval($this->time->format("H.i"))])
-                        ->orWhereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 1 <= ?"), [floatval($this->time->format("H.i"))]);
+                    $query->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 0, ':', '.') AS FLOAT) > ?"), [floatval($this->time->format("H.i"))])
+                        ->orWhereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 1, ':', '.') AS FLOAT) <= ?"), [floatval($this->time->format("H.i"))]);
                 });
             });
     }
