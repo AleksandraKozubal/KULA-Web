@@ -17,7 +17,7 @@ use Illuminate\Support\Collection;
  * @property string $address
  * @property string $latitude
  * @property string $longitude
- * @property ?string $google_maps_url
+ * @property ?string $place_id
  * @property ?string $google_maps_rating
  * @property string $phone
  * @property ?string $website
@@ -48,7 +48,7 @@ class KebabPlace extends Model
         "address",
         "latitude",
         "longitude",
-        "google_maps_url",
+        "place_id",
         "google_maps_rating",
         "phone",
         "website",
