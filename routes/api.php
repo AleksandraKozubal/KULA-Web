@@ -218,6 +218,25 @@ Route::middleware("auth:sanctum")->delete("/kebab-places/{kebabPlace}/unfav", [F
 Route::middleware("auth:sanctum")->put("/kebab-places/{kebabPlace}/comment", [CommentController::class, "store"]);
 
 /**
+ * @OA\Get(
+ *     path="/comments/{comment}",
+ *     summary="Pobierz komentarz",
+ *     @OA\Parameter(
+ *         name="comment",
+ *         in="path",
+ *         required=true,
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Komentarz",
+ *         @OA\JsonContent(ref="#/components/schemas/Comment")
+ *     )
+ * )
+ * */
+Route::get("/comment/{comment}", [CommentController::class, "show"]);
+
+/**
  * @OA\Patch(
  *     path="/comment/{comment}",
  *     summary="Edytuj komentarz",

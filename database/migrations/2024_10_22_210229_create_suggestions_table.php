@@ -14,10 +14,11 @@ return new class() extends Migration {
         Schema::create("suggestions", function (Blueprint $table): void {
             $table->id();
             $table->string("name");
-            $table->string("description");
+            $table->text("description");
             $table->string("status");
             $table->foreignIdFor(User::class)->constrained()->onDelete("cascade");
             $table->foreignIdFor(KebabPlace::class)->constrained()->onDelete("cascade");
+            $table->text("comment")->nullable();
             $table->timestamps();
         });
     }

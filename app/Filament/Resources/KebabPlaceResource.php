@@ -8,8 +8,8 @@ use App\Enums\KebabPlaceLocationType;
 use App\Enums\KebabPlaceStatus;
 use App\Events\KebabPlaceDeleted;
 use App\Filament\Resources\KebabPlaceResource\Pages\CreateKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
-use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\EditKebabPlace;
+use App\Filament\Resources\KebabPlaceResource\Pages\ListKebabPlace;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
@@ -26,12 +26,21 @@ use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
 
 class KebabPlaceResource extends Resource
 {
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -67,8 +76,8 @@ class KebabPlaceResource extends Resource
                                 ->label("Długość geograficzna")
                                 ->numeric()
                                 ->required(),
-                            TextInput::make("google_maps_url")
-                                ->label("Google Maps URL")
+                            TextInput::make("place_id")
+                                ->label("Google ID miejsca")
                                 ->maxLength(255),
                             TextInput::make("google_maps_rating")
                                 ->label("Google Maps Ocena")
@@ -132,10 +141,10 @@ class KebabPlaceResource extends Resource
                             ->maxLength(255),
                         Grid::make(2)->schema([
                             TextInput::make("android")
-                                ->label("Link do aplikacji na androida")
+                                ->label("Aplikacja android")
                                 ->maxLength(255),
                             TextInput::make("ios")
-                                ->label("Link do aplikacji na iOS")
+                                ->label("Aplikacja iOS")
                                 ->maxLength(255),
                         ]),
                     ]),
@@ -161,42 +170,104 @@ class KebabPlaceResource extends Resource
                                     "web" => "własna strona",
                                 ]),
                         ]),
-                        Repeater::make("opening_hours")
-                            ->label("Godziny otwarcia")
+                        Section::make("Godziny otwarcia")
                             ->schema([
-                                TextInput::make("day")
-                                    ->label("Dzień")
-                                    ->disabled()
-                                    ->default(fn($state, $record, $index) => [
-                                        "Poniedziałek", "Wtorek", "Środa",
-                                        "Czwartek", "Piątek", "Sobota", "Niedziela",
-                                    ][$index]),
-                                TimePicker::make("from")
-                                    ->label("Od")
-                                    ->format("H:i")
-                                    ->timezone("Europe/Warsaw")
-                                    ->seconds(false)
-                                    ->nullable(),
-                                TimePicker::make("to")
-                                    ->label("Do")
-                                    ->format("H:i")
-                                    ->timezone("Europe/Warsaw")
-                                    ->seconds(false)
-                                    ->nullable(),
+                                Grid::make(2)->schema([
+                                    TimePicker::make("opening_hours_monday.0")
+                                        ->label("Poniedziałek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_monday[0] ?? null),
+                                    TimePicker::make("opening_hours_monday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_monday[1] ?? null),
+                                    TimePicker::make("opening_hours_tuesday.0")
+                                        ->label("Wtorek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_tuesday[0] ?? null),
+                                    TimePicker::make("opening_hours_tuesday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_tuesday[1] ?? null),
+                                    TimePicker::make("opening_hours_wednesday.0")
+                                        ->label("Środa - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_wednesday[0] ?? null),
+                                    TimePicker::make("opening_hours_wednesday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_wednesday[1] ?? null),
+                                    TimePicker::make("opening_hours_thursday.0")
+                                        ->label("Czwartek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_thursday[0] ?? null),
+                                    TimePicker::make("opening_hours_thursday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_thursday[1] ?? null),
+                                    TimePicker::make("opening_hours_friday.0")
+                                        ->label("Piątek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_friday[0] ?? null),
+                                    TimePicker::make("opening_hours_friday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_friday[1] ?? null),
+                                    TimePicker::make("opening_hours_saturday.0")
+                                        ->label("Sobota - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_saturday[0] ?? null),
+                                    TimePicker::make("opening_hours_saturday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_saturday[1] ?? null),
+                                    TimePicker::make("opening_hours_sunday.0")
+                                        ->label("Niedziela - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_sunday[0] ?? null),
+                                    TimePicker::make("opening_hours_sunday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_sunday[1] ?? null),
+                                ]),
                             ])
-                            ->default(fn() => collect([
-                                ["day" => "Poniedziałek", "from" => null, "to" => null],
-                                ["day" => "Wtorek", "from" => null, "to" => null],
-                                ["day" => "Środa", "from" => null, "to" => null],
-                                ["day" => "Czwartek", "from" => null, "to" => null],
-                                ["day" => "Piątek", "from" => null, "to" => null],
-                                ["day" => "Sobota", "from" => null, "to" => null],
-                                ["day" => "Niedziela", "from" => null, "to" => null],
-                            ])->toArray())
-                            ->addable(false)
-                            ->deletable(false)
-                            ->reorderable(false)
-                            ->columns(3),
+                            ->default(fn() => [
+                                "opening_hours_monday" => [null, null],
+                                "opening_hours_tuesday" => [null, null],
+                                "opening_hours_wednesday" => [null, null],
+                                "opening_hours_thursday" => [null, null],
+                                "opening_hours_friday" => [null, null],
+                                "opening_hours_saturday" => [null, null],
+                                "opening_hours_sunday" => [null, null],
+                            ]),
                     ]),
                 ])->from("lg"),
             ])->columns(1);
@@ -213,16 +284,25 @@ class KebabPlaceResource extends Resource
                     ->label("Nazwa")
                     ->searchable(),
                 Tables\Columns\ImageColumn::make("image")
-                    ->label("Zdjęcie"),
+                    ->label("Zdjęcie")
+                    ->square(),
                 TextColumn::make("status")
                     ->label("Status")
+                    ->badge()
+                    ->color(fn(KebabPlace $kebabPlace): string => match ($kebabPlace->status) {
+                        "otwarte" => "success",
+                        "planowane" => "info",
+                        "zamknięte" => "danger",
+                        default => "warning",
+                    })
                     ->searchable(),
-                TextColumn::make("location_type")
-                    ->label("Typ lokalizacji")
-                    ->searchable(),
-                Tables\Columns\IconColumn::make("is_craft")
+                IconColumn::make("is_craft")
                     ->label("Mięso kraftowe")
                     ->boolean(),
+                RatingStar::make("google_maps_rating")
+                    ->label("Ocena Google Maps")
+                    ->size("sm")
+                    ->searchable(),
             ])
             ->filters([
                 TernaryFilter::make("is_craft")
@@ -230,6 +310,17 @@ class KebabPlaceResource extends Resource
                     ->placeholder("Wszystkie")
                     ->trueLabel("Kraftowe")
                     ->falseLabel("Kula"),
+                TernaryFilter::make("is_chain_restaurant")
+                    ->label("Rodzaj marki")
+                    ->placeholder("Wszystkie")
+                    ->trueLabel("sieciówka")
+                    ->falseLabel("indywidualna"),
+                SelectFilter::make("status")
+                    ->label("Status")
+                    ->options(KebabPlaceStatus::class),
+                SelectFilter::make("location_type")
+                    ->label("Typ lokalizacji")
+                    ->options(KebabPlaceLocationType::class),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -254,10 +345,4 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
-
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
 }

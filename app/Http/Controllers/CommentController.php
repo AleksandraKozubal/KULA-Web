@@ -37,9 +37,9 @@ class CommentController extends Controller
         ]);
     }
 
-    public function show(Comment $comment): JsonResponse
+    public function show(): JsonResponse
     {
-        return response()->json_encode($comment);
+        return response()->json(Comment::find(request()->comment));
     }
 
     public function edit(Request $request): JsonResponse

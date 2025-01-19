@@ -21,8 +21,8 @@ jobs:
       pgsql:
         image: postgres:15.2-alpine3.17
         env:
-          POSTGRES_DB: escooters
-          POSTGRES_USER: escooters
+          POSTGRES_DB: kula-web
+          POSTGRES_USER:  kula-web
           POSTGRES_PASSWORD: password
         # Set health checks to wait until postgres has started
         options: >-
