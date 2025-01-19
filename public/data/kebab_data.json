@@ -11,8 +11,34 @@
         "email": "cyrus@cyrus.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [22,22,22,22,0,0,22],
+        "opening_hours_monday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "22:00"
+        ],
         "fillings": [
             4,
             5,
@@ -51,8 +77,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [19,19,19,19,19,18,17],
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [
             1,
             2
@@ -82,8 +134,35 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            null,
+            null
+        ],
+        "opening_hours_tuesday": [
+            null,
+            null
+        ],
+        "opening_hours_wednesday": [
+            null,
+            null
+        ],
+        "opening_hours_thursday": [
+            null,
+            null
+        ],
+        "opening_hours_friday": [
+            null,
+            null
+        ],
+        "opening_hours_saturday": [
+            null,
+            null
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
+
         "fillings": [
             3,
             4,
@@ -123,8 +202,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [23,23,23,23,23,23,23],
+        "opening_hours_monday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "23:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "23:00"
+        ],
         "fillings": [
             3,
             4,
@@ -169,8 +274,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [0,0,0,0,0,0,0],
+        "opening_hours_monday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "00:00"
+        ],
         "fillings": [
             3,
             4,
@@ -214,8 +345,34 @@
         "email": "piripirilegnica@gmail.com",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "open_from": [11,11,11,11,11,11,12],
-        "open_to": [22,22,22,22,23,23,22],
+        "opening_hours_monday": [
+            "11:00",
+            "22:00"
+        ],
+        "opening_hours_tuesday": [
+            "11:00",
+            "22:00"
+        ],
+        "opening_hours_wednesday": [
+            "11:00",
+            "22:00"
+        ],
+        "opening_hours_thursday": [
+            "11:00",
+            "22:00"
+        ],
+        "opening_hours_friday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_saturday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "22:00"
+        ],
         "fillings": [
             3,
             8,
@@ -264,8 +421,34 @@
         "email": "kizilelma.sp.z.o.o@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [11,11,11,11,11,11,12],
-        "open_to": [23,23,23,23,1,1,23],
+        "opening_hours_monday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_tuesday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_wednesday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_thursday": [
+            "11:00",
+            "23:00"
+        ],
+        "opening_hours_friday": [
+            "11:00",
+            "01:00"
+        ],
+        "opening_hours_saturday": [
+            "11:00",
+            "01:00"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "23:00"
+        ],
         "fillings": [
             3,
             5,
@@ -300,8 +483,34 @@
         "email": "kavovarka2023@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [20.5,20.5,20.5,20.5,20.5,20.5,20.5],
+        "opening_hours_monday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "20:30"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "20:30"
+        ],
         "fillings": [
             9
         ],
@@ -334,8 +543,34 @@
         "email": "kinghousekebab@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [null,12,12,12,12,12,12],
-        "open_to": [null,21.5,21.5,21.5,0,0,21],
+        "opening_hours_monday": [
+            null,
+            null
+        ],
+        "opening_hours_tuesday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_wednesday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_thursday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_friday": [
+            "12:00",
+            "00:00"
+        ],
+        "opening_hours_saturday": [
+            "12:00",
+            "00:00"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "21:00"
+        ],
         "fillings": [
             10,
             3,
@@ -379,8 +614,34 @@
         "email": "mirer23@interia.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,null],
-        "open_to": [20,20,20,20,20,20,null],
+        "opening_hours_monday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
         "fillings": [
             3,
             4,
@@ -422,8 +683,34 @@
         "email": "nasim68@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [0,0,0,0,0,0,0],
+        "opening_hours_monday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "00:00"
+        ],
         "fillings": [
             3,
             9,
@@ -458,8 +745,34 @@
         "email": "patrycja2194@wp.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,12],
-        "open_to": [22,22,22,22,22,22,22],
+        "opening_hours_monday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "22:00"
+        ],
         "fillings": [
             3,
             4,
@@ -499,8 +812,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,11],
-        "open_to": [0,0,0,0,2,2,0],
+        "opening_hours_monday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "02:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "02:00"
+        ],
+        "opening_hours_sunday": [
+            "11:00",
+            "00:00"
+        ],
         "fillings": [
             3,
             4,
@@ -538,8 +877,34 @@
         "email": "bafralegnica@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,11],
-        "open_to": [21,21,21,21,21,21,20],
+        "opening_hours_monday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_sunday": [
+            "11:00",
+            "20:00"
+        ],
         "fillings": [
             11,
             4,
@@ -588,8 +953,34 @@
         "email": "bafralegnica@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,11],
-        "open_to": [21,21,21,21,21,21,20],
+        "opening_hours_monday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "21:00"
+        ],
+        "opening_hours_sunday": [
+            "11:00",
+            "20:00"
+        ],
         "fillings": [
             11,
             4,
@@ -637,8 +1028,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [12,12,12,12,12,12,12],
-        "open_to": [21.5,21.5,21.5,21.5,21.5,21.5,20.5],
+        "opening_hours_monday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_tuesday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_wednesday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_thursday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_friday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_saturday": [
+            "12:00",
+            "21:30"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "20:30"
+        ],
         "fillings": [
             3,
             9,
@@ -660,11 +1077,11 @@
         "social_media": [
             {
                 "name": "fb",
-                "fb": "https://www.facebook.com/hadfoodlegnica/reels/"
+                "url": "https://www.facebook.com/hadfoodlegnica/reels/"
             },
             {
                 "name": "ig",
-                "ig": "https://www.instagram.com/had_food_legnica/"
+                "url": "https://www.instagram.com/had_food_legnica/"
             }
         ]
     },
@@ -680,8 +1097,34 @@
         "email": "amamkebab.legnica@gmail.com",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,11],
-        "open_to": [20,20,20,20,20,20,20],
+        "opening_hours_monday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_sunday": [
+            "11:00",
+            "20:00"
+        ],
         "fillings": [
             3,
             4,
@@ -720,8 +1163,34 @@
         "email": null,
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,10],
-        "open_to": [22,22,22,22,0,0,22],
+        "opening_hours_monday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "22:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "00:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "22:00"
+        ],
         "fillings": [
             4,
             9
@@ -761,8 +1230,34 @@
         "email": "joana2105@wp.pl",
         "opened_at_year": "2024",
         "closed_at_year": null,
-        "open_from": [11.5,11.5,11.5,11.5,11.5,11.5,null],
-        "open_to": [20,20,20,20,20,20,null],
+        "opening_hours_monday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_tuesday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_wednesday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_thursday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_friday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_saturday": [
+            "11:30",
+            "20:00"
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -791,8 +1286,34 @@
         "email": "www.kebabtruck@wp.pl",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,null],
-        "open_to": [19,19,19,19,19,19,null],
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [
             12,
             11
@@ -830,8 +1351,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [11,11,11,11,11,12,12],
-        "open_to": [21,21,21,21,21,21,21],
+        "opening_hours_monday": [
+            "11:00",
+            "21:00"
+        ],
+        "opening_hours_tuesday": [
+            "11:00",
+            "21:00"
+        ],
+        "opening_hours_wednesday": [
+            "11:00",
+            "21:00"
+        ],
+        "opening_hours_thursday": [
+            "11:00",
+            "21:00"
+        ],
+        "opening_hours_friday": [
+            "11:00",
+            "21:00"
+        ],
+        "opening_hours_saturday": [
+            "12:00",
+            "21:00"
+        ],
+        "opening_hours_sunday": [
+            "12:00",
+            "21:00"
+        ],
         "fillings": [
             3,
             4,
@@ -890,8 +1437,34 @@
         "email": "annarybaczyk@wp.pl",
         "opened_at_year": null,
         "closed_at_year": 2022,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            null,
+            null
+        ],
+        "opening_hours_tuesday": [
+            null,
+            null
+        ],
+        "opening_hours_wednesday": [
+            null,
+            null
+        ],
+        "opening_hours_thursday": [
+            null,
+            null
+        ],
+        "opening_hours_friday": [
+            null,
+            null
+        ],
+        "opening_hours_saturday": [
+            null,
+            null
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
         "fillings": [
             5,
             14
@@ -927,8 +1500,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -955,8 +1554,34 @@
         "email": null,
         "opened_at_year": "2012",
         "closed_at_year": "2021",
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -983,8 +1608,34 @@
         "email": "kebabmarklubin@gmail.com",
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [
             3,
             4,
@@ -1021,8 +1672,34 @@
         "email": null,
         "opened_at_year": "2022",
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1043,8 +1720,34 @@
         "email": null,
         "opened_at_year": "2022",
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1066,8 +1769,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1089,8 +1818,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1112,8 +1867,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": "2020",
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1140,8 +1921,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1162,8 +1969,34 @@
         "email": null,
         "opened_at_year": "2025",
         "closed_at_year": null,
-        "open_from": [1,1,1,1,1,1,null],
-        "open_to": [20,20,20,20,20,20,null],
+        "opening_hours_monday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "20:00"
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
         "fillings": [],
         "sauces": [],
         "status": "otwarte",
@@ -1185,8 +2018,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": null,
-        "open_to": null,
+        "opening_hours_monday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "19:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            "10:00",
+            "17:00"
+        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1208,8 +2067,34 @@
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "open_from": [10,10,10,10,10,10,null],
-        "open_to": [18,18,18,18,18,18,null],
+        "opening_hours_monday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_tuesday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_wednesday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_thursday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_friday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_saturday": [
+            "10:00",
+            "18:00"
+        ],
+        "opening_hours_sunday": [
+            null,
+            null
+        ],
         "fillings": [
             1,
             2

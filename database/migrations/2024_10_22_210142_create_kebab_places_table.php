@@ -25,8 +25,13 @@ return new class() extends Migration {
             $table->string("email")->nullable();
             $table->smallInteger("opened_at_year")->nullable();
             $table->smallInteger("closed_at_year")->nullable();
-            $table->text("open_from")->nullable();
-            $table->text("open_to")->nullable();
+            $table->jsonb("opening_hours_monday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_tuesday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_wednesday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_thursday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_friday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_saturday")->nullable()->default(json_encode([]));
+            $table->jsonb("opening_hours_sunday")->nullable()->default(json_encode([]));
             $table->json("fillings")->nullable()->default(json_encode([]));
             $table->json("sauces")->nullable()->default(json_encode([]));
             $table->string("status");

@@ -13,69 +13,59 @@ use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 
 class KebabPlaceController extends Controller
 {
+    protected $kebabPlaces;
+    protected ?int $paginate;
+    protected string $sby;
+    protected string $sdirection;
+    protected ?string $fopen;
+    protected ?string $fdatetime;
+    protected ?array $ffillings;
+    protected ?array $fsauces;
+    protected ?string $fstatus;
+    protected ?bool $fcraft;
+    protected ?string $flocation;
+    protected ?bool $fchain;
+    protected ?string $fordering;
+    protected int $day;
+    protected Carbon $time;
+    protected string $weekday;
+
     public function index(KebabPlaceFilterRequest $request): JsonResponse
     {
-        $paginate = $request->paginate ?? 20;
-        $sby = $request->sby ?? "id";
-        $sdirection = $request->sdirection ?? "asc";
-        $fopen = $request->fopen ?? null;
-        $fdatetime = $request->fdatetime ?? date("N-H:i");
-        $ffillings = $request->ffillings ? json_decode($request->ffillings, true) : null;
-        $fsauces = $request->fsauces ? json_decode($request->fsauces, true) : null;
-        $fstatus = $request->fstatus ?? null;
-        $fkraft = $request->fkraft ?? null;
-        $flocation = $request->flocation ?? null;
-        $fchain = $request->fchain ?? null;
-        $fordering = $request->fordering ?? null;
+        $this->paginate = $request->paginate ? json_decode($request->paginate) : 20;
+        $this->sby = $request->sby ?? "id";
+        $this->sdirection = $request->sdirection ?? "asc";
+        $this->fopen = $request->fopen ?? null;
+        $this->fdatetime = $request->fdatetime ?? date("N-H:i");
+        $this->ffillings = $request->ffillings ? json_decode($request->ffillings, true) : null;
+        $this->fsauces = $request->fsauces ? json_decode($request->fsauces, true) : null;
+        $this->fstatus = $request->fstatus ?? null;
+        $this->fcraft = isset($request->fcraft) ? json_decode($request->fcraft) : null;
+        $this->flocation = $request->flocation ?? null;
+        $this->fchain = isset($request->fchain) ? json_decode($request->fchain) : null;
+        $this->fordering = $request->fordering ?? null;
+        $this->day = explode("-", $this->fdatetime)[0] - 1;
+        $this->weekday = Weekdays::cases()[$this->day]->value;
+        $this->time = Carbon::parse(explode("-", $this->fdatetime)[1]);
 
+        $query = KebabPlace::query();
+        $query = $this->filter($query);
+        $query = $this->sort($query);
+        $this->kebabPlaces = $query->paginate($this->paginate);
+        $this->attachFormattedOpeningHours();
+        $this->attachUserData();
 
-        $kebabPlaces = KebabPlace::query()
-            ->when($ffillings, fn($query): Builder => $query->whereJsonContains("fillings", $ffillings))
-            ->when($flocation, fn($query): Builder => $query->where("location_type", $flocation))
-            ->when($fsauces, fn($query): Builder => $query->whereJsonContains("sauces", $fsauces))
-            ->when($fkraft !== null, fn($query): Builder => $query->where("is_craft", $fkraft))
-            ->when($fchain !== null, fn($query): Builder => $query->where("is_chain_restaurant", $fchain))
-            ->when($fstatus, fn($query): Builder => $query->where("status", $fstatus))
-            ->when($fordering, fn($query): Builder => $query->whereJsonContains("order_options", $fordering))
-            ->orderBy($sby, $sdirection)
-            ->when($fopen !== null, fn($query): Builder => $query->where(function ($query) use ($fdatetime, $fopen) {
-                $day = explode("-", $fdatetime)[0] - 1;
-                $time = explode("-", $fdatetime)[1];
-                $converted_time = fn($time) => explode(":", $time)[0] + (explode(":", $time)[1] != "00" ? explode(":", $time)[1] / 60 : 0);
-                $converted_time_value = $converted_time($time);
-                if ($fopen === "open") {
-                    $query->whereRaw("(open_from::jsonb->>?)::numeric <= ?", [$day, $converted_time_value])
-                        ->whereRaw("(open_to::jsonb->>?)::numeric >= ?", [$day, $converted_time_value]);
-                } else {
-                    $query->whereRaw("(open_from::jsonb->>?)::numeric > ?", [$day, $converted_time_value])
-                        ->orWhereRaw("(open_to::jsonb->>?)::numeric < ?", [$day, $converted_time_value]);
-                }
-            }))
-            ->paginate($paginate);
-
-        dd($kebabPlaces);
-        foreach ($kebabPlaces as $kebabPlace) {
-            $kebabPlace->opening_hours = array_map(function ($from, $to) {
-                return [
-                    'from' => $from ? (is_int($from) ? $from . ":00" : floor($from) . ":30") : null,
-                    'to' => $to ? (is_int($to) ? $to . ":00" : floor($to) . ":30") : null
-                ];
-            }, json_decode($kebabPlace->open_from ?? "[]"), json_decode($kebabPlace->open_to ?? "[]"));
-        }
-        if (auth()->check()) {
-            foreach ($kebabPlaces as $kebabPlace) {
-                $kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $kebabPlace->id)->exists();
-            }
-        }
-
-        return response()->json($kebabPlaces);
+        return response()->json($this->kebabPlaces);
     }
 
     public function store(KebabPlaceRequest $request): JsonResponse
@@ -140,5 +130,77 @@ class KebabPlaceController extends Controller
         $kebabPlace->delete();
 
         return response()->json("Usunięto kebab", 200);
+    }
+
+    protected function filter(Builder $kebabPlaces): Builder
+    {
+        return $kebabPlaces
+            ->when($this->fstatus, fn(Builder $query) => $query->where("status", $this->fstatus))
+            ->when(isset($this->fcraft), fn(Builder $query) => $query->where("is_craft", $this->fcraft))
+            ->when($this->flocation, fn(Builder $query) => $query->where("location_type", $this->flocation))
+            ->when(isset($this->fchain), fn(Builder $query) => $query->where("is_chain_restaurant", $this->fchain))
+            ->when($this->ffillings, fn(Builder $query) => $query->whereJsonContains("fillings", $this->ffillings))
+            ->when($this->fsauces, fn(Builder $query) => $query->whereJsonContains("sauces", $this->fsauces))
+            ->when($this->fordering, fn(Builder $query) => $query->whereJsonContains("order_options", $this->fordering))
+            ->when($this->fopen == "open", function (Builder $query) {
+                $query->where(function (Builder $query) {
+                    // compare the hours as floats
+                    $query->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 0, ':', '.') AS FLOAT) <= ?"), [floatval($this->time->format('H.i'))])
+                        ->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 1, ':', '.') AS FLOAT) > ?"), [floatval($this->time->format('H.i'))]);
+                });
+            })
+            ->when($this->fopen == "closed", function (Builder $query) {
+                $query->where(function (Builder $query) {
+                    $query->whereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 0 > ?"), [floatval($this->time->format('H.i'))])
+                        ->orWhereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 1 <= ?"), [floatval($this->time->format('H.i'))]);
+                });
+            });
+    }
+
+    protected function sort(Builder $kebabPlaces): Builder
+    {
+        return $kebabPlaces
+            ->orderBy($this->sby, $this->sdirection);
+    }
+
+    protected function attachFormattedOpeningHours(): void
+    {
+        $this->kebabPlaces->each(function ($kebabPlace): void {
+            $openFrom = array_map(fn($hours) => $hours[0], $kebabPlace->only([
+                'opening_hours_monday',
+                'opening_hours_tuesday',
+                'opening_hours_wednesday',
+                'opening_hours_thursday',
+                'opening_hours_friday',
+                'opening_hours_saturday',
+                'opening_hours_sunday',
+            ]));
+            $openTo = array_map(fn($hours) => $hours[1], $kebabPlace->only([
+                'opening_hours_monday',
+                'opening_hours_tuesday',
+                'opening_hours_wednesday',
+                'opening_hours_thursday',
+                'opening_hours_friday',
+                'opening_hours_saturday',
+                'opening_hours_sunday',
+            ]));
+
+            $kebabPlace->opening_hours = array_map(fn($from, $to, $index) => [
+                'day' => Weekdays::cases()[$index]->getLabel(),
+                'from' => $from,
+                'to' => $to,
+            ], $openFrom, $openTo, array_keys(Weekdays::cases()));
+
+            unset($kebabPlace->opening_hours_monday, $kebabPlace->opening_hours_tuesday, $kebabPlace->opening_hours_wednesday, $kebabPlace->opening_hours_thursday, $kebabPlace->opening_hours_friday, $kebabPlace->opening_hours_saturday, $kebabPlace->opening_hours_sunday);
+        });
+    }
+
+    protected function attachUserData(): void
+    {
+        if (auth()->check()) {
+            foreach ($this->kebabPlaces as $kebabPlace) {
+                $kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $kebabPlace->id)->exists();
+            }
+        }
     }
 }

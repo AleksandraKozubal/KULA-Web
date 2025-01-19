@@ -31,12 +31,13 @@ class KebabPlaceFactory extends Factory
             "email" => fake()->optional()->email(),
             "opened_at_year" => fake()->year(),
             "closed_at_year" => fake()->optional()->year(),
-            "open_from" => [
-                10,10,10,10,10,10,10
-            ],
-            "open_to" => [
-                22,22,22,22,22,22,22
-            ],
+            "opening_hours_monday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_tuesday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_wednesday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_thursday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_friday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_saturday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
+            "opening_hours_sunday" => fake()->randomElements(["00:00-23:59", "09:00-17:00", "10:00-18:00"], fake()->numberBetween(1, 3)),
             "fillings" => fake()->randomElements(Filling::all()->pluck("id"), fake()->numberBetween(1, 3)),
             "sauces" => fake()->randomElements(Sauce::all()->pluck("id"), fake()->numberBetween(0, 5)),
             "status" => fake()->randomElement(array_column(KebabPlaceStatus::cases(), "value")),

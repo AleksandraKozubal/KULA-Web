@@ -8,13 +8,13 @@ use Filament\Support\Contracts\HasLabel;
 
 enum Weekdays: string implements HasLabel
 {
-    case Monday = "Mon";
-    case Tuesday = "Tue";
-    case Wednesday = "Wed";
-    case Thursday = "Thu";
-    case Friday = "Fri";
-    case Saturday = "Sat";
-    case Sunday = "Sun";
+    case Monday = "monday";
+    case Tuesday = "tuesday";
+    case Wednesday = "wednesday";
+    case Thursday = "thursday";
+    case Friday = "friday";
+    case Saturday = "saturday";
+    case Sunday = "sunday";
 
     public function getLabel(): string
     {

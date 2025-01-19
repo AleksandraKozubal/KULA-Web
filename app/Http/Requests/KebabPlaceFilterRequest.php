@@ -21,10 +21,10 @@ class KebabPlaceFilterRequest extends FormRequest
             "fstatus" => [Rule::enum(KebabPlaceStatus::class)],
             "flocation" => ["string", Rule::in(["buda", "lokal"])],
             "fordering" => ["string", Rule::enum(KebabPlaceOrderOptions::class)],
-            "fchain" => ["boolean"],
+            "fchain" => [Rule::in(["true", "false"])],
             "ffillings" => ["regex:/^\[(\d+,)*\d+]$/"],
             "fsauces" => ["regex:/^\[(\d+,)*\d+]$/"],
-            "fkraft" => ["boolean"],
+            "fcraft" => [Rule::in(["true", "false"])],
             "paginate" => ["integer"],
             "page" => ["integer"],
         ];
