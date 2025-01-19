@@ -197,7 +197,6 @@ class KebabPlaceController extends Controller
         return $kebabPlace;
     }
 
-
     protected function attachUserDataAll(): void
     {
         if (auth()->check()) {
@@ -206,7 +205,8 @@ class KebabPlaceController extends Controller
             }
         }
     }
-    protected   function attachUserData(): void
+
+    protected function attachUserData(): void
     {
         if (auth()->check()) {
             $this->kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $this->kebabPlace->id)->exists();
