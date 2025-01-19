@@ -10,16 +10,19 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Support\Facades\Log;
 
-class KebabPlaceCreated implements ShouldBroadcast
+class CommentCreated implements ShouldBroadcast
 {
     public Model $kebabPlace;
+    public Model $comment;
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public function __construct(Model $kebabPlace)
+    public function __construct(Model $kebabPlace, Model $comment )
     {
         $this->kebabPlace = $kebabPlace;
-        Log::info('KebabPlaceCreated event dispatched', ['kebabPlace' => $kebabPlace]);
+        $this->comment = $comment;
+
+        Log::info('CommentCreated event dispatched', ['kebabPlace' => $kebabPlace, 'comment' => $comment]);
     }
 
     /**
@@ -35,6 +38,6 @@ class KebabPlaceCreated implements ShouldBroadcast
 
     public function broadcastAs(): string
     {
-        return 'KebabPlaceCreated';
+        return 'CommentCreated';
     }
 }

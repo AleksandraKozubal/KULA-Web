@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Support\Facades\Log;
 
-class KebabPlaceCreated implements ShouldBroadcast
+class KebabPlaceDeleted implements ShouldBroadcast
 {
     public Model $kebabPlace;
 
@@ -19,7 +19,7 @@ class KebabPlaceCreated implements ShouldBroadcast
     public function __construct(Model $kebabPlace)
     {
         $this->kebabPlace = $kebabPlace;
-        Log::info('KebabPlaceCreated event dispatched', ['kebabPlace' => $kebabPlace]);
+        Log::info('KebabPlaceDeleted event dispatched', ['kebabPlace' => $kebabPlace]);
     }
 
     /**
@@ -35,6 +35,6 @@ class KebabPlaceCreated implements ShouldBroadcast
 
     public function broadcastAs(): string
     {
-        return 'KebabPlaceCreated';
+        return 'KebabPlaceDeleted';
     }
 }

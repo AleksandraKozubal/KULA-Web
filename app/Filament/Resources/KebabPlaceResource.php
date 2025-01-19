@@ -6,6 +6,7 @@ namespace App\Filament\Resources;
 
 use App\Enums\KebabPlaceLocationType;
 use App\Enums\KebabPlaceStatus;
+use App\Events\KebabPlaceDeleted;
 use App\Filament\Resources\KebabPlaceResource\Pages\CreateKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\EditKebabPlace;
 use App\Filament\Resources\KebabResource\Pages\ListKebabPlace;
@@ -233,7 +234,10 @@ class KebabPlaceResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->after(function ($record) {
+                        broadcast(new KebabPlaceDeleted($record));
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
