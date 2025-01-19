@@ -27,6 +27,7 @@ class KebabPlaceFilterRequest extends FormRequest
             "fcraft" => [Rule::in(["true", "false"])],
             "paginate" => ["integer"],
             "page" => ["integer"],
+            "fdatetime" => ["regex:/^(\d-\d+:\d+)$/"],
         ];
     }
 }

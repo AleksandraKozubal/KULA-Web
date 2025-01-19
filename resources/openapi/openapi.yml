@@ -89,6 +89,27 @@ paths:
           description: Filtruj według typu restauracji
           required: false
           example: "true"
+        - in: query
+          name: paginate
+          schema:
+            type: integer
+          description: Liczba wyników na stronę
+          required: false
+          example: 10
+        - in: query
+          name: fopen
+          schema:
+            type: string
+          description: Filtruj według otwartej restauracji
+          required: false
+          example: "true"
+        - in: query
+          name: fdatetime
+          schema:
+            type: string
+          description: Filtruj według dnia tygodnia (0-6) i godziny (nie działa bez fopen)
+          required: false
+          example: "2-12:00"
       responses:
         "200":
           description: Lista miejsc z kebabami w formacie JSON z paginacją
