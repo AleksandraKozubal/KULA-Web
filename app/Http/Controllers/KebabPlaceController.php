@@ -74,7 +74,7 @@ class KebabPlaceController extends Controller
             "address" => $request->address,
             "latitude" => $request->latitude,
             "longitude" => $request->longitude,
-            "google_maps_url" => $request->google_maps_url,
+            "place_id" => $request->place_id,
             "google_maps_rating" => $request->google_maps_rating,
             "phone" => $request->phone,
             "website" => $request->website,

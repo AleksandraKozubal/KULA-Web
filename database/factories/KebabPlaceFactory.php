@@ -24,7 +24,7 @@ class KebabPlaceFactory extends Factory
             "address" => fake()->address(),
             "latitude" => fake()->latitude(),
             "longitude" => fake()->longitude(),
-            "google_maps_url" => fake()->url(),
+            "place_id" => fake()->optional()->uuid(),
             "google_maps_rating" => fake()->randomFloat(1, 1, 5),
             "phone" => fake()->phoneNumber(),
             "website" => fake()->optional()->url(),

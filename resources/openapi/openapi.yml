@@ -124,7 +124,7 @@ paths:
                     address: Rynek 20
                     latitude: "51.20788328467099"
                     longitude: "16.161068016930532"
-                    google_maps_url: https://g.co/kgs/c3CxWnh
+                    place_id: ADKSNAasdnkadjfisajJAFDJCID
                     google_maps_rating: null
                     phone: "+48 509 969 117"
                     website: https://www.cyrus.pl/
@@ -182,7 +182,7 @@ paths:
                     address: Kosmiczna 2
                     latitude: "51.20960667521959"
                     longitude: "16.187620415522723"
-                    google_maps_url: https://maps.app.goo.gl/kuUMqSf1FScGcpDu5
+                    place_id: ADKSNAasdnkadjfisajJAFDJCID
                     google_maps_rating: null
                     phone: "696 385 028"
                     website: null
@@ -316,7 +316,7 @@ paths:
                     type: string
                   longitude:
                     type: string
-                  google_maps_url:
+                  place_id:
                     type: string
                   google_maps_rating:
                     type: number
@@ -357,7 +357,7 @@ paths:
                 address: Jaworzyńska 4
                 latitude: "51.20440383503453"
                 longitude: "16.159921511864013"
-                google_maps_url: https://g.co/kgs/Bqe8mNk
+                place_id: ADKSNAasdnkadjfisajJAFDJCID
                 google_maps_rating: null
                 phone: "509 047 182"
                 website: https://www.leokebab-legnica.pl/
