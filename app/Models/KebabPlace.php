@@ -115,12 +115,4 @@ class KebabPlace extends Model
     {
         return $this->hasMany(Comment::class);
     }
-
-    /**
-     * @param array $value
-     */
-    // protected function setOpeningHoursAttribute($value): void
-    // {
-
-    // }
 }
