@@ -60,7 +60,7 @@ class KebabPlaceController extends Controller
         $query = $this->sort($query);
         $this->kebabPlaces = $query->paginate($this->paginate);
         $this->attachFormattedOpeningHours();
-        $this->attachUserData();
+        $this->attachUserDataAll();
 
         return response()->json($this->kebabPlaces);
     }
@@ -197,12 +197,19 @@ class KebabPlaceController extends Controller
         return $kebabPlace;
     }
 
-    protected function attachUserData(): void
+
+    protected function attachUserDataAll(): void
     {
         if (auth()->check()) {
             foreach ($this->kebabPlaces as $kebabPlace) {
                 $kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $kebabPlace->id)->exists();
             }
+        }
+    }
+    protected   function attachUserData(): void
+    {
+        if (auth()->check()) {
+            $this->kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $this->kebabPlace->id)->exists();
         }
     }
 

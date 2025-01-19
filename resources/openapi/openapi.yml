@@ -287,6 +287,14 @@ paths:
     get:
       summary: Pobierz szczegóły miejsca z kebabami
       description:
+      parameters:
+        - in: path
+          name: kebabPlace
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 1
       responses:
         "200":
           description: Szczegóły miejsca z kebabami w formacie JSON
@@ -294,10 +302,194 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  name:
+                    type: string
+                  image:
+                    type: string
+                  address:
+                    type: string
+                  latitude:
+                    type: string
+                  longitude:
+                    type: string
+                  google_maps_url:
+                    type: string
+                  google_maps_rating:
+                    type: number
+                  phone:
+                    type: string
+                  website:
+                    type: string
+                  android:
+                    type: string
+                  ios:
+                    type: string
+                  email:
+                    type: string
+                  opened_at_year:
+                    type: integer
+                  closed_at_year:
+                    type: integer
+                  fillings:
+                    type: array
+                  sauces:
+                    type: array
+                  status:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  opning_hours:
+                    type: array
+                  comments:
+                    type: array
+                    items:
+                      type: object
+              example:
+                id: 5
+                name: Leo Kebab
+                image: kebab-place/leo-kebab.jpeg
+                address: Jaworzyńska 4
+                latitude: "51.20440383503453"
+                longitude: "16.159921511864013"
+                google_maps_url: https://g.co/kgs/Bqe8mNk
+                google_maps_rating: null
+                phone: "509 047 182"
+                website: https://www.leokebab-legnica.pl/
+                android: https://play.google.com/store/apps/details?id=com.restaumatic.leo_kebab_production&pli=1
+                ios: null
+                email: null
+                opened_at_year: null
+                closed_at_year: null
+                fillings:
+                  - id: 3
+                    name: kurczak
+                    is_vege: false
+                    hex_color: "#ff00ff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 4
+                    name: mieszane
+                    is_vege: false
+                    hex_color: "#00ff00"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 5
+                    name: wołowina
+                    is_vege: false
+                    hex_color: "#00ffff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 6
+                    name: falafel
+                    is_vege: true
+                    hex_color: "#0000ff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 7
+                    name: kraftowe
+                    is_vege: false
+                    hex_color: "#ff0000"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                sauces:
+                  - id: 3
+                    name: czosnkowy
+                    hex_color: "#ff00ff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 5
+                    name: mieszany
+                    hex_color: "#00ffff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 6
+                    name: ostry
+                    hex_color: "#0000ff"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                  - id: 7
+                    name: łagodny
+                    hex_color: "#ff0000"
+                    created_at: 2025-01-19T01:32:08.000000Z
+                    updated_at: 2025-01-19T01:32:08.000000Z
+                status: otwarte
+                is_craft: true
+                is_chain_restaurant: true
+                location_type: lokal
+                order_options:
+                  - przez telefon
+                  - własna strona
+                  - własna aplikacja
+                  - pyszne.pl
+                  - glovo
+                social_media:
+                  - name: fb
+                    url: https://www.facebook.com/p/Leo-Kebab-Legnica-61555702835902/
+                created_at: 2025-01-19T01:32:08.000000Z
+                updated_at: 2025-01-19T01:32:08.000000Z
+                opening_hours:
+                  - day: Poniedziałek
+                    from: 10:00
+                    to: 00:00
+                  - day: Wtorek
+                    from: 10:00
+                    to: 00:00
+                  - day: Środa
+                    from: 10:00
+                    to: 00:00
+                  - day: Czwartek
+                    from: 10:00
+                    to: 00:00
+                  - day: Piątek
+                    from: 10:00
+                    to: 00:00
+                  - day: Sobota
+                    from: 10:00
+                    to: 00:00
+                  - day: Niedziela
+                    from: 10:00
+                    to: 00:00
+                comments: []
   /register:
     post:
       summary: Zarejestruj nowego użytkownika
       description:
+      parameters:
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+          description: Imie uzytkownika
+          example: "Mercedes"
+        - in: query
+          name: email
+          required: true
+          schema:
+            type: string
+          description: Email uzytkownika
+          example: "mercedes@example.org"
+        - in: query
+          name: password
+          required: true
+          schema:
+            type: string
+          description: Hasło uzytkownika
+          example: "Secret123"
+        - in: query
+          name: password_confirmation
+          required: true
+          schema:
+            type: string
+          description: Potwierdzenie hasła uzytkownika
+          example: "Secret123"
+
       responses:
         "201":
           description: Użytkownik zarejestrowany
@@ -305,10 +497,52 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                  user:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      email:
+                        type: string
+                      updated_at:
+                        type: string
+                      created_at:
+                        type: string
+                      id:
+                        type: integer
+                  token:
+                    type: string
+              example:
+                message: "Created an account"
+                user:
+                  name: "Mercedes"
+                  email: "mercedes@example.org"
+                  updated_at: "2025-01-19T14:12:07.000000Z"
+                  created_at: "2025-01-19T14:12:07.000000Z"
+                  id: 3
+                token: "2|Bhajg6JVtPREDLAKI6EXNCtAxdFga0hKgngT0z9g7decfaad"
   /login:
     post:
       summary: Zaloguj użytkownika
       description:
+      parameters:
+        - in: query
+          name: email
+          required: true
+          schema:
+            type: string
+          description: Email uzytkownika
+          example: "mercedes@example.org"
+        - in: query
+          name: password
+          required: true
+          schema:
+            type: string
+          description: Hasło uzytkownika
+          example: "Secret123"
       responses:
         "200":
           description: Użytkownik zalogowany
@@ -316,10 +550,23 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  token:
+                    type: string
+                example:
+                  token: "5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
   /user:
     get:
       summary: Pobierz dane zalogowanego użytkownika
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
       responses:
         "200":
           description: Dane użytkownika
@@ -327,9 +574,72 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+                  email_verified_at:
+                    type: string
+                    nullable: true
+                  role:
+                    type: string
+                  active:
+                    type: boolean
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                example:
+                  id: 2
+                  name: Scot
+                  email: Velda_Fahey88@example.com
+                  email_verified_at: null
+                  role: user
+                  active: true
+                  created_at: '2025-01-08T19:37:03.000000Z'
+                  updated_at: '2025-01-08T19:37:03.000000Z'
     patch:
       summary: Zaktualizuj dane zalogowanego użytkownika
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
+        - in: query
+          name: name
+          required: false
+          schema:
+            type: string
+          description: Imie uzytkownika
+          example: "Mercedes"
+        - in: query
+          name: email
+          required: false
+          schema:
+            type: string
+          description: Email uzytkownika
+          example: "mercedes@example.org"
+        - in: query
+          name: password
+          required: false
+          schema:
+            type: string
+          description: Hasło uzytkownika
+          example: "Secret123"
+        - in: query
+          name: password_confirmation
+          required: false
+          schema:
+            type: string
+          description: Potwierdzenie hasła (wymagane w przypadku zmiany hasła)
+          example: "Secret123"
       responses:
         "200":
           description: Dane użytkownika zaktualizowane
@@ -337,10 +647,23 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Zaktualizowano dane"
   /logout:
     post:
       summary: Wyloguj użytkownika
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
       responses:
         "200":
           description: Użytkownik wylogowany
@@ -348,6 +671,11 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Unauthenticated."
   /sauces:
     get:
       summary: Pobierz listę wszystkich sosów
@@ -358,9 +686,149 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
+                type: object
+                properties:
+                  sauces:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        hex_color:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+              example:
+                - id: 1
+                  name: "ketchup"
+                  hex_color: "#ff0000"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 2
+                  name: "BBQ"
+                  hex_color: "#ffff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 3
+                  name: "czosnkowy"
+                  hex_color: "#ff00ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 4
+                  name: "koperkowy"
+                  hex_color: "#00ff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 5
+                  name: "mieszany"
+                  hex_color: "#00ffff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 6
+                  name: "ostry"
+                  hex_color: "#0000ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 7
+                  name: "łagodny"
+                  hex_color: "#ff0000"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 8
+                  name: "mocny czosnek"
+                  hex_color: "#ffff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 9
+                  name: "sriracha-mayo"
+                  hex_color: "#ff00ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 10
+                  name: "miodowo-musztardowy"
+                  hex_color: "#00ff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 11
+                  name: "tzatziki"
+                  hex_color: "#00ffff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 12
+                  name: "mango habanero"
+                  hex_color: "#0000ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 13
+                  name: "ziołowy"
+                  hex_color: "#ff0000"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 14
+                  name: "pasta czosnkowa"
+                  hex_color: "#ffff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 15
+                  name: "miętowy"
+                  hex_color: "#ff00ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 16
+                  name: "sweet chili"
+                  hex_color: "#00ff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 17
+                  name: "pomidorowy pikantny"
+                  hex_color: "#00ffff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 18
+                  name: "jogurtowy"
+                  hex_color: "#0000ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 19
+                  name: "drwala"
+                  hex_color: "#ff0000"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 20
+                  name: "sambal"
+                  hex_color: "#ffff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 21
+                  name: "musztardowo-ziołowy"
+                  hex_color: "#ff00ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 22
+                  name: "ogórkowo-czosnkowy"
+                  hex_color: "#00ff00"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 23
+                  name: "salsa"
+                  hex_color: "#00ffff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 24
+                  name: "ostry sriracha"
+                  hex_color: "#0000ff"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
+                - id: 25
+                  name: "majonez"
+                  hex_color: "#ff0000"
+                  created_at: "2025-01-19T01:32:08.000000Z"
+                  updated_at: "2025-01-19T01:32:08.000000Z"
   /fillings:
     get:
       summary: Pobierz listę wszystkich składników
@@ -374,10 +842,118 @@ paths:
                 type: array
                 items:
                   type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    is_vege:
+                      type: boolean
+                    hex_color:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                  example:
+                    - id: 1
+                      name: "gyros"
+                      is_vege: false
+                      hex_color: "#ff0000"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 2
+                      name: "ser &zacute;&oacute;&lacute;ty"
+                      is_vege: true
+                      hex_color: "#ffff00"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 3
+                      name: "kurczak"
+                      is_vege: false
+                      hex_color: "#ff00ff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 4
+                      name: "mieszane"
+                      is_vege: false
+                      hex_color: "#00ff00"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 5
+                      name: "wołowina"
+                      is_vege: false
+                      hex_color: "#00ffff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 6
+                      name: "falafel"
+                      is_vege: true
+                      hex_color: "#0000ff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 7
+                      name: "kraftowe"
+                      is_vege: false
+                      hex_color: "#ff0000"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 8
+                      name: "kark&oacute;wka"
+                      is_vege: false
+                      hex_color: "#ffff00"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 9
+                      name: "wołowo-baranina"
+                      is_vege: false
+                      hex_color: "#ff00ff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 10
+                      name: "baranina"
+                      is_vege: false
+                      hex_color: "#00ff00"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 11
+                      name: "drobiowe"
+                      is_vege: false
+                      hex_color: "#00ffff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 12
+                      name: "wieprzowo-wołowe"
+                      is_vege: false
+                      hex_color: "#0000ff"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
+                    - id: 13
+                      name: "wieprzowe"
+                      is_vege: false
+                      hex_color: "#ff0000"
+                      created_at: "2025-01-19T01:32:08.000000Z"
+                      updated_at: "2025-01-19T01:32:08.000000Z"
   /kebab-places/{kebabPlace}/fav:
     put:
       summary: Dodaj miejsce do ulubionych
       description:
+      parameters:
+        - in: path
+          name: kebabPlace
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID miejsca
+          example: 1
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Bearer token
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
       responses:
         "200":
           description: Dodano do ulubionych
@@ -385,10 +961,39 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  user_id:
+                    type: integer
+                    example: 5
+                  kebab_place_id:
+                    type: string
+                    example: "3"
+                  updated_at:
+                    type: string
+                    example: "2025-01-19T14:54:16.000000Z"
+                  created_at:
+                    type: string
+                    example: "2025-01-19T14:54:16.000000Z"
   /kebab-places/{kebabPlace}/unfav:
     delete:
       summary: Usuń miejsce z ulubionych
       description:
+      parameters:
+        - in: path
+          name: kebabPlace
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID miejsca
+          example: 1
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Bearer token
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
       responses:
         "200":
           description: Usunięto z ulubionych
@@ -396,10 +1001,37 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Polubienie usunięte"
   /kebab-places/{kebabPlace}/comment:
     post:
       summary: Dodaj komentarz do miejsca
       description:
+      parameters:
+        - in: query
+          name: comment
+          required: true
+          schema:
+            type: string
+          description: Komentarz
+          example: "Komentarz"
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
+        - in: path
+          name: kebabPlace
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID KebabPlace
+          example: 1
       responses:
         "200":
           description: Dodano komentarz
@@ -407,10 +1039,38 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Dodano komentarz"
   /comment/{comment}:
     patch:
       summary: Edytuj komentarz
       description:
+      parameters:
+        - in: query
+          name: comment
+          required: true
+          schema:
+            type: string
+          description: Komentarz
+          example: "Komentarz"
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
+        - in: path
+          name: comment
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID Komentarza
+          example: 1
       responses:
         "200":
           description: Edytowano komentarz
@@ -418,9 +1078,30 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Edytowano komentarz"
     delete:
       summary: Usuń komentarz
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
+        - in: path
+          name: comment
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID Komentarza
+          example: 1
       responses:
         "200":
           description: Komentarz usunięty
@@ -428,10 +1109,37 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Komentarz usunięty"
   /kebab-places/{kebabPlace}/suggest:
     post:
       summary: Zarejestruj nowe sugestie
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+          description: Nazwa nowego sosu
+          example: "Nowy sos"
+        - in: query
+          name: description
+          required: true
+          schema:
+            type: string
+          description: Opis nowego sosu
+          example: "Do tego kebsika wleciało nowe sosiwo byczq"
       responses:
         "201":
           description: Sugestie zarejestrowane
@@ -439,10 +1147,23 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: "Dodano sugestie"
   /mysuggestions:
     get:
       summary: Pobierz sugestie użytkownika
       description:
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: Token autoryzacji
+          example: "Bearer 5|SHg42uq9AId8FcwXTEBDbedX5xzye9ExphauPm9o5f12ad65"
       responses:
         "200":
           description: Lista sugestii
@@ -452,3 +1173,37 @@ paths:
                 type: array
                 items:
                   type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    status:
+                      type: string
+                    user_id:
+                      type: integer
+                    kebab_place_id:
+                      type: integer
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                  example:
+                    - id: 1
+                      name: "Więcej wegańskich opcji"
+                      description: "Dodanie większej liczby wegańskich nadzień i sosów."
+                      status: "pending"
+                      user_id: 1
+                      kebab_place_id: 1
+                      created_at: "2025-01-19T01:32:09.000000Z"
+                      updated_at: "2025-01-19T01:32:09.000000Z"
+                    - id: 2
+                      name: "Nowy sos"
+                      description: "Do tego kebsika wleciało nowe sosiwo byczq"
+                      status: "pending"
+                      user_id: 5
+                      kebab_place_id: 3
+                      created_at: "2025-01-19T14:48:23.000000Z"
+                      updated_at: "2025-01-19T14:48:23.000000Z"
