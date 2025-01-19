@@ -13,6 +13,8 @@ use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
 
 class KebabPlaceOverview extends BaseWidget
 {
+    protected static ?string $heading = "Kebaby";
+
     public function table(Table $table): Table
     {
         return $table
@@ -32,6 +34,4 @@ class KebabPlaceOverview extends BaseWidget
             ])
             ->defaultPaginationPageOption(5);
     }
-
-    protected static ?string $heading = "Kebaby";
 }

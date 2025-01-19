@@ -25,6 +25,12 @@ use Illuminate\Support\Str;
 
 class SuggestionResource extends Resource
 {
+    protected static ?string $model = Suggestion::class;
+    protected static ?string $label = "sugestie";
+    protected static ?string $pluralLabel = "Sugestie";
+    protected static ?string $navigationIcon = "heroicon-o-bell-alert";
+    protected static bool $hasTitleCaseModelLabel = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -170,10 +176,4 @@ class SuggestionResource extends Resource
     {
         return $record->status === SuggestionStatus::Pending;
     }
-
-    protected static ?string $model = Suggestion::class;
-    protected static ?string $label = "sugestie";
-    protected static ?string $pluralLabel = "Sugestie";
-    protected static ?string $navigationIcon = "heroicon-o-bell-alert";
-    protected static bool $hasTitleCaseModelLabel = false;
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c28232f310ee2d468fba1768c521a6a3",
+    "content-hash": "66d2111ec079a861fb3304fcf0a54c68",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9789,7 +9789,6 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2025-01-13T16:57:11+00:00"
-        
         },
         {
             "name": "laravel/telescope",
