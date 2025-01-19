@@ -169,42 +169,104 @@ class KebabPlaceResource extends Resource
                                     "web" => "własna strona",
                                 ]),
                         ]),
-                        Repeater::make("opening_hours")
-                            ->label("Godziny otwarcia")
+                        Section::make("Godziny otwarcia")
                             ->schema([
-                                TextInput::make("day")
-                                    ->label("Dzień")
-                                    ->disabled()
-                                    ->default(fn($state, $record, $index): string => [
-                                        "Poniedziałek", "Wtorek", "Środa",
-                                        "Czwartek", "Piątek", "Sobota", "Niedziela",
-                                    ][$index]),
-                                TimePicker::make("from")
-                                    ->label("Od")
-                                    ->format("H:i")
-                                    ->timezone("Europe/Warsaw")
-                                    ->seconds(false)
-                                    ->nullable(),
-                                TimePicker::make("to")
-                                    ->label("Do")
-                                    ->format("H:i")
-                                    ->timezone("Europe/Warsaw")
-                                    ->seconds(false)
-                                    ->nullable(),
+                                Grid::make(2)->schema([
+                                    TimePicker::make("opening_hours_monday.0")
+                                        ->label("Poniedziałek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_monday[0] ?? null),
+                                    TimePicker::make("opening_hours_monday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_monday[1] ?? null),
+                                    TimePicker::make("opening_hours_tuesday.0")
+                                        ->label("Wtorek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_tuesday[0] ?? null),
+                                    TimePicker::make("opening_hours_tuesday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_tuesday[1] ?? null),
+                                    TimePicker::make("opening_hours_wednesday.0")
+                                        ->label("Środa - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_wednesday[0] ?? null),
+                                    TimePicker::make("opening_hours_wednesday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_wednesday[1] ?? null),
+                                    TimePicker::make("opening_hours_thursday.0")
+                                        ->label("Czwartek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_thursday[0] ?? null),
+                                    TimePicker::make("opening_hours_thursday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_thursday[1] ?? null),
+                                    TimePicker::make("opening_hours_friday.0")
+                                        ->label("Piątek - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_friday[0] ?? null),
+                                    TimePicker::make("opening_hours_friday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_friday[1] ?? null),
+                                    TimePicker::make("opening_hours_saturday.0")
+                                        ->label("Sobota - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_saturday[0] ?? null),
+                                    TimePicker::make("opening_hours_saturday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_saturday[1] ?? null),
+                                    TimePicker::make("opening_hours_sunday.0")
+                                        ->label("Niedziela - od")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_sunday[0] ?? null),
+                                    TimePicker::make("opening_hours_sunday.1")
+                                        ->label("do")
+                                        ->format("H:i")
+                                        ->timezone("Europe/Warsaw")
+                                        ->seconds(false)
+                                        ->default(fn($record) => $record->opening_hours_sunday[1] ?? null),
+                                ]),
                             ])
-                            ->default(fn(): array => collect([
-                                ["day" => "Poniedziałek", "from" => null, "to" => null],
-                                ["day" => "Wtorek", "from" => null, "to" => null],
-                                ["day" => "Środa", "from" => null, "to" => null],
-                                ["day" => "Czwartek", "from" => null, "to" => null],
-                                ["day" => "Piątek", "from" => null, "to" => null],
-                                ["day" => "Sobota", "from" => null, "to" => null],
-                                ["day" => "Niedziela", "from" => null, "to" => null],
-                            ])->toArray())
-                            ->addable(false)
-                            ->deletable(false)
-                            ->reorderable(false)
-                            ->columns(3),
+                            ->default(fn() => [
+                                "opening_hours_monday" => [null, null],
+                                "opening_hours_tuesday" => [null, null],
+                                "opening_hours_wednesday" => [null, null],
+                                "opening_hours_thursday" => [null, null],
+                                "opening_hours_friday" => [null, null],
+                                "opening_hours_saturday" => [null, null],
+                                "opening_hours_sunday" => [null, null],
+                            ]),
                     ]),
                 ])->from("lg"),
             ])->columns(1);
