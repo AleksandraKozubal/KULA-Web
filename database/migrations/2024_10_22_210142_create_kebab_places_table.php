@@ -16,7 +16,7 @@ return new class() extends Migration {
             $table->string("address");
             $table->string("latitude");
             $table->string("longitude");
-            $table->string("google_maps_url")->nullable();
+            $table->string("place_id")->nullable();
             $table->string("google_maps_rating")->nullable();
             $table->string("phone")->nullable();
             $table->string("website")->nullable();

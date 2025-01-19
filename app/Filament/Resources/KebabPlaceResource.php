@@ -30,6 +30,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
 
 class KebabPlaceResource extends Resource
 {
@@ -74,8 +75,8 @@ class KebabPlaceResource extends Resource
                                 ->label("Długość geograficzna")
                                 ->numeric()
                                 ->required(),
-                            TextInput::make("google_maps_url")
-                                ->label("Google Maps URL")
+                            TextInput::make("place_id")
+                                ->label("Google ID miejsca")
                                 ->maxLength(255),
                             TextInput::make("google_maps_rating")
                                 ->label("Google Maps Ocena")
@@ -139,10 +140,10 @@ class KebabPlaceResource extends Resource
                             ->maxLength(255),
                         Grid::make(2)->schema([
                             TextInput::make("android")
-                                ->label("Link do aplikacji na androida")
+                                ->label("Aplikacja android")
                                 ->maxLength(255),
                             TextInput::make("ios")
-                                ->label("Link do aplikacji na iOS")
+                                ->label("Aplikacja iOS")
                                 ->maxLength(255),
                         ]),
                     ]),
@@ -174,7 +175,7 @@ class KebabPlaceResource extends Resource
                                 TextInput::make("day")
                                     ->label("Dzień")
                                     ->disabled()
-                                    ->default(fn($state, $record, $index) => [
+                                    ->default(fn($state, $record, $index): string => [
                                         "Poniedziałek", "Wtorek", "Środa",
                                         "Czwartek", "Piątek", "Sobota", "Niedziela",
                                     ][$index]),
@@ -191,7 +192,7 @@ class KebabPlaceResource extends Resource
                                     ->seconds(false)
                                     ->nullable(),
                             ])
-                            ->default(fn() => collect([
+                            ->default(fn(): array => collect([
                                 ["day" => "Poniedziałek", "from" => null, "to" => null],
                                 ["day" => "Wtorek", "from" => null, "to" => null],
                                 ["day" => "Środa", "from" => null, "to" => null],
@@ -220,16 +221,25 @@ class KebabPlaceResource extends Resource
                     ->label("Nazwa")
                     ->searchable(),
                 Tables\Columns\ImageColumn::make("image")
-                    ->label("Zdjęcie"),
+                    ->label("Zdjęcie")
+                    ->square(),
                 TextColumn::make("status")
                     ->label("Status")
-                    ->searchable(),
-                TextColumn::make("location_type")
-                    ->label("Typ lokalizacji")
+                    ->badge()
+                    ->color(fn(KebabPlace $kebabPlace): string => match ($kebabPlace->status) {
+                        "otwarte" => "success",
+                        "planowane" => "info",
+                        "zamknięte" => "danger",
+                        default => "warning",
+                    })
                     ->searchable(),
                 IconColumn::make("is_craft")
                     ->label("Mięso kraftowe")
                     ->boolean(),
+                RatingStar::make("google_maps_rating")
+                    ->label("Ocena Google Maps")
+                    ->size("sm")
+                    ->searchable(),
             ])
             ->filters([
                 TernaryFilter::make("is_craft")

@@ -5,10 +5,15 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Suggestion;
+use App\Actions\RetrieveOpinionAction;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * @throws GuzzleException
+     */
     public function run(): void
     {
         $this->call(ProductionSeeder::class);
@@ -24,5 +29,8 @@ class DatabaseSeeder extends Seeder
         Suggestion::factory(10)->create([
             "kebab_place_id" => 1,
         ]);
+      
+        $action = new RetrieveOpinionAction();
+        $action->execute();
     }
 }
