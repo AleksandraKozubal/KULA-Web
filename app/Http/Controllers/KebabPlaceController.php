@@ -167,7 +167,7 @@ class KebabPlaceController extends Controller
 
     protected function formatOpeningHours($kebabPlace): mixed
     {
-        $openFrom = array_map(fn($hours) => $hours[0] ?? [], $kebabPlace->only([
+        $openFrom = array_map(fn($hours) => $hours[0] ?? "", $kebabPlace->only([
             "opening_hours_monday",
             "opening_hours_tuesday",
             "opening_hours_wednesday",
@@ -176,7 +176,7 @@ class KebabPlaceController extends Controller
             "opening_hours_saturday",
             "opening_hours_sunday",
         ]));
-        $openTo = array_map(fn($hours) => $hours[1] ?? [], $kebabPlace->only([
+        $openTo = array_map(fn($hours) => $hours[1] ?? "nieczynne", $kebabPlace->only([
             "opening_hours_monday",
             "opening_hours_tuesday",
             "opening_hours_wednesday",
