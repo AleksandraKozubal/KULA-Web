@@ -44,5 +44,5 @@ Remember to **secure your firewall** for initialization of the app, because duri
 
 #### API
 
-To see all available endpoints see the route **/api-docs**.
-If you are more interested in raw data see the route **/api-docs/raw**
+To see all available endpoints see the route **/api/documentation**.
+If you are more interested in raw data see the route **/api/documentation/raw**
