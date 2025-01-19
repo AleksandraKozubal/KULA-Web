@@ -18,7 +18,7 @@ class FillingController extends Controller
 
     public function store(Request $request): JsonResponse
     {
-        $filling = Filling::query()->create([
+        Filling::query()->create([
             "name" => $request->name,
             "is_vege" => $request->is_vege,
             "hex_color" => $request->hex_color,

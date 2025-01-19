@@ -14,7 +14,7 @@ use Illuminate\View\View;
 
 class InitAppController extends Controller
 {
-    public function index(): View
+    public function index(): View | RedirectResponse
     {
         if (User::where("role", "admin")->exists()) {
             return redirect("/");

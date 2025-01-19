@@ -8,6 +8,10 @@ make dev
 ```
 Application will be running under [localhost:63251](localhost:63251) and [http://kula-web.localhost/](http://kula-web.localhost/) in Blumilk traefik environment. If you don't have a Blumilk traefik environment set up yet, follow the instructions from this [repository](https://github.com/blumilksoftware/environment).
 
+After setting everything up, you can access Telescope for your local application: [http://kula-web.localhost/telescope](http://kula-web.localhost/telescope).
+It is not recommended to use Telescope in production environment.
+
+
 #### Commands
 Before running any of the commands below, you must run shell:
 ```

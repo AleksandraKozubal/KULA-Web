@@ -1045,6 +1045,46 @@ paths:
                 example:
                   message: "Dodano komentarz"
   /comment/{comment}:
+    get:
+      summary: Pobierz komentarz
+      description:
+      parameters:
+        - in: path
+          name: comment
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID Komentarza
+          example: 1
+      responses:
+        "200":
+          description: Pobrano komentarz
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  content:
+                    type: string
+                  user_id:
+                    type: integer
+                  kebab_place_id:
+                    type: integer
+                  parent_id:
+                    type: integer
+                  created_at:
+                    type: string
+              example:
+                id: 2
+                content: "Veri niceee"
+                user_id: 3
+                kebab_place_id: 3
+                parent_id: null
+                created_at: "2025-01-19T18:54:14.000000Z"
+                updated_at: "2025-01-19T18:54:14.000000Z"
     patch:
       summary: Edytuj komentarz
       description:
