@@ -98,5 +98,13 @@
   {
     "name": "majonez",
     "hex_color": "#ff0000"
+  },
+  {
+    "name": "średni",
+    "hex_color": "#ffff00"
+  },
+  {
+    "name": "słodko-kwaśny",
+    "hex_color": "#ff00ff"
   }
 ]

@@ -8,16 +8,16 @@ use Filament\Support\Contracts\HasLabel;
 
 enum KebabPlaceStatus: string implements HasLabel
 {
-    case open = "otwarte";
-    case closed = "zamknięte";
-    case planned = "planowane";
+    case Open = "otwarte";
+    case Closed = "zamknięte";
+    case Planned = "planowane";
 
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::open => "Otwarte",
-            self::closed => "Zamknięte",
-            self::planned => "Planowane",
+            self::Open => "Otwarte",
+            self::Closed => "Zamknięte",
+            self::Planned => "Planowane",
         };
     }
 }
