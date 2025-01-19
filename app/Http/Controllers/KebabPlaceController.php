@@ -231,7 +231,7 @@ class KebabPlaceController extends Controller
         $this->kebabPlace->comments->each(function ($comment): void {
             $comment->is_owner = $comment->user_id === auth()->id();
             $comment->user_name = $comment->user->name;
-            $comment->makeHidden('user');
+            $comment->makeHidden("user");
         });
     }
 }
