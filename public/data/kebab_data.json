@@ -5,6 +5,7 @@
         "address": "Rynek 20",
         "latitude": "51.20788328467099",
         "longitude": "16.161068016930532",
+        "place_id": "ChIJ9arvl5oSD0cRJm8AqJdF4LY",
         "phone": "+48 509 969 117",
         "website": "https://www.cyrus.pl/",
         "email": "cyrus@cyrus.pl",
@@ -70,6 +71,7 @@
         "address": "Kosmiczna 2",
         "latitude": "51.20960667521959",
         "longitude": "16.187620415522723",
+        "place_id": "ChIJvVd-82YND0cRbXLIUgM-Bqg",
         "phone": "696 385 028",
         "website": null,
         "email": null,
@@ -126,6 +128,7 @@
         "address": "Jaworzyńska 41",
         "latitude": "51.200633684016836",
         "longitude": "16.159551796173226",
+        "place_id": "ChIJw8y-LooTD0cRUoJUVhrFfSk",
         "phone": "576 904 806",
         "website": null,
         "email": null,
@@ -191,6 +194,7 @@
         "address": "Jaworzyńska 8",
         "latitude": "51.20424397674176",
         "longitude": "16.160210448143005",
+        "place_id": "ChIJ62675wUTD0cRnrvk5qDkWHU",
         "phone": "459 566 602",
         "website": "https://zahirkebab.pl/menu/",
         "android": "https://play.google.com/store/apps/details?id=com.restaumatic.zahir_kebab_kalisz_production",
@@ -262,6 +266,7 @@
         "address": "Jaworzyńska 4",
         "latitude": "51.20440383503453",
         "longitude": "16.159921511864013",
+        "place_id": "ChIJw3VUVV8TD0cRrcle31A__bQ",
         "phone": "509 047 182",
         "website": "https://www.leokebab-legnica.pl/",
         "android": "https://play.google.com/store/apps/details?id=com.restaumatic.leo_kebab_production&pli=1",
@@ -333,6 +338,7 @@
         "address": "Szkolna 1",
         "latitude": "51.2040685085953",
         "longitude": "16.16069280262619",
+        "place_id": "ChIJC4kRBAATD0cR3BiUbD5_MOw",
         "phone": "790 884 360",
         "website": null,
         "email": "piripirilegnica@gmail.com",
@@ -408,6 +414,7 @@
         "address": "Chojnowska 21A",
         "latitude": "51.207171497698724",
         "longitude": "16.15698843481341",
+        "place_id": "ChIJvWebIhQTD0cRrmhWH7HjJ28",
         "phone": "453 244 469",
         "website": null,
         "email": "kizilelma.sp.z.o.o@gmail.com",
@@ -469,6 +476,7 @@
         "address": "Górnicza 10B",
         "latitude": "51.20552860580215",
         "longitude": "16.186559038356293",
+        "place_id": "ChIJgzfhPAAND0cRwOKUtJ9cTjg",
         "phone": "690 922 578",
         "website": "https://www.kavovarka.pl/",
         "email": "kavovarka2023@gmail.com",
@@ -526,6 +534,7 @@
         "address": "Piłsudskiego 38",
         "latitude": "51.20462333765386",
         "longitude": "16.188554530901975",
+        "place_id": "ChIJnY_cZmoND0cRzKIlNRCEVaA",
         "phone": "789 977 721",
         "website": "https://www.kinghousekebab.pl/",
         "android": "https://play.google.com/store/apps/details?id=com.restaumatic.king_house_kebab_production",
@@ -598,6 +607,7 @@
         "address": "Schumanna 17",
         "latitude": "51.18544929618131",
         "longitude": "16.17237413997929",
+        "place_id": "ChIJFcGp8HQND0cR4f2W50pUfE8",
         "phone": "501 953 031",
         "website": "https://www.kebablegnica.pl/",
         "email": "mirer23@interia.pl",
@@ -666,6 +676,7 @@
         "address": "Piłsudskiego 18",
         "latitude": "51.205138423988146",
         "longitude": "16.185351536443285",
+        "place_id": "ChIJAcrhKvsND0cRvaF9mvB-EC0",
         "phone": "696 727 433",
         "website": null,
         "email": "nasim68@gmail.com",
@@ -727,6 +738,7 @@
         "address": "Wrocławska 13",
         "latitude": "51.20959448358735",
         "longitude": "16.167796240447224",
+        "place_id": "ChIJJ19PBAATD0cRjbBlrWWn1nM",
         "phone": "661 037 017",
         "website": null,
         "email": "patrycja2194@wp.pl",
@@ -793,6 +805,7 @@
         "address": "Kolejowa 3",
         "latitude": "51.21231665915741",
         "longitude": "16.1686792330936",
+        "place_id": "ChIJR8lLPpkSD0cRyfq4L65KDVs",
         "phone": "577 122 801",
         "website": "https://zahirkebab.pl/lokale/legnica/legnica-kolejowa/",
         "email": null,
@@ -856,6 +869,7 @@
         "address": "Złotoryjska 170",
         "latitude": "51.19281402860933",
         "longitude": "16.128722115045626",
+        "place_id": "ChIJJ6SNK1YTD0cRY8ty5QUMWZ8",
         "phone": "575 245 777",
         "website": "https://www.bafrakebablegnica.pl/restauracja/bafra-kebab-zlotoryjska",
         "android": "https://play.google.com/store/apps/details?id=com.restaumatic.bafra_kebab_legnica_2_production",
@@ -931,6 +945,7 @@
         "address": "Gwiezdna 4",
         "latitude": "51.208439469019005",
         "longitude": "16.181745589916925",
+        "place_id": "ChIJucEJiVQND0cR4U-x0jy0b5U",
         "phone": "793 142 594",
         "website": "https://www.bafrakebablegnica.pl/restauracja/bafra-kebab-gwiezdna",
         "android": "https://play.google.com/store/apps/details?id=com.restaumatic.bafra_kebab_legnica_2_production",
@@ -1006,6 +1021,7 @@
         "address": "Fabryczna 13",
         "latitude": "51.20677303064106",
         "longitude": "16.17869613057113",
+        "place_id": "ChIJpTHDpo4ND0cRHwkbpORuuno",
         "phone": "573 677 536",
         "website": "https://www.hadfood-legnica.pl/",
         "email": null,
@@ -1060,11 +1076,11 @@
         "social_media": [
             {
                 "name": "fb",
-                "fb": "https://www.facebook.com/hadfoodlegnica/reels/"
+                "url": "https://www.facebook.com/hadfoodlegnica/reels/"
             },
             {
                 "name": "ig",
-                "ig": "https://www.instagram.com/had_food_legnica/"
+                "url": "https://www.instagram.com/had_food_legnica/"
             }
         ]
     },
@@ -1074,6 +1090,7 @@
         "address": "Wrocławska 155",
         "latitude": "51.20952045769188",
         "longitude": "16.187051359374788",
+        "place_id": "ChIJs_g2IgAND0cROXSFApy8Zls",
         "phone": "531 877 968",
         "website": null,
         "email": "amamkebab.legnica@gmail.com",
@@ -1139,6 +1156,7 @@
         "address": "Czarnieckiego 19c",
         "latitude": "51.21170885367406",
         "longitude": "16.175237588475987",
+        "place_id": "ChIJmTJ0ZAATD0cREGWFJZa29bI",
         "phone": null,
         "website": null,
         "email": null,
@@ -1205,6 +1223,7 @@
         "address": "Piłsudskiego 84",
         "latitude": "51.20140320728768",
         "longitude": "16.214000840314657",
+        "place_id": "ChIJm3_wp8MND0cRill24XGU9Ec",
         "phone": "883 118 848",
         "website": null,
         "email": "joana2105@wp.pl",
@@ -1260,6 +1279,7 @@
         "address": "Iwaszkiewicza 1",
         "latitude": "51.20792723252704",
         "longitude": "16.21341613253819",
+        "place_id": "ChIJNXxkxBUND0cRlUa2Tx-M6bk",
         "phone": "735 602 702",
         "website": null,
         "email": "www.kebabtruck@wp.pl",
@@ -1324,6 +1344,7 @@
         "address": "Wrocławska 23A",
         "latitude": "51.20922454986468",
         "longitude": "16.169298227052437",
+        "place_id": "ChIJ2-PqPwATD0cRN8sl0NakWuU",
         "phone": "576 765 815",
         "website": null,
         "email": null,
@@ -1384,39 +1405,12 @@
         "address": "Nowy Świat",
         "latitude": "51.205128470632545",
         "longitude": "16.1545378995454",
+        "place_id": "ChIJGdu1lxwTD0cRaP9kA_8FaVE",
         "phone": "669 721 401",
         "website": null,
         "email": null,
         "opened_at_year": null,
         "closed_at_year": null,
-        "opening_hours_monday": [
-            null,
-            null
-        ],
-        "opening_hours_tuesday": [
-            null,
-            null
-        ],
-        "opening_hours_wednesday": [
-            null,
-            null
-        ],
-        "opening_hours_thursday": [
-            null,
-            null
-        ],
-        "opening_hours_friday": [
-            null,
-            null
-        ],
-        "opening_hours_saturday": [
-            null,
-            null
-        ],
-        "opening_hours_sunday": [
-            null,
-            null
-        ],
         "fillings": [],
         "sauces": [],
         "status": "zamknięte",
@@ -1436,6 +1430,7 @@
         "address": "Asnyka 18d",
         "latitude": "51.20133491074013",
         "longitude": "16.141212683191867",
+        "place_id": null,
         "phone": "605 674 302",
         "website": null,
         "email": "annarybaczyk@wp.pl",
@@ -1498,6 +1493,7 @@
         "address": "Piłsudskiego 84",
         "latitude": "51.20140320728768",
         "longitude": "16.214000840314657",
+        "place_id": null,
         "phone": "796 145 169",
         "website": null,
         "email": null,
@@ -1551,6 +1547,7 @@
         "address": "Rynek 32",
         "latitude": "51.20777731965639",
         "longitude": "16.160579600694",
+        "place_id": "ChIJ086yo5oSD0cR8tvItnC9d8c",
         "phone": null,
         "website": null,
         "email": null,
@@ -1604,6 +1601,7 @@
         "address": "Fabryczna 13",
         "latitude": "51.20677303064106",
         "longitude": "16.17869613057113",
+        "place_id": "ChIJGy-MjykND0cRREbQJoI4ZL8",
         "phone": "573 683 905",
         "website": null,
         "email": "kebabmarklubin@gmail.com",
@@ -1667,6 +1665,7 @@
         "address": "Fabryczna 13",
         "latitude": "51.20677303064106",
         "longitude": "16.17869613057113",
+        "place_id": null,
         "phone": "573 683 905",
         "website": null,
         "email": null,
@@ -1714,38 +1713,39 @@
         "address": "Batalionu „Zośka” 36a",
         "latitude": "51.19930113838938",
         "longitude": "16.219397530166724",
+        "place_id": "ChIJ-VTk2U4ND0cRBZ5n7M5bKXk",
         "phone": null,
         "website": null,
         "email": null,
         "opened_at_year": "2022",
         "closed_at_year": null,
         "opening_hours_monday": [
-            null,
-            null
+            "10:00",
+            "19:00"
         ],
         "opening_hours_tuesday": [
-            null,
-            null
+            "10:00",
+            "19:00"
         ],
         "opening_hours_wednesday": [
-            null,
-            null
+            "10:00",
+            "19:00"
         ],
         "opening_hours_thursday": [
-            null,
-            null
+            "10:00",
+            "19:00"
         ],
         "opening_hours_friday": [
-            null,
-            null
+            "10:00",
+            "19:00"
         ],
         "opening_hours_saturday": [
-            null,
-            null
+            "10:00",
+            "18:00"
         ],
         "opening_hours_sunday": [
-            null,
-            null
+            "10:00",
+            "17:00"
         ],
         "fillings": [],
         "sauces": [],
@@ -1762,6 +1762,7 @@
         "address": "Chojnowska 21A",
         "latitude": "51.207171497698724",
         "longitude": "16.15698843481341",
+        "place_id": "ChIJU0taJ5ASD0cRuSdT6fhc1sA",
         "phone": "768545664",
         "website": null,
         "email": null,
@@ -1810,6 +1811,7 @@
         "address": "Hutników 23",
         "latitude": "51.20523547984742",
         "longitude": "16.150942551540048",
+        "place_id": "ChIJVbnxgI4SD0cR7zlHf9LwLGU",
         "phone": "669406095",
         "website": null,
         "email": null,
@@ -1858,6 +1860,7 @@
         "address": "Najświętszej Marii Panny",
         "latitude": "51.209281018102246",
         "longitude": "16.16491389168841",
+        "place_id": null,
         "phone": "574 179 918",
         "website": null,
         "email": null,
@@ -1911,6 +1914,7 @@
         "address": "Marsa Pawilon",
         "latitude": "51.206183035565644",
         "longitude": "16.191148257671063",
+        "place_id": "ChIJXYnc4iAND0cR-19to6-8CH4",
         "phone": "780519788",
         "website": null,
         "email": null,
@@ -1958,6 +1962,7 @@
         "address": "Wrocławska 10A",
         "latitude": "51.209807033960686",
         "longitude": "16.168548395615964",
+        "google_maps_url": "https://maps.app.goo.gl/DzMrgmFr65HS5cbL7",
         "phone": null,
         "website": null,
         "email": null,
@@ -2006,6 +2011,7 @@
         "address": "Pocztowa 5",
         "latitude": "51.212185928118465",
         "longitude": "16.16581084232893",
+        "place_id": "ChIJb7_jnZkSD0cRDy9y_cu4dhs",
         "phone": "697 483 834",
         "website": null,
         "email": null,
@@ -2054,6 +2060,7 @@
         "address": "Pocztowa 5",
         "latitude": "51.20728291605775",
         "longitude": "16.15196427301321",
+        "place_id": "ChIJTXnE7d0TD0cRx2uT3ornGps",
         "phone": null,
         "website": null,
         "email": null,
@@ -2105,6 +2112,7 @@
         "address": "Jaworzyńska 41",
         "latitude": "51.20077839119545",
         "longitude": "16.159529430684273",
+        "place_id": "ChIJNa4sE3QTD0cR0N_o00WYhm8",
         "phone": "534 817 907",
         "website": null,
         "email": null,
