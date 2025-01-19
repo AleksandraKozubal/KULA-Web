@@ -26,7 +26,13 @@ use Illuminate\Support\Collection;
  * @property ?string $email
  * @property ?int $opened_at_year
  * @property ?int $closed_at_year
- * @property array $opening_hours
+ * @property array $opening_hours_monday
+ * @property array $opening_hours_tuesday
+ * @property array $opening_hours_wednesday
+ * @property array $opening_hours_thursday
+ * @property array $opening_hours_friday
+ * @property array $opening_hours_saturday
+ * @property array $opening_hours_sunday
  * @property ?array $fillings
  * @property ?array $sauces
  * @property string $status
@@ -40,7 +46,7 @@ class KebabPlace extends Model
 {
     use HasFactory;
 
-    public const string PHOTOS_DIRECTORY = "kebab-place";
+    public const PHOTOS_DIRECTORY = "kebab-place";
 
     protected $fillable = [
         "name",
@@ -57,7 +63,13 @@ class KebabPlace extends Model
         "email",
         "fillings",
         "sauces",
-        "opening_hours",
+        "opening_hours_monday",
+        "opening_hours_tuesday",
+        "opening_hours_wednesday",
+        "opening_hours_thursday",
+        "opening_hours_friday",
+        "opening_hours_saturday",
+        "opening_hours_sunday",
         "status",
         "is_craft",
         "is_chain_restaurant",
@@ -66,7 +78,13 @@ class KebabPlace extends Model
         "social_media",
     ];
     protected $casts = [
-        "opening_hours" => "array",
+        "opening_hours_monday" => "array",
+        "opening_hours_tuesday" => "array",
+        "opening_hours_wednesday" => "array",
+        "opening_hours_thursday" => "array",
+        "opening_hours_friday" => "array",
+        "opening_hours_saturday" => "array",
+        "opening_hours_sunday" => "array",
         "fillings" => "array",
         "sauces" => "array",
         "is_craft" => "boolean",
@@ -96,21 +114,5 @@ class KebabPlace extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
-    }
-
-    /**
-     * @param array $value
-     */
-    protected function setOpeningHoursAttribute($value): void
-    {
-        $days = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
-
-        $formatted = collect($value)->map(fn($item, $index) => [
-            "day" => $days[$index],
-            "from" => $item["from"] ?? null,
-            "to" => $item["to"] ?? null,
-        ])->toArray();
-
-        $this->attributes["opening_hours"] = json_encode($formatted);
     }
 }

@@ -8,6 +8,10 @@ make dev
 ```
 Application will be running under [localhost:63251](localhost:63251) and [http://kula-web.localhost/](http://kula-web.localhost/) in Blumilk traefik environment. If you don't have a Blumilk traefik environment set up yet, follow the instructions from this [repository](https://github.com/blumilksoftware/environment).
 
+After setting everything up, you can access Telescope for your local application: [http://kula-web.localhost/telescope](http://kula-web.localhost/telescope).
+It is not recommended to use Telescope in production environment.
+
+
 #### Commands
 Before running any of the commands below, you must run shell:
 ```
@@ -33,16 +37,16 @@ make shell
 
 | service    | container name            | default host port               |
 |:-----------|:--------------------------|:--------------------------------|
-| `app`      | `kula-web-app-dev`     | [63251](http://localhost:63251) |
+| `app`      | `kula-web-app-dev`     | [63251](http://kula-web.localhost) |
 | `database` | `kula-web-db-dev`      | 63253                           |
 | `redis`    | `kula-web-redis-dev`   | 63252                           |
 | `mailpit`  | `kula-web-mailpit-dev` | 63254                           |
 
 #### Production
 
-Remember to **secure your firewall** for initialization of the app, because during first run it will ask to make an **admin account**!
+Remember to **secure your firewall** for initialization of the app, because during first run it will ask to create an **admin account**!
 
 #### API
 
-To see all available endpoints see the route **/api-docs**.
-If you are more interested in raw data see the route **/api-docs/raw**
+To see all available endpoints see the route **/api/documentation**.
+If you are more interested in raw data see the route **/api/documentation/raw**
