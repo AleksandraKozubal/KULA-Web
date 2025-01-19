@@ -21,10 +21,10 @@ class SuggestionController extends Controller
         $request = $request->validated();
 
         Suggestion::query()->create([
-            "name" => $request->name,
-            "description" => $request->description,
-            "kebab_place_id" => $request->kebabPlace,
-            "user_id" => auth()->user(),
+            "name" => $request["name"],
+            "description" => $request["description"],
+            "kebab_place_id" => $request["kebabPlace"],
+            "user_id" => auth()->user()->id,
             "status" => SuggestionStatus::Pending,
         ]);
 
