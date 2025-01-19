@@ -15,10 +15,8 @@ use App\Models\Sauce;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 
 class KebabPlaceController extends Controller
@@ -142,17 +140,17 @@ class KebabPlaceController extends Controller
             ->when($this->ffillings, fn(Builder $query) => $query->whereJsonContains("fillings", $this->ffillings))
             ->when($this->fsauces, fn(Builder $query) => $query->whereJsonContains("sauces", $this->fsauces))
             ->when($this->fordering, fn(Builder $query) => $query->whereJsonContains("order_options", $this->fordering))
-            ->when($this->fopen == "open", function (Builder $query) {
-                $query->where(function (Builder $query) {
+            ->when($this->fopen === "open", function (Builder $query): void {
+                $query->where(function (Builder $query): void {
                     // compare the hours as floats
-                    $query->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 0, ':', '.') AS FLOAT) <= ?"), [floatval($this->time->format('H.i'))])
-                        ->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 1, ':', '.') AS FLOAT) > ?"), [floatval($this->time->format('H.i'))]);
+                    $query->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 0, ':', '.') AS FLOAT) <= ?"), [floatval($this->time->format("H.i"))])
+                        ->whereRaw(DB::raw("CAST(REPLACE(opening_hours_{$this->weekday}::jsonb ->> 1, ':', '.') AS FLOAT) > ?"), [floatval($this->time->format("H.i"))]);
                 });
             })
-            ->when($this->fopen == "closed", function (Builder $query) {
-                $query->where(function (Builder $query) {
-                    $query->whereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 0 > ?"), [floatval($this->time->format('H.i'))])
-                        ->orWhereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 1 <= ?"), [floatval($this->time->format('H.i'))]);
+            ->when($this->fopen === "closed", function (Builder $query): void {
+                $query->where(function (Builder $query): void {
+                    $query->whereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 0 > ?"), [floatval($this->time->format("H.i"))])
+                        ->orWhereRaw(DB::raw("opening_hours_{$this->weekday}::jsonb ->> 1 <= ?"), [floatval($this->time->format("H.i"))]);
                 });
             });
     }
@@ -167,28 +165,28 @@ class KebabPlaceController extends Controller
     {
         $this->kebabPlaces->each(function ($kebabPlace): void {
             $openFrom = array_map(fn($hours) => $hours[0], $kebabPlace->only([
-                'opening_hours_monday',
-                'opening_hours_tuesday',
-                'opening_hours_wednesday',
-                'opening_hours_thursday',
-                'opening_hours_friday',
-                'opening_hours_saturday',
-                'opening_hours_sunday',
+                "opening_hours_monday",
+                "opening_hours_tuesday",
+                "opening_hours_wednesday",
+                "opening_hours_thursday",
+                "opening_hours_friday",
+                "opening_hours_saturday",
+                "opening_hours_sunday",
             ]));
             $openTo = array_map(fn($hours) => $hours[1], $kebabPlace->only([
-                'opening_hours_monday',
-                'opening_hours_tuesday',
-                'opening_hours_wednesday',
-                'opening_hours_thursday',
-                'opening_hours_friday',
-                'opening_hours_saturday',
-                'opening_hours_sunday',
+                "opening_hours_monday",
+                "opening_hours_tuesday",
+                "opening_hours_wednesday",
+                "opening_hours_thursday",
+                "opening_hours_friday",
+                "opening_hours_saturday",
+                "opening_hours_sunday",
             ]));
 
             $kebabPlace->opening_hours = array_map(fn($from, $to, $index) => [
-                'day' => Weekdays::cases()[$index]->getLabel(),
-                'from' => $from,
-                'to' => $to,
+                "day" => Weekdays::cases()[$index]->getLabel(),
+                "from" => $from,
+                "to" => $to,
             ], $openFrom, $openTo, array_keys(Weekdays::cases()));
 
             unset($kebabPlace->opening_hours_monday, $kebabPlace->opening_hours_tuesday, $kebabPlace->opening_hours_wednesday, $kebabPlace->opening_hours_thursday, $kebabPlace->opening_hours_friday, $kebabPlace->opening_hours_saturday, $kebabPlace->opening_hours_sunday);

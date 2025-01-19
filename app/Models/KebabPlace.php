@@ -121,14 +121,6 @@ class KebabPlace extends Model
      */
     // protected function setOpeningHoursAttribute($value): void
     // {
-    //     $days = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
 
-    //     $formatted = collect($value)->map(fn($item, $index) => [
-    //         "day" => $days[$index],
-    //         "from" => $item["from"] ?? null,
-    //         "to" => $item["to"] ?? null,
-    //     ])->toArray();
-
-    //     $this->attributes["opening_hours"] = json_encode($formatted);
     // }
 }
