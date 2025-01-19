@@ -16,6 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
 class FillingResource extends Resource
@@ -59,6 +60,15 @@ class FillingResource extends Resource
                 ColorColumn::make("hex_color")
                     ->label("Kolor")
                     ->sortable(),
+            ])
+            ->filters([
+                TernaryFilter::make("is_vege")
+                    ->label("Czy wege")
+                    ->placeholder("Wszystkie")
+                    ->options([
+                        "true" => "tak",
+                        "false" => "nie",
+                    ]),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
