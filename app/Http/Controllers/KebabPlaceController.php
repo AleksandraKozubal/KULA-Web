@@ -12,7 +12,6 @@ use App\Models\Favorites;
 use App\Models\Filling;
 use App\Models\KebabPlace;
 use App\Models\Sauce;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
@@ -22,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 class KebabPlaceController extends Controller
 {
     protected $kebabPlaces;
+    protected $kebabPlace;
     protected ?int $paginate;
     protected string $sby;
     protected string $sdirection;
@@ -55,7 +55,6 @@ class KebabPlaceController extends Controller
         $this->day = explode("-", $this->fdatetime)[0] - 1;
         $this->weekday = Weekdays::cases()[$this->day]->value;
         $this->time = Carbon::parse(explode("-", $this->fdatetime)[1]);
-
         $query = KebabPlace::query();
         $query = $this->filter($query);
         $query = $this->sort($query);
@@ -99,21 +98,15 @@ class KebabPlaceController extends Controller
         return response()->json($kebabPlace, 201);
     }
 
-    public function show(Request $request, ?User $user): JsonResponse
+    public function show(Request $request): JsonResponse
     {
-        $kebabPlace = KebabPlace::find($request->kebabPlace);
+        $this->kebabPlace = KebabPlace::find($request->kebabPlace);
+        $this->kebabPlace = $this->formatOpeningHours($this->kebabPlace);
+        $this->attachUserData();
+        $this->attachDetails();
+        $this->attachComments();
 
-        if (auth()->check()) {
-            $kebabPlace->is_favorite = Favorites::where("user_id", auth()->id())->where("kebab_place_id", $request->kebabPlace)->exists();
-        }
-        $kebabPlace->comments = Comment::where("kebab_place_id", $request->kebabPlace)->get();
-        $kebabPlace->comments->each(function ($comment): void {
-            $comment->is_owner = $comment->user_id === auth()->id();
-        });
-        $kebabPlace->fillings = Filling::whereIn("id", $kebabPlace->fillings)->get();
-        $kebabPlace->sauces = Sauce::whereIn("id", $kebabPlace->sauces)->get();
-
-        return response()->json($kebabPlace, 200);
+        return response()->json($this->kebabPlace, 200);
     }
 
     public function update(KebabPlaceRequest $request, KebabPlace $kebabPlace): JsonResponse
@@ -163,34 +156,45 @@ class KebabPlaceController extends Controller
 
     protected function attachFormattedOpeningHours(): void
     {
+        if ($this->kebabPlaces === null) {
+            throw new \RuntimeException("Kebab places are null");
+        }
+
         $this->kebabPlaces->each(function ($kebabPlace): void {
-            $openFrom = array_map(fn($hours) => $hours[0], $kebabPlace->only([
-                "opening_hours_monday",
-                "opening_hours_tuesday",
-                "opening_hours_wednesday",
-                "opening_hours_thursday",
-                "opening_hours_friday",
-                "opening_hours_saturday",
-                "opening_hours_sunday",
-            ]));
-            $openTo = array_map(fn($hours) => $hours[1], $kebabPlace->only([
-                "opening_hours_monday",
-                "opening_hours_tuesday",
-                "opening_hours_wednesday",
-                "opening_hours_thursday",
-                "opening_hours_friday",
-                "opening_hours_saturday",
-                "opening_hours_sunday",
-            ]));
-
-            $kebabPlace->opening_hours = array_map(fn($from, $to, $index) => [
-                "day" => Weekdays::cases()[$index]->getLabel(),
-                "from" => $from,
-                "to" => $to,
-            ], $openFrom, $openTo, array_keys(Weekdays::cases()));
-
-            unset($kebabPlace->opening_hours_monday, $kebabPlace->opening_hours_tuesday, $kebabPlace->opening_hours_wednesday, $kebabPlace->opening_hours_thursday, $kebabPlace->opening_hours_friday, $kebabPlace->opening_hours_saturday, $kebabPlace->opening_hours_sunday);
+            $kebabPlace = $this->formatOpeningHours($kebabPlace);
         });
+    }
+
+    protected function formatOpeningHours($kebabPlace): mixed
+    {
+        $openFrom = array_map(fn($hours) => $hours[0] ?? [], $kebabPlace->only([
+            "opening_hours_monday",
+            "opening_hours_tuesday",
+            "opening_hours_wednesday",
+            "opening_hours_thursday",
+            "opening_hours_friday",
+            "opening_hours_saturday",
+            "opening_hours_sunday",
+        ]));
+        $openTo = array_map(fn($hours) => $hours[1] ?? [], $kebabPlace->only([
+            "opening_hours_monday",
+            "opening_hours_tuesday",
+            "opening_hours_wednesday",
+            "opening_hours_thursday",
+            "opening_hours_friday",
+            "opening_hours_saturday",
+            "opening_hours_sunday",
+        ]));
+
+        $kebabPlace->opening_hours = array_map(fn($from, $to, $index) => [
+            "day" => Weekdays::cases()[$index]->getLabel(),
+            "from" => $from,
+            "to" => $to,
+        ], $openFrom, $openTo, array_keys(Weekdays::cases()));
+
+        unset($kebabPlace->opening_hours_monday, $kebabPlace->opening_hours_tuesday, $kebabPlace->opening_hours_wednesday, $kebabPlace->opening_hours_thursday, $kebabPlace->opening_hours_friday, $kebabPlace->opening_hours_saturday, $kebabPlace->opening_hours_sunday);
+
+        return $kebabPlace;
     }
 
     protected function attachUserData(): void
@@ -200,5 +204,19 @@ class KebabPlaceController extends Controller
                 $kebabPlace->is_favorite = Favorites::query()->where("user_id", auth()->id())->where("kebab_place_id", $kebabPlace->id)->exists();
             }
         }
+    }
+
+    protected function attachDetails(): void
+    {
+        $this->kebabPlace->fillings = Filling::whereIn("id", $this->kebabPlace->fillings)->get();
+        $this->kebabPlace->sauces = Sauce::whereIn("id", $this->kebabPlace->sauces)->get();
+    }
+
+    protected function attachComments(): void
+    {
+        $this->kebabPlace->comments = Comment::where("kebab_place_id", $this->kebabPlace->id)->get();
+        $this->kebabPlace->comments->each(function ($comment): void {
+            $comment->is_owner = $comment->user_id === auth()->id();
+        });
     }
 }
