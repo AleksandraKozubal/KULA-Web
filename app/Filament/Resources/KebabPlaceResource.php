@@ -32,12 +32,6 @@ use IbrahimBougaoua\FilamentRatingStar\Columns\Components\RatingStar;
 
 class KebabPlaceResource extends Resource
 {
-    protected static ?string $model = KebabPlace::class;
-    protected static ?string $label = "kebab";
-    protected static ?string $pluralLabel = "Kebaby";
-    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
-    protected static bool $hasTitleCaseModelLabel = false;
-
     public static function form(Form $form): Form
     {
         return $form
@@ -264,8 +258,7 @@ class KebabPlaceResource extends Resource
                                 "opening_hours_friday" => [null, null],
                                 "opening_hours_saturday" => [null, null],
                                 "opening_hours_sunday" => [null, null],
-                            ])
-
+                            ]),
                     ]),
                 ])->from("lg"),
             ])->columns(1);
@@ -329,4 +322,10 @@ class KebabPlaceResource extends Resource
             "edit" => EditKebabPlace::route("/{record}/edit"),
         ];
     }
+
+    protected static ?string $model = KebabPlace::class;
+    protected static ?string $label = "kebab";
+    protected static ?string $pluralLabel = "Kebaby";
+    protected static ?string $navigationIcon = "heroicon-o-building-storefront";
+    protected static bool $hasTitleCaseModelLabel = false;
 }

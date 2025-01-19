@@ -15,8 +15,6 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
-    protected static ?string $password;
-
     /**
      * @return array<string, mixed>
      */
@@ -39,4 +37,6 @@ class UserFactory extends Factory
             "email_verified_at" => null,
         ]);
     }
+
+    protected static ?string $password;
 }
