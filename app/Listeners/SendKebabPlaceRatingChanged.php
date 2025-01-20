@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Events\KebabPlaceRatingChanged;
@@ -15,6 +17,6 @@ class SendKebabPlaceRatingChanged implements ShouldQueue
     {
         $kebabPlace = $event->kebabPlace;
 
-        Log::info('KebabPlaceRatingChanged event handled', ['kebabPlace' => $kebabPlace]);
+        Log::info("KebabPlaceRatingChanged event handled", ["kebabPlace" => $kebabPlace]);
     }
 }

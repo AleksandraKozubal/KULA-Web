@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Events\KebabPlaceDeleted;
@@ -15,6 +17,6 @@ class SendKebabPlaceDeleted implements ShouldQueue
     {
         $kebabPlace = $event->kebabPlace;
 
-        Log::info('KebabPlaceDeleted event handled', ['kebabPlace' => $kebabPlace]);
+        Log::info("KebabPlaceDeleted event handled", ["kebabPlace" => $kebabPlace]);
     }
 }

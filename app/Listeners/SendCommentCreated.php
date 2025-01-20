@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Events\CommentCreated;
@@ -16,6 +18,6 @@ class SendCommentCreated implements ShouldQueue
         $kebabPlace = $event->kebabPlace;
         $comment = $event->comment;
 
-        Log::info('CommentCreated event handled', ['kebabPlace' => $kebabPlace, 'comment' => $comment]);
+        Log::info("CommentCreated event handled", ["kebabPlace" => $kebabPlace, "comment" => $comment]);
     }
 }

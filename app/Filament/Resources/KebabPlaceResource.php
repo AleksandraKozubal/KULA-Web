@@ -326,7 +326,7 @@ class KebabPlaceResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->after(function ($record) {
+                    ->after(function ($record): void {
                         broadcast(new KebabPlaceDeleted($record));
                     }),
             ])
