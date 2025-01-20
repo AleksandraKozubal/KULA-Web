@@ -73,20 +73,6 @@ class AdminPanelProvider extends PanelProvider
             ->navigationGroups([
                 NavigationGroup::make("linki projektowe")->collapsible(false),
             ])
-            ->navigationItems([
-                NavigationItem::make("OPZ")
-                    ->url("https://drive.google.com/file/d/1rzBXt32Hwl9UaX9H00mx_Al4heIaSa4a/view?authuser=1&usp=classroom_web", shouldOpenInNewTab: true)
-                    ->icon("heroicon-o-clipboard-document-list")
-                    ->group("linki projektowe"),
-                NavigationItem::make("PUM - zasady")
-                    ->url("https://github.com/kamilpiech97/cwup-resources/blob/main/INF/2024-2025/s7/pum/classes/lab01.md", shouldOpenInNewTab: true)
-                    ->icon("heroicon-o-device-phone-mobile")
-                    ->group("linki projektowe"),
-                NavigationItem::make("PZ - zasady")
-                    ->url("https://github.com/krzysztofrewak/cwup/blob/main/projects/pz.md", shouldOpenInNewTab: true)
-                    ->icon("heroicon-o-users")
-                    ->group("linki projektowe"),
-            ])
             ->spa();
     }
 }
