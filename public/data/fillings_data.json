@@ -2,7 +2,7 @@
   {
     "name": "gyros",
     "is_vege": false,
-    "hex_color": "#ff0000"
+    "hex_color": "#401d1d"
   },
   {
     "name": "ser żółty",
@@ -12,56 +12,56 @@
   {
     "name": "kurczak",
     "is_vege": false,
-    "hex_color": "#ff00ff"
+    "hex_color": "#ad7d3e"
   },
   {
     "name": "mieszane",
     "is_vege": false,
-    "hex_color": "#00ff00"
+    "hex_color": "#8a6e3f"
   },
   {
     "name": "wołowina",
     "is_vege": false,
-    "hex_color": "#00ffff"
+    "hex_color": "#9c0000"
   },
   {
     "name": "falafel",
     "is_vege": true,
-    "hex_color": "#0000ff"
+    "hex_color": "#594b26"
   },
   {
     "name": "kraftowe",
     "is_vege": false,
-    "hex_color": "#ff0000"
+    "hex_color": "#592222"
   },
   {
     "name": "karkówka",
     "is_vege": false,
-    "hex_color": "#ffff00"
+    "hex_color": "#4f1515"
   },
   {
     "name": "wołowo-baranie",
     "is_vege": false,
-    "hex_color": "#ff00ff"
+    "hex_color": "#541a1a"
   },
   {
     "name": "baranina",
     "is_vege": false,
-    "hex_color": "#00ff00"
+    "hex_color": "#522626"
   },
   {
     "name": "drobiowe",
     "is_vege": false,
-    "hex_color": "#00ffff"
+    "hex_color": "#d48247"
   },
   {
     "name": "wieprzowo-wołowe",
     "is_vege": false,
-    "hex_color": "#0000ff"
+    "hex_color": "#733939"
   },
   {
     "name": "wieprzowe",
     "is_vege": false,
-    "hex_color": "#ff0000"
+    "hex_color": "#613551"
   }
 ]

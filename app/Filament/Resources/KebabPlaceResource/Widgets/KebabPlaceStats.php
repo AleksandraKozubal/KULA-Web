@@ -10,6 +10,7 @@ use Filament\Widgets\ChartWidget;
 class KebabPlaceStats extends ChartWidget
 {
     protected static ?string $heading = "Statusy kebabów";
+    protected static ?string $maxHeight = "300px";
 
     protected function getData(): array
     {

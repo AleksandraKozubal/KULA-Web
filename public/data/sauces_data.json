@@ -5,71 +5,71 @@
   },
   {
     "name": "BBQ",
-    "hex_color": "#ffff00"
+    "hex_color": "#731500"
   },
   {
     "name": "czosnkowy",
-    "hex_color": "#ff00ff"
+    "hex_color": "#faf9c8"
   },
   {
     "name": "koperkowy",
-    "hex_color": "#00ff00"
+    "hex_color": "#cdfc97"
   },
   {
     "name": "mieszany",
-    "hex_color": "#00ffff"
+    "hex_color": "#c99a49"
   },
   {
     "name": "ostry",
-    "hex_color": "#0000ff"
+    "hex_color": "#ff5400"
   },
   {
     "name": "łagodny",
-    "hex_color": "#ff0000"
+    "hex_color": "#ffda57"
   },
   {
     "name": "mocny czosnek",
-    "hex_color": "#ffff00"
+    "hex_color": "#ffffff"
   },
   {
     "name": "sriracha-mayo",
-    "hex_color": "#ff00ff"
+    "hex_color": "#f7af59"
   },
   {
     "name": "miodowo-musztardowy",
-    "hex_color": "#00ff00"
+    "hex_color": "#d1b025"
   },
   {
     "name": "tzatziki",
-    "hex_color": "#00ffff"
+    "hex_color": "#ebffe0"
   },
   {
     "name": "mango habanero",
-    "hex_color": "#0000ff"
+    "hex_color": "#ffbf00"
   },
   {
     "name": "ziołowy",
-    "hex_color": "#ff0000"
+    "hex_color": "#6fa868"
   },
   {
     "name": "pasta czosnkowa",
-    "hex_color": "#ffff00"
+    "hex_color": "#ffdc8f"
   },
   {
     "name": "miętowy",
-    "hex_color": "#ff00ff"
+    "hex_color": "#29a65f"
   },
   {
     "name": "sweet chili",
-    "hex_color": "#00ff00"
+    "hex_color": "#f03265"
   },
   {
     "name": "pomidorowy pikantny",
-    "hex_color": "#00ffff"
+    "hex_color": "#ba1914"
   },
   {
     "name": "jogurtowy",
-    "hex_color": "#0000ff"
+    "hex_color": "#e8e8e8"
   },
   {
     "name": "drwala",
@@ -77,34 +77,34 @@
   },
   {
     "name": "sambal",
-    "hex_color": "#ffff00"
+    "hex_color": "#ffc71d"
   },
   {
     "name": "musztardowo-ziołowy",
-    "hex_color": "#ff00ff"
+    "hex_color": "#ffc700"
   },
   {
     "name": "ogórkowo-czosnkowy",
-    "hex_color": "#00ff00"
+    "hex_color": "#adf5ad"
   },
   {
     "name": "salsa",
-    "hex_color": "#00ffff"
+    "hex_color": "#ff6b4a"
   },
   {
     "name": "ostry sriracha",
-    "hex_color": "#0000ff"
+    "hex_color": "#ff3d00"
   },
   {
     "name": "majonez",
-    "hex_color": "#ff0000"
+    "hex_color": "#fff9c3"
   },
   {
     "name": "średni",
-    "hex_color": "#ffff00"
+    "hex_color": "#ffb16a"
   },
   {
     "name": "słodko-kwaśny",
-    "hex_color": "#ff00ff"
+    "hex_color": "#fc4d01"
   }
 ]

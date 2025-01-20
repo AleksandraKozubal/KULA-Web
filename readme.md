@@ -21,7 +21,6 @@ make shell
 | Command                 | Task                                        |
 |:------------------------|:--------------------------------------------|
 | `composer <command>`    | Composer                                    |
-| `composer test`         | Runs backend tests                          |
 | `composer analyse`      | Runs Larastan analyse for backend files     |
 | `composer cs`           | Lints backend files                         |
 | `composer csf`          | Lints and fixes backend files               |
@@ -30,7 +29,6 @@ make shell
 | `npm run build`         | Compiles and minifies for production        |
 | `npm run lint`          | Lints frontend files                        |
 | `npm run lintf`         | Lints and fixes frontend files              |
-| `npm run tsc`           | Runs TypeScript checker                     |
 
 
 #### Containers
