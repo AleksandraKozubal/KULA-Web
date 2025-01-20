@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Events\KebabPlaceCreated;
+use App\Listeners\SendCommentCreated;
+use App\Listeners\SendKebabPlaceCreated;
+use App\Listeners\SendKebabPlaceDeleted;
+use App\Listeners\SendKebabPlaceRatingChanged;
+use App\Listeners\SendKebabPlaceUpdated;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,11 +21,14 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        KebabPlaceCreated::class => [
+            SendKebabPlaceCreated::class,
+            SendKebabPlaceUpdated::class,
+            SendKebabPlaceDeleted::class,
+            SendKebabPlaceRatingChanged::class,
+            SendCommentCreated::class,
+        ],
     ];
-
-    public function boot(): void
-    {
-    }
 
     public function shouldDiscoverEvents(): bool
     {

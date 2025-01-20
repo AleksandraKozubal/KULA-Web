@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
+use App\Events\KebabPlaceRatingChanged;
 use App\Models\KebabPlace;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -34,6 +35,8 @@ class RetrieveOpinionAction
                 $kebabPlace->update([
                     "google_maps_rating" => $rating,
                 ]);
+
+                broadcast(new KebabPlaceRatingChanged($kebabPlace));
             }
         }
     }

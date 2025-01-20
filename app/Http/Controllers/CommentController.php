@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Events\CommentCreated;
 use App\Models\Comment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -28,6 +29,8 @@ class CommentController extends Controller
         $comment->user_id = auth()->user()->id;
         $comment->kebab_place_id = $request->kebabPlace;
         $comment->save();
+
+        broadcast(new CommentCreated($request->kebabPlace, $comment));
 
         return response()->json([
             "message" => "Dodano komentarz",
