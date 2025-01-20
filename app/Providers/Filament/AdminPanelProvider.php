@@ -70,9 +70,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->navigationGroups([
-                NavigationGroup::make("linki projektowe")->collapsible(false),
-            ])
             ->spa();
     }
 }
