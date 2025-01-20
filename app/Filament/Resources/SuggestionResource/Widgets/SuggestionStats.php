@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\SuggestionResource\Widgets;
 
+use App\Enums\SuggestionStatus;
+use App\Models\Suggestion;
 use Filament\Widgets\ChartWidget;
 
 class SuggestionStats extends ChartWidget
@@ -13,12 +15,18 @@ class SuggestionStats extends ChartWidget
 
     protected function getData(): array
     {
+        $suggestions = Suggestion::query()->get();
+
+        $accepted = $suggestions->where("status", SuggestionStatus::Accepted)->count();
+        $rejected = $suggestions->where("status", SuggestionStatus::Rejected)->count();
+        $pending = $suggestions->where("status", SuggestionStatus::Pending)->count();
+
         return [
-            "labels" => ["Accepted", "Rejected", "Pending"],
+            "labels" => ["Zaakceptowane", "Odrzucone", "Oczekujące"],
             "datasets" => [
                 [
                     "label" => "Suggestions",
-                    "data" => [1, 2, 3],
+                    "data" => [$accepted, $rejected, $pending],
                     "backgroundColor" => ["#4CAF50", "#2196F3", "#F44336"],
                 ],
             ],
