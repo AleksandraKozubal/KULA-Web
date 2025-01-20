@@ -61,7 +61,11 @@ class KebabPlaceController extends Controller
         $this->kebabPlaces = $query->paginate($this->paginate);
         $this->attachFormattedOpeningHours();
         $this->attachUserDataAll();
-        $this->attachImageData();
+
+
+        foreach ($this->kebabPlaces as $kebabPlace) {
+            $this->attachImageData($kebabPlace);
+        }
 
         return response()->json($this->kebabPlaces);
     }
@@ -112,6 +116,7 @@ class KebabPlaceController extends Controller
         $this->attachUserData();
         $this->attachDetails();
         $this->attachComments();
+        $this->attachImageData($this->kebabPlace);
 
         return response()->json($this->kebabPlace, 200);
     }
@@ -235,9 +240,8 @@ class KebabPlaceController extends Controller
         });
     }
 
-    protected function attachImageData(): void
+    protected function attachImageData(KebabPlace $kebabPlace): void
     {
-        $this->kebabPlaces->getCollection()->transform(function ($kebabPlace) {
             if ($kebabPlace->image) {
                 $imagePath = storage_path('app/public/' . $kebabPlace->image);
 
@@ -253,7 +257,5 @@ class KebabPlaceController extends Controller
                     $kebabPlace->image = $imageDataUrl;
                 }
             }
-            return $kebabPlace;
-        });
     }
 }
