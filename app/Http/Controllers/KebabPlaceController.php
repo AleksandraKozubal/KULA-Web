@@ -62,7 +62,6 @@ class KebabPlaceController extends Controller
         $this->attachFormattedOpeningHours();
         $this->attachUserDataAll();
 
-
         foreach ($this->kebabPlaces as $kebabPlace) {
             $this->attachImageData($kebabPlace);
         }
@@ -242,20 +241,20 @@ class KebabPlaceController extends Controller
 
     protected function attachImageData(KebabPlace $kebabPlace): void
     {
-            if ($kebabPlace->image) {
-                $imagePath = storage_path('app/public/' . $kebabPlace->image);
+        if ($kebabPlace->image) {
+            $imagePath = storage_path("app/public/" . $kebabPlace->image);
 
-                if (file_exists($imagePath)) {
-                    $imageBinary = file_get_contents($imagePath);
+            if (file_exists($imagePath)) {
+                $imageBinary = file_get_contents($imagePath);
 
-                    $base64Image = base64_encode($imageBinary);
+                $base64Image = base64_encode($imageBinary);
 
-                    $mimeType = mime_content_type($imagePath);
+                $mimeType = mime_content_type($imagePath);
 
-                    $imageDataUrl = "data:$mimeType;base64,$base64Image";
+                $imageDataUrl = "data:$mimeType;base64,$base64Image";
 
-                    $kebabPlace->image = $imageDataUrl;
-                }
+                $kebabPlace->image = $imageDataUrl;
             }
+        }
     }
 }

@@ -46,7 +46,7 @@ class KebabPlace extends Model
 {
     use HasFactory;
 
-    public const PHOTOS_DIRECTORY = "kebab-place";
+    public const string PHOTOS_DIRECTORY = "kebab-place";
 
     protected $fillable = [
         "name",
