@@ -108,7 +108,7 @@ paths:
           name: fdatetime
           schema:
             type: string
-          description: Filtruj według dnia tygodnia (0-6) i godziny (nie działa bez fopen)
+          description: Filtruj według dnia tygodnia (1-7) i godziny (nie działa bez fopen)
           required: false
           example: "2-12:00"
       responses:
