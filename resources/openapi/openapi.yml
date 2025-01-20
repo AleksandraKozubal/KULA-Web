@@ -100,9 +100,10 @@ paths:
           name: fopen
           schema:
             type: string
+            enum: [open, closed]
           description: Filtruj według otwartej restauracji
           required: false
-          example: "true"
+          example: "open"
         - in: query
           name: fdatetime
           schema:
