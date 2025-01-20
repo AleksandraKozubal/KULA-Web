@@ -10,7 +10,7 @@ use Filament\Widgets\ChartWidget;
 
 class SuggestionStats extends ChartWidget
 {
-    protected static ?string $heading = "Statusy sugetii użytkowników";
+    protected static ?string $heading = "Statusy sugestii użytkowników";
     protected static ?string $maxHeight = "300px";
 
     protected function getData(): array
